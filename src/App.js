@@ -394,9 +394,7 @@ class App extends Component {
     }
     else if (event.key === 'p'){
       this.xemtruoc();
-    }
-    else if (event.key === 'n'){
-      this.xemtrangsau();
+    
     }
   }
 
