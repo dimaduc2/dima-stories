@@ -1,7 +1,7 @@
 {
   "main.css": "/dima-stories/static/css/main.9e3b5499.chunk.css",
-  "main.js": "/dima-stories/static/js/main.c34c0f7a.chunk.js",
-  "main.js.map": "/dima-stories/static/js/main.c34c0f7a.chunk.js.map",
+  "main.js": "/dima-stories/static/js/main.33085819.chunk.js",
+  "main.js.map": "/dima-stories/static/js/main.33085819.chunk.js.map",
   "static/css/1.bc188f46.chunk.css": "/dima-stories/static/css/1.bc188f46.chunk.css",
   "static/js/1.e5df1f1c.chunk.js": "/dima-stories/static/js/1.e5df1f1c.chunk.js",
   "static/js/1.e5df1f1c.chunk.js.map": "/dima-stories/static/js/1.e5df1f1c.chunk.js.map",
@@ -15,8 +15,8 @@
   "static/media/Back to the future.pdf": "/dima-stories/static/media/Back to the future.c9e2cad0.pdf",
   "static/media/Changing the Future.docx": "/dima-stories/static/media/Changing the Future.cee9650a.docx",
   "static/media/Changing the Future.pdf": "/dima-stories/static/media/Changing the Future.52ac48ef.pdf",
-  "static/media/evangelion.docx": "/dima-stories/static/media/evangelion.cc24fc81.docx",
-  "static/media/evangelion.pdf": "/dima-stories/static/media/evangelion.edb2670c.pdf",
+  "static/media/evangelion.docx": "/dima-stories/static/media/evangelion.e93c00f2.docx",
+  "static/media/evangelion.pdf": "/dima-stories/static/media/evangelion.51c8e8ca.pdf",
   "static/media/Darth Vader Rebirth.docx": "/dima-stories/static/media/Darth Vader Rebirth.c7ba5dcc.docx",
   "static/media/Darth Vader Rebirth.pdf": "/dima-stories/static/media/Darth Vader Rebirth.3c812418.pdf",
   "static/media/Darth Vader- Hero of Naboo.docx": "/dima-stories/static/media/Darth Vader- Hero of Naboo.6cce490c.docx",
@@ -33,6 +33,6 @@
   "static/css/main.9e3b5499.chunk.css.map": "/dima-stories/static/css/main.9e3b5499.chunk.css.map",
   "static/css/1.bc188f46.chunk.css.map": "/dima-stories/static/css/1.bc188f46.chunk.css.map",
   "index.html": "/dima-stories/index.html",
-  "precache-manifest.1e4cdbaaaf131a279a6d0f07bd0147a5.js": "/dima-stories/precache-manifest.1e4cdbaaaf131a279a6d0f07bd0147a5.js",
+  "precache-manifest.cb863a2a59e0188bb0632dbe14280352.js": "/dima-stories/precache-manifest.cb863a2a59e0188bb0632dbe14280352.js",
   "service-worker.js": "/dima-stories/service-worker.js"
 }

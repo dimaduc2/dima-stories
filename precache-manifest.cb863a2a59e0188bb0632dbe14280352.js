@@ -4,7 +4,7 @@ self.__precacheManifest = [
     "url": "/dima-stories/static/media/Mace Windus alternate self.3733de79.pdf"
   },
   {
-    "revision": "c34c0f7acc9c42ccf38c",
+    "revision": "330858194f66e9a592dc",
     "url": "/dima-stories/static/css/main.9e3b5499.chunk.css"
   },
   {
@@ -52,12 +52,12 @@ self.__precacheManifest = [
     "url": "/dima-stories/static/media/Changing the Future.52ac48ef.pdf"
   },
   {
-    "revision": "cc24fc81ace33d56d9358be727dcf47a",
-    "url": "/dima-stories/static/media/evangelion.cc24fc81.docx"
+    "revision": "e93c00f2b9136bcacd3fb0907a974d27",
+    "url": "/dima-stories/static/media/evangelion.e93c00f2.docx"
   },
   {
-    "revision": "edb2670c5afc0174637e521439275827",
-    "url": "/dima-stories/static/media/evangelion.edb2670c.pdf"
+    "revision": "51c8e8ca0117f9d3786cc1d6f9a80f4e",
+    "url": "/dima-stories/static/media/evangelion.51c8e8ca.pdf"
   },
   {
     "revision": "c7ba5dccf6d4ed3c372a8862440c54d5",
@@ -88,8 +88,8 @@ self.__precacheManifest = [
     "url": "/dima-stories/static/media/Mace Windus alternate self.8eb8be84.docx"
   },
   {
-    "revision": "c34c0f7acc9c42ccf38c",
-    "url": "/dima-stories/static/js/main.c34c0f7a.chunk.js"
+    "revision": "330858194f66e9a592dc",
+    "url": "/dima-stories/static/js/main.33085819.chunk.js"
   },
   {
     "revision": "442be4dc7915337de1475399e71d588b",
@@ -144,12 +144,12 @@ self.__precacheManifest = [
     "url": "/dima-stories/static/media/brand-icons.a046592b.woff"
   },
   {
-    "revision": "8e3c7f5520f5ae906c6cf6d7f3ddcd19",
-    "url": "/dima-stories/static/media/icons.8e3c7f55.eot"
-  },
-  {
     "revision": "b87b9ba532ace76ae9f6edfe9f72ded2",
     "url": "/dima-stories/static/media/icons.b87b9ba5.ttf"
+  },
+  {
+    "revision": "8e3c7f5520f5ae906c6cf6d7f3ddcd19",
+    "url": "/dima-stories/static/media/icons.8e3c7f55.eot"
   },
   {
     "revision": "13db00b7a34fee4d819ab7f9838cc428",
@@ -172,7 +172,7 @@ self.__precacheManifest = [
     "url": "/dima-stories/static/css/1.bc188f46.chunk.css"
   },
   {
-    "revision": "67062e8cd80dbc53c38ac7e1c3375029",
+    "revision": "94515a74535d48ec87d0a0dfd4c24411",
     "url": "/dima-stories/index.html"
   }
 ];
