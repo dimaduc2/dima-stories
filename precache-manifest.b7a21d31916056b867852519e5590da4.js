@@ -4,7 +4,7 @@ self.__precacheManifest = [
     "url": "/dima-stories/static/media/Mace Windus alternate self.3733de79.pdf"
   },
   {
-    "revision": "330858194f66e9a592dc",
+    "revision": "6470b1d0ba151ef836d7",
     "url": "/dima-stories/static/css/main.9e3b5499.chunk.css"
   },
   {
@@ -88,8 +88,8 @@ self.__precacheManifest = [
     "url": "/dima-stories/static/media/Mace Windus alternate self.8eb8be84.docx"
   },
   {
-    "revision": "330858194f66e9a592dc",
-    "url": "/dima-stories/static/js/main.33085819.chunk.js"
+    "revision": "6470b1d0ba151ef836d7",
+    "url": "/dima-stories/static/js/main.6470b1d0.chunk.js"
   },
   {
     "revision": "442be4dc7915337de1475399e71d588b",
@@ -144,20 +144,20 @@ self.__precacheManifest = [
     "url": "/dima-stories/static/media/brand-icons.a046592b.woff"
   },
   {
-    "revision": "b87b9ba532ace76ae9f6edfe9f72ded2",
-    "url": "/dima-stories/static/media/icons.b87b9ba5.ttf"
-  },
-  {
     "revision": "8e3c7f5520f5ae906c6cf6d7f3ddcd19",
     "url": "/dima-stories/static/media/icons.8e3c7f55.eot"
   },
   {
-    "revision": "13db00b7a34fee4d819ab7f9838cc428",
-    "url": "/dima-stories/static/media/brand-icons.13db00b7.eot"
+    "revision": "b87b9ba532ace76ae9f6edfe9f72ded2",
+    "url": "/dima-stories/static/media/icons.b87b9ba5.ttf"
   },
   {
     "revision": "c5ebe0b32dc1b5cc449a76c4204d13bb",
     "url": "/dima-stories/static/media/brand-icons.c5ebe0b3.ttf"
+  },
+  {
+    "revision": "13db00b7a34fee4d819ab7f9838cc428",
+    "url": "/dima-stories/static/media/brand-icons.13db00b7.eot"
   },
   {
     "revision": "82f60bd0b94a1ed68b1e6e309ce2e8c3",
@@ -172,7 +172,7 @@ self.__precacheManifest = [
     "url": "/dima-stories/static/css/1.bc188f46.chunk.css"
   },
   {
-    "revision": "94515a74535d48ec87d0a0dfd4c24411",
+    "revision": "ecc4704444ae0974e79ac38ffb1eb5e9",
     "url": "/dima-stories/index.html"
   }
 ];
