@@ -715,67 +715,101 @@ class App extends Component {
 
         }
 
-        {tatCaTrang && (dangXemGi === 'dangXemTruyen')
-          ? null
-          : <Menu fixed='bottom' borderless size='mini' widths={5} compact inverted={white_or_black}>
-              <Menu.Item onClick={this.hienVaGiauPhoneMenu}>
-                { chieuRongManHinh > 900
-                  ? null
-                  : <Icon size='large' name='th large'/>
-                }
-              </Menu.Item>
+
+        {chieuRongManHinh <= 900
+        /* Nếu màn hình bé hơn 900 = màn hình ĐT */
+          /* Thì hiện ra menu dưới cho ĐT */
+          ? 
               
-              {/* Cách thứ nhất:
-              1 tên hành động xemtruoc chung cho cả 2 trường hợp: xem Phim và xem Truyện */}
-              <Menu.Item onClick={this.xemtruoc}>    
-                { chieuRongManHinh > 900
-                  ? <Button icon labelPosition='left' >
-                      <Icon name='arrow circle left'/>
-                      Previous (Prev)
-                    </Button>
-                  : <Icon size='large' name='arrow circle left'/>
-                }
-              </Menu.Item>
-              {dangXemGi === 'dangXemTruyen'
-                ? <Menu.Item>
-                   <Dropdown compact placeholder='Chon Trang' selection options={arrayTatCaTrang} onChange={this.xemTrangKhac}/>
-                 </Menu.Item>
+
+              dangXemGi === 'dangXemPhim'
+              ? 
+              <Menu fixed='bottom' borderless size='mini' widths={4} compact inverted={white_or_black}>
+         
+                <Menu.Item onClick={this.hienVaGiauPhoneMenu}>
+                  <Icon size='large' name='th large'/>
+                </Menu.Item>
+
+                <Menu.Item onClick={this.xemtruoc}>    
+                  <Icon size='large' name='arrow circle left'/>
+                </Menu.Item>
+
+                <Menu.Item>
+                  <Dropdown compact placeholder='Chon Tap' selection options={arrayTatCaTap} onChange={this.xemTapKhac}/>
+                </Menu.Item>
+
+                <Menu.Item onClick={this.xemtapsau}>
+                  <Icon size='large' name='arrow circle right'/>
+                </Menu.Item>
+              </Menu>
+              
+              /*Sai, nghĩa là ko phải đang xem phim, nghĩa là xem truyen*/
+              :
+                <Menu fixed='bottom' borderless size='mini' widths={4} compact inverted={white_or_black}>
+
+                  <Menu.Item onClick={this.hienVaGiauPhoneMenu}>
+                    <Icon size='large' name='th large'/>
+                  </Menu.Item>
+
+
+                  <Menu.Item as='a' href='#oTrenTrang'>
+                    <Icon size='large' name='angle double up' />
+                  </Menu.Item>
                 
-                : <Menu.Item>
-                   <Dropdown compact placeholder='Chon Tap' selection options={arrayTatCaTap} onChange={this.xemTapKhac}/>
+                  <Menu.Item as='a' href='#oDuoiTrang'>
+                    <Icon size='large' name='angle double down' />
                   </Menu.Item>
-              }
-              {/* Cách thứ hai:
-              2 hành động khác nhau cho 2 trường hợp: xem Phim và xem Truyện
-              SO SÁNH Ở DƯỚI ĐÂY, ở nút bấm */}   
-              <Menu.Item onClick={(dangXemGi === 'dangXemPhim') ? this.xemtapsau : this.xemtrangsau}>
-                {
-                  chieuRongManHinh > 900
-                  ? <Button icon labelPosition='right' >
-                      <Icon name='arrow circle right'/>
-                      Next
-                    </Button>
-                  : <Icon size='large' name='arrow circle right'/>
-                }
-              </Menu.Item>
+                </Menu>
 
-              { chieuRongManHinh <= 900
-                ? <Menu.Item fitted>
-                    <Menu.Item as='a' href='#oTrenTrang'>
-                      <Icon size='large' name='angle double up' />
+
+
+
+
+
+
+          /* Còn ko là Màn Hình hơn 900 = màn hình MT */
+          : (tatCaTrang && (dangXemGi === 'dangXemTruyen'))
+          /* Nếu đang xem DOC và đang xem Truyện */
+           
+            /* thì ko cần hiện ra menu chọn trang ở dưới */
+            ? null
+         
+            /* còn ko thì hiện ra menu chọn trang ở dưới */
+            : <Menu fixed='bottom' borderless size='mini' widths={5} compact inverted={white_or_black}>
+         
+                <Menu.Item>
+                </Menu.Item>
+                
+                {/* Cách thứ nhất:
+                1 tên hành động xemtruoc chung cho cả 2 trường hợp: xem Phim và xem Truyện */}
+                <Menu.Item onClick={this.xemtruoc}>    
+                  <Button icon labelPosition='left' >
+                    <Icon name='arrow circle left'/>
+                      Previous (Prev)
+                  </Button>
+                </Menu.Item>
+                {dangXemGi === 'dangXemTruyen'
+                  ? <Menu.Item>
+                    <Dropdown compact placeholder='Chon Trang' selection options={arrayTatCaTrang} onChange={this.xemTrangKhac}/>
                     </Menu.Item>
-                    <Menu.Item>
-                    </Menu.Item>
-                    <Menu.Item as='a' href='#oDuoiTrang'>
-                      <Icon size='large' name='angle double down' />
-                    </Menu.Item>
-                  </Menu.Item>
                   
-                : <Menu.Item>
-                  </Menu.Item>
-              }
+                  : <Menu.Item>
+                    <Dropdown compact placeholder='Chon Tap' selection options={arrayTatCaTap} onChange={this.xemTapKhac}/>
+                    </Menu.Item>
+                }
+                {/* Cách thứ hai:
+                2 hành động khác nhau cho 2 trường hợp: xem Phim và xem Truyện
+                SO SÁNH Ở DƯỚI ĐÂY, ở nút bấm */}   
+                <Menu.Item onClick={(dangXemGi === 'dangXemPhim') ? this.xemtapsau : this.xemtrangsau}>
+                  <Button icon labelPosition='right' >
+                    <Icon name='arrow circle right'/>
+                    Next
+                  </Button>
+                </Menu.Item>
 
-            </Menu>
+                <Menu.Item>
+                </Menu.Item>
+              </Menu>
         }
         
         { chieuRongManHinh <= 900
