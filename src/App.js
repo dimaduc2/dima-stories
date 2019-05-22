@@ -396,6 +396,10 @@ class App extends Component {
       this.xemtruoc();
     
     }
+    else if (event.key === 'n'){
+      this.xemtrangsau();
+    
+    }
   }
 
  /*
@@ -775,21 +779,28 @@ class App extends Component {
         }
         
         { chieuRongManHinh <= 900
+          /*neu trên đt thì ko hiện gì*/
           ? null
-          : <Menu vertical fixed='right' icon style={{marginTop:'70vh', marginBottom:'5vh'}}>
-              <Menu.Item onClick={this.lentranghet}>
-                  <Icon name='angle double up' />
-              </Menu.Item>
-              <Menu.Item onClick={this.lentrang}>
-                  <Icon name='angle up' />
-              </Menu.Item>
-              <Menu.Item onClick={this.xuongtrang}>
-                  <Icon name='angle down' />
-              </Menu.Item>
-              <Menu.Item onClick={this.xuongtranghet}>
-                  <Icon name='angle double down' />
-              </Menu.Item>
-            </Menu> 
+
+          /*neu trên mt thì hiện ra khi xem truyện*/
+          /*nếu đang xem truyện*/
+          : (dangXemGi === 'dangXemTruyen')
+            /* thì hiện ra menu lên xuống */
+            ? <Menu vertical fixed='right' icon style={{marginTop:'70vh', marginBottom:'5vh'}}>
+                <Menu.Item onClick={this.lentranghet}>
+                    <Icon name='angle double up' />
+                </Menu.Item>
+                <Menu.Item onClick={this.lentrang}>
+                    <Icon name='angle up' />
+                </Menu.Item>
+                <Menu.Item onClick={this.xuongtrang}>
+                    <Icon name='angle down' />
+                </Menu.Item>
+                <Menu.Item onClick={this.xuongtranghet}>
+                    <Icon name='angle double down' />
+                </Menu.Item>
+              </Menu>
+            : null
         }
         
         {/* Vị trí này ở trên cùng của trang, khi Dima bấm lên thì sẽ lên đây*/}
@@ -884,7 +895,7 @@ class App extends Component {
           <Icon name='youtube' /> Overlord
         </Button>
         <Button circular color='youtube' icon='youtube' />
-          
+        <br/><br/><br/><br/><br/>
 
         {/* Vị trí này ở dưới cùng của trang, khi Dima bấm xuống thì sẽ xuống đây*/}
         <ScrollableAnchor id={'oDuoiTrang'}> 
