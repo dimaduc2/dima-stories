@@ -30,6 +30,8 @@ import ChangingtheFutureDoc from './truyen/Changing the Future.docx';
 import ChangingtheFuturePDF from './truyen/Changing the Future.pdf';
 import EvangelionDoc from './truyen/evangelion.docx';
 import EvangelionPDF from './truyen/evangelion.pdf';
+import GANTZDoc from './truyen/GANTZ.docx';
+import GANTZPDF from './truyen/GANTZ.pdf';
 import DarthVaderRebirthDoc from './truyen/Darth Vader Rebirth.docx';
 import DarthVaderRebirthPDF from './truyen/Darth Vader Rebirth.pdf';
 import DarthVaderHeroofNabooDoc from './truyen/Darth Vader- Hero of Naboo.docx';
@@ -74,6 +76,10 @@ const truyens = {
   'Evangelion': {
     truyenDoc: EvangelionDoc,
     truyenPDF: EvangelionPDF
+  },
+  'GANTZ': {
+    truyenDoc: GANTZDoc,
+    truyenPDF: GANTZPDF
   },
   'DarthVaderRebirth': {
     truyenDoc: DarthVaderRebirthDoc,
@@ -475,9 +481,11 @@ class App extends Component {
                   {/*    
                   <Dropdown.Item onClick={this.doc}></Dropdown.Item>
                   */}
+                  <Dropdown.Item onClick={() => this.docTruyen('Evangelion')}>EVANGELION</Dropdown.Item>
+                  <Dropdown.Item onClick={() => this.docTruyen('GANTZ')}>GANTZ</Dropdown.Item>
+                  <Dropdown.Divider />
                   <Dropdown.Item onClick={() => this.docTruyen('Backtothefuture')}>Back to the future</Dropdown.Item>
                   <Dropdown.Item onClick={() => this.docTruyen('ChangingtheFuture')}>Changing the Future</Dropdown.Item>
-                  <Dropdown.Item onClick={() => this.docTruyen('Evangelion')}>EVANGELION</Dropdown.Item>
                   <Dropdown.Divider />
                   <Dropdown.Item>
                     <Icon name='star'/>
@@ -612,9 +620,11 @@ class App extends Component {
                     {/*    
                     <Dropdown.Item onClick={this.doc}></Dropdown.Item>
                     */}
+                    <Dropdown.Item onClick={() => this.docTruyen('Evangelion')}>EVANGELION</Dropdown.Item>
+                    <Dropdown.Item onClick={() => this.docTruyen('GANTZ')}>GANTZ</Dropdown.Item>
+                    <Dropdown.Divider />
                     <Dropdown.Item onClick={() => this.docTruyen('Backtothefuture')}>Back to the future</Dropdown.Item>
                     <Dropdown.Item onClick={() => this.docTruyen('ChangingtheFuture')}>Changing the Future</Dropdown.Item>
-                    <Dropdown.Item onClick={() => this.docTruyen('Evangelion')}>EVANGELION</Dropdown.Item>
                     <Dropdown.Divider />
                     <Dropdown.Item>
                       <Dropdown floating text='Darth Vader from the past'>
@@ -856,7 +866,7 @@ class App extends Component {
                   <FileViewer key={truyenDoc} fileType='docx' filePath={truyenDoc}/>
                 </div>
 
-              : <div align='center'  style={{backgroundColor: (white_or_black ? 'black' : 'white'), 
+              : <div className='truyen-PDF' align='center'  style={{backgroundColor: (white_or_black ? 'black' : 'white'), 
               color: (white_or_black ? 'white' : 'black')}}>
               
                 <div style={{height: 125*kichCuocChu+'vh', paddingTop: 60*kichCuocChu + 'vh'}}>
