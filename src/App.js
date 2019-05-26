@@ -105,8 +105,16 @@ const truyens = {
 
 //Danh ba tat ca Phim
 const phims = {
+  'starwars' :  [ 
+                  [
+                    {
+                      ten: "Star Wars Clone Wars 2003 Full SS1 - SS2",
+                      diaChi: 'https://www.youtube.com/embed/VgjtkgTNOHw'
+                    }
+                  ]
+                ],
+  
   'overlord' :  [
-                  
                   [
                     {
                       ten: "Overlord SS1 EP1-13",
@@ -421,11 +429,6 @@ class App extends Component {
     this.hienVaGiauPhoneMenu()
   }
 
-  xemStarWarsCloneWars = () => {
-    this.setState({tenPhim: "STAR WARS", diachiPhim: "https://www.youtube.com/embed/EwkNO8DDV1U"});
-    this.setState({dangXemGi: 'dangXemPhim'})
-    this.hienVaGiauPhoneMenu()
-  }
   xemTatCa = () => {
     this.setState({tatCaTrang: !this.state.tatCaTrang});
   }
@@ -561,7 +564,7 @@ class App extends Component {
                     </Dropdown.Menu>
                   </Dropdown.Item>
                   <Dropdown.Divider />
-                  <Dropdown.Item onClick={this.xemStarWarsCloneWars}>Star Wars: Clone Wars</Dropdown.Item>
+                  <Dropdown.Item onClick={ () => this.xemPhim('starwars', 0, 0) }>Star Wars Clone Wars 2003 Full</Dropdown.Item>
                 </Dropdown.Menu>
               </Dropdown>
               <Menu.Menu position='right'>
@@ -702,7 +705,7 @@ class App extends Component {
                       </Dropdown>
                     </Dropdown.Item>
                     <Dropdown.Divider />
-                    <Dropdown.Item onClick={this.xemStarWarsCloneWars}>Star Wars: Clone Wars</Dropdown.Item>
+                    <Dropdown.Item onClick={ () => this.xemPhim('starwars', 0, 0) }>Star Wars Clone Wars 2003 Full</Dropdown.Item>
                   </Dropdown.Menu>
                 </Dropdown>
               </Menu.Item>
