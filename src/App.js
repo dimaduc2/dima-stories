@@ -111,6 +111,12 @@ const phims = {
                       ten: "Star Wars Clone Wars 2003 Full SS1 - SS2",
                       diaChi: 'https://www.youtube.com/embed/VgjtkgTNOHw'
                     }
+                  ],
+                  [
+                    {
+                      ten: "Revan - Star Wars Fan Film (2015)",
+                      diaChi: 'https://www.youtube.com/embed/-DtvTM1Am4I'
+                    }
                   ]
                 ],
   
@@ -565,6 +571,7 @@ class App extends Component {
                   </Dropdown.Item>
                   <Dropdown.Divider />
                   <Dropdown.Item onClick={ () => this.xemPhim('starwars', 0, 0) }>Star Wars Clone Wars 2003 Full</Dropdown.Item>
+                  <Dropdown.Item onClick={ () => this.xemPhim('starwars', 1, 0) }>Revan - Star Wars Fan Film (2015)</Dropdown.Item>
                 </Dropdown.Menu>
               </Dropdown>
               <Menu.Menu position='right'>
@@ -706,6 +713,7 @@ class App extends Component {
                     </Dropdown.Item>
                     <Dropdown.Divider />
                     <Dropdown.Item onClick={ () => this.xemPhim('starwars', 0, 0) }>Star Wars Clone Wars 2003 Full</Dropdown.Item>
+                    <Dropdown.Item onClick={ () => this.xemPhim('starwars', 1, 0) }>Revan - Star Wars Fan Film (2015)</Dropdown.Item>
                   </Dropdown.Menu>
                 </Dropdown>
               </Menu.Item>
