@@ -487,7 +487,7 @@ class App extends Component {
           ?	// nếu true thì hiện Menu Máy Tính
             <Menu stackable inverted fixed='top'>
               <Menu.Item onClick={this.bamHome}>
-                <img src={logo_star_wars} /> 
+              HOME
               </Menu.Item>
               <Menu.Item header onClick={this.bamHome}>Dima Stories</Menu.Item>
               <Dropdown item simple text='Star Wars'>
@@ -575,9 +575,10 @@ class App extends Component {
                     </Dropdown.Menu>
                   </Dropdown.Item>
                   <Dropdown.Divider />
-                  <Dropdown.Item onClick={ () => this.xemPhim('starwars', 0, 0) }>Star Wars Clone Wars 2003 Full</Dropdown.Item>
-                  <Dropdown.Item onClick={ () => this.xemPhim('starwars', 1, 0) }>Revan - Star Wars Fan Film (2015)</Dropdown.Item>
-                  <Dropdown.Item onClick={ () => this.xemPhim('starwars', 2, 0) }>SKYWALKER APPRENTICE (2019 Star Wars Fan Film)</Dropdown.Item>
+                  
+                  <Dropdown.Item onClick={ () => this.xemPhim('starwars', 0, 0) }><img src={logo_star_wars} /> Star Wars Clone Wars 2003 Full</Dropdown.Item>
+                  <Dropdown.Item onClick={ () => this.xemPhim('starwars', 1, 0) }><img src={logo_star_wars} /> Revan - Star Wars Fan Film (2015)</Dropdown.Item>
+                  <Dropdown.Item onClick={ () => this.xemPhim('starwars', 2, 0) }><img src={logo_star_wars} /> SKYWALKER APPRENTICE (2019 Star Wars Fan Film)</Dropdown.Item>
                 </Dropdown.Menu>
               </Dropdown>
               <Menu.Menu position='right'>
