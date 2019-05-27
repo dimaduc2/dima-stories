@@ -576,9 +576,9 @@ class App extends Component {
                   </Dropdown.Item>
                   <Dropdown.Divider />
                   
-                  <Dropdown.Item onClick={ () => this.xemPhim('starwars', 0, 0) }><img src={logo_star_wars} /> Star Wars Clone Wars 2003 Full</Dropdown.Item>
-                  <Dropdown.Item onClick={ () => this.xemPhim('starwars', 1, 0) }><img src={logo_star_wars} /> Revan - Star Wars Fan Film (2015)</Dropdown.Item>
-                  <Dropdown.Item onClick={ () => this.xemPhim('starwars', 2, 0) }><img src={logo_star_wars} /> SKYWALKER APPRENTICE (2019 Star Wars Fan Film)</Dropdown.Item>
+                  <Dropdown.Item onClick={ () => this.xemPhim('starwars', 0, 0) }><Image src={logo_star_wars} avatar/> Star Wars Clone Wars 2003 Full</Dropdown.Item>
+                  <Dropdown.Item onClick={ () => this.xemPhim('starwars', 1, 0) }><Image src={logo_star_wars} avatar/> Revan - Star Wars Fan Film (2015)</Dropdown.Item>
+                  <Dropdown.Item onClick={ () => this.xemPhim('starwars', 2, 0) }><Image src={logo_star_wars} avatar/> SKYWALKER APPRENTICE (2019 Star Wars Fan Film)</Dropdown.Item>
                 </Dropdown.Menu>
               </Dropdown>
               <Menu.Menu position='right'>
@@ -719,9 +719,9 @@ class App extends Component {
                       </Dropdown>
                     </Dropdown.Item>
                     <Dropdown.Divider />
-                    <Dropdown.Item onClick={ () => this.xemPhim('starwars', 0, 0) }>Star Wars Clone Wars 2003 Full</Dropdown.Item>
-                    <Dropdown.Item onClick={ () => this.xemPhim('starwars', 1, 0) }>Revan - Star Wars Fan Film (2015)</Dropdown.Item>
-                    <Dropdown.Item onClick={ () => this.xemPhim('starwars', 2, 0) }>SKYWALKER APPRENTICE (2019 Star Wars Fan Film)</Dropdown.Item>
+                    <Dropdown.Item onClick={ () => this.xemPhim('starwars', 0, 0) }><Image src={logo_star_wars} avatar/> Star Wars Clone Wars 2003 Full</Dropdown.Item>
+                    <Dropdown.Item onClick={ () => this.xemPhim('starwars', 1, 0) }><Image src={logo_star_wars} avatar/> Revan - Star Wars Fan Film </Dropdown.Item>
+                    <Dropdown.Item onClick={ () => this.xemPhim('starwars', 2, 0) }><Image src={logo_star_wars} avatar/> SKYWALKER APPRENTICE</Dropdown.Item>
                   </Dropdown.Menu>
                 </Dropdown>
               </Menu.Item>
@@ -738,9 +738,7 @@ class App extends Component {
                 } onChange={this.thayDoiCoChudocx}/>
               </Menu.Item>
 
-
             </Menu>
-
 
         }
 
@@ -749,8 +747,7 @@ class App extends Component {
         /* Nếu màn hình bé hơn 900 = màn hình ĐT */
           /* Thì hiện ra menu dưới cho ĐT */
           ? 
-              
-
+          
               dangXemGi === 'dangXemPhim'
               ? 
               <Menu fixed='bottom' borderless size='mini' widths={4} compact inverted={white_or_black}>
