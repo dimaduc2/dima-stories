@@ -9,7 +9,6 @@ import Iframe from 'react-iframe';
 import ScrollableAnchor from 'react-scrollable-anchor';
 import { configureAnchors } from 'react-scrollable-anchor';	
 
-
 import * as Scroll from 'react-scroll';
 import { Link, Element , Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
 
@@ -116,6 +115,12 @@ const phims = {
                     {
                       ten: "Revan - Star Wars Fan Film (2015)",
                       diaChi: 'https://www.youtube.com/embed/-DtvTM1Am4I'
+                    }
+                  ],
+                  [
+                    {
+                      ten:  'SKYWALKER APPRENTICE (2019 Star Wars Fan Film)',
+                      diaChi: 'https://www.youtube.com/embed/7ZfWU-3OL_s'
                     }
                   ]
                 ],
@@ -572,6 +577,7 @@ class App extends Component {
                   <Dropdown.Divider />
                   <Dropdown.Item onClick={ () => this.xemPhim('starwars', 0, 0) }>Star Wars Clone Wars 2003 Full</Dropdown.Item>
                   <Dropdown.Item onClick={ () => this.xemPhim('starwars', 1, 0) }>Revan - Star Wars Fan Film (2015)</Dropdown.Item>
+                  <Dropdown.Item onClick={ () => this.xemPhim('starwars', 2, 0) }>SKYWALKER APPRENTICE (2019 Star Wars Fan Film)</Dropdown.Item>
                 </Dropdown.Menu>
               </Dropdown>
               <Menu.Menu position='right'>
@@ -714,6 +720,7 @@ class App extends Component {
                     <Dropdown.Divider />
                     <Dropdown.Item onClick={ () => this.xemPhim('starwars', 0, 0) }>Star Wars Clone Wars 2003 Full</Dropdown.Item>
                     <Dropdown.Item onClick={ () => this.xemPhim('starwars', 1, 0) }>Revan - Star Wars Fan Film (2015)</Dropdown.Item>
+                    <Dropdown.Item onClick={ () => this.xemPhim('starwars', 2, 0) }>SKYWALKER APPRENTICE (2019 Star Wars Fan Film)</Dropdown.Item>
                   </Dropdown.Menu>
                 </Dropdown>
               </Menu.Item>
@@ -956,10 +963,7 @@ class App extends Component {
         <ScrollableAnchor id={'oDuoiTrang'}> 
           <div></div> 
         </ScrollableAnchor>
-
-
-
-
+        
       </div>
     );
   }
