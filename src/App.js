@@ -15,6 +15,10 @@ import { Link, Element , Events, animateScroll as scroll, scrollSpy, scroller } 
 import logo_star_wars from './anh/Gray_Jedi_(Jedi_&_Sith)_symbol.png';
 import logo_overlord from './anh/overlord_symbol.png';
 
+import gray_jedi_revan from './anh/Gray_Jedi_Revan.jpg';
+import batman_arkham_knight_demon from './anh/Batman_Arkham_Knight_Demon.jpg';
+
+
 import koTruyenDoc from './truyen/koTruyen.docx';
 import koTruyenPDF from './truyen/koTruyen.pdf';
 
@@ -292,16 +296,45 @@ class App extends Component {
     thuTuTapDangXem: 0,
     thuTuPhanDangXem: 0,
     hienMenu: false,
+    anhStarWars_or_Batman: false, 
   }
+  //anhStarWars_or_Batman: false la Star Wars và true là Batman
 
 // PHẦN 3: Function
-  hienVaGiauPhoneMenu = () => {
+
+  kiemTraManHinh =  () => {
+    if(chieuRongManHinh > 900){
+      alert("Hiện cửa sổ trên màn hình trên máy tính.");
+    }
+    else{
+      alert("Hiện cửa sổ trên màn hình trên điện thoại.");
+    }
+  }
+  
+  /*hienVaGiauPhoneMenu = () => {
     if(this.state.hienMenu === true){
       this.setState({hienMenu: false})
     }
     else{
       this.setState({hienMenu: true})
     }
+  }*/
+
+  hienVaGiauPhoneMenu = () => {
+    this.setState({hienMenu: !this.state.hienMenu})
+  }
+
+  doi_anh_batman = () => {
+      //trong đây phải làm gì, mục đích là gì?
+			//Mục đích là đổi sang ảnh Batman, 
+      //Làm thế nào? Thay đổi hộp thành gì? Thành false
+      this.setState({anhStarWars_or_Batman: false})
+  }
+  doi_anh_star_wars = () => {
+    //trong đây phải làm gì, mục đích là gì?
+    //Mục đích là đổi sang ảnh Star Wars, 
+    //Làm thế nào? Thay đổi hộp thành gì? Thành true
+    this.setState({anhStarWars_or_Batman: true})
   }
 
   xemTrangKhac = (e,{value}) => {
@@ -360,7 +393,6 @@ class App extends Component {
    }
 
   xemtapsau = () => {
-
     
     if((this.state.thuTuTapDangXem + 1) < phims['overlord'][this.state.thuTuPhanDangXem].length){
       //Dima bảo máy tính: hãy xemPhim tênDanhBạ này 'overlord' (hãy xem phim này)
@@ -479,7 +511,7 @@ class App extends Component {
 // PHẦN 4: Trình bày trang Web, giống HTML
   render() {
     var {truyenDoc, truyenPDF, tenPhim, diachiPhim, trang, tongSoTrang, tatCaTrang, arrayTatCaTrang, arrayTatCaTap, kichCuocChu, 
-          kichCuocChuDocx, white_or_black, dangXemGi, phimDangxem, thuTuPhanDangXem, thuTuTapDangXem, hienMenu} = this.state;
+          kichCuocChuDocx, white_or_black, dangXemGi, phimDangxem, thuTuPhanDangXem, thuTuTapDangXem, hienMenu, anhStarWars_or_Batman} = this.state;
     return (
       <div className="App" onKeyUp={this.bamBanPhim} tabIndex="0" style={{backgroundColor: (white_or_black ? 'black' : 'white')}}>
         
@@ -490,7 +522,7 @@ class App extends Component {
               HOME
               </Menu.Item>
               <Menu.Item header onClick={this.bamHome}>Dima Stories</Menu.Item>
-              <Dropdown item simple text='Star Wars'>
+              <Dropdown item simple text='Truyện Tranh'>
                 <Dropdown.Menu>
                   {/*    
                   <Dropdown.Item onClick={this.doc}></Dropdown.Item>
@@ -777,7 +809,6 @@ class App extends Component {
                     <Icon size='large' name='th large'/>
                   </Menu.Item>
 
-
                   <Menu.Item as='a' href='#oTrenTrang'>
                     <Icon size='large' name='angle double up' />
                   </Menu.Item>
@@ -785,13 +816,8 @@ class App extends Component {
                   <Menu.Item as='a' href='#oDuoiTrang'>
                     <Icon size='large' name='angle double down' />
                   </Menu.Item>
+
                 </Menu>
-
-
-
-
-
-
 
           /* Còn ko là Màn Hình hơn 900 = màn hình MT */
           : (tatCaTrang && (dangXemGi === 'dangXemTruyen'))
@@ -867,6 +893,17 @@ class App extends Component {
         <ScrollableAnchor id={'oTrenTrang'}> 
           <div></div> 
         </ScrollableAnchor>
+
+        <br/><br/><br/><br/><br/>
+        
+        
+        <Button basic color='red' as='a' href='#denCuoiTrang'> Đến Cuối Trang </Button>
+        
+        <br/><br/>
+
+
+        <Button basic color='blue' onClick={this.kiemTraManHinh}> scs </Button>
+
         {(chieuRongManHinh > 900)
           ? (dangXemGi === 'dangXemTruyen')
             ? 
@@ -940,6 +977,25 @@ class App extends Component {
               : null         
         }
         <br/><br/><br/><br/><br/>
+        
+        <ScrollableAnchor id={'denCuoiTrang'}> 
+          <div></div> 
+        </ScrollableAnchor>
+        
+        {anhStarWars_or_Batman
+          ? <Image size='medium' centered src={gray_jedi_revan}/>
+          : <Image fluid src={batman_arkham_knight_demon}/> 
+        }
+
+
+
+        <Button.Group>
+          <Button color='red' onClick={this.doi_anh_batman}>Batman</Button>
+          <Button.Or />
+          <Button color='blue' onClick={this.doi_anh_star_wars}>Star Wars</Button>
+        </Button.Group>
+
+
         <Button basic color='red' onClick={this.xemTatCa}>Xem Tat Ca</Button>
         
         <Button basic color='red' onClick={this.hienPhoneMenu}> Hiện Menu Phone </Button>
@@ -955,6 +1011,7 @@ class App extends Component {
           <Icon name='youtube' /> Overlord
         </Button>
         <Button circular color='youtube' icon='youtube' />
+
         <br/><br/><br/><br/><br/>
 
         {/* Vị trí này ở dưới cùng của trang, khi Dima bấm xuống thì sẽ xuống đây*/}
