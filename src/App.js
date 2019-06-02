@@ -439,7 +439,7 @@ class App extends Component {
   }
 
   bamHome = () => {
-    this.setState({truyenDoc: koTruyenDoc, truyenPDF: koTruyenPDF, tenPhim: "", diachiPhim:"", dangXemGi:"Home"});
+    this.setState({truyenDoc: koTruyenDoc, truyenPDF: koTruyenPDF, tenPhim: "", diachiPhim:"", dangXemGi:"koXemGi"});
     this.hienVaGiauPhoneMenu()
   }
 
@@ -626,44 +626,58 @@ class App extends Component {
               </Dropdown>
 
               <Menu.Menu position='right'>
-              <Menu.Item>
-                  {tatCaTrang
-                    ? 
-                    <Label color='teal' basic={white_or_black} ribbon={white_or_black}>
-                      tất cả trang
-                    </Label>
-                    : 
-                    <Label color='olive' basic={white_or_black} ribbon={white_or_black}>
-                      từng trang một
-                    </Label>
-                  }
-                </Menu.Item>
-                <Menu.Item>
-                  PDF <Checkbox toggle checked={tatCaTrang} onChange={this.xemTatCa} style={{marginLeft:"5px", marginRight:"5px"}} /> DOC 
-                </Menu.Item>
+              
+              
+                {dangXemGi === 'dangXemTruyen'
+                  ? <Menu.Item>
+                      {tatCaTrang
+                        ? 
+                        <Label color='teal' basic={white_or_black} ribbon={white_or_black}>
+                          tất cả trang
+                        </Label>
+                        : 
+                        <Label color='olive' basic={white_or_black} ribbon={white_or_black}>
+                          từng trang một
+                        </Label>
+                      }
+                    </Menu.Item>
+                  : null
+                }
+                { dangXemGi === 'dangXemTruyen'
+                  ? <Menu.Item>
+                      PDF <Checkbox toggle checked={tatCaTrang} onChange={this.xemTatCa} style={{marginLeft:"5px", marginRight:"5px"}} /> DOC 
+                    </Menu.Item>
+                  : null
+                }
+
                 <Menu.Item>
                   LIGHT <Checkbox toggle checked={white_or_black} onChange={this.doimau} style={{marginLeft:"5px", marginRight:"5px"}} /> DARK
                 </Menu.Item>
-                <Menu.Item>
-                  {tatCaTrang
-                    ?
-                    <Dropdown placeholder='Kich Co' selection options={
-                      [
-                        {key: 1, text: '10pt', value: 10},
-                        {key: 1.5, text: '15pt', value: 15},
-                        {key: 2, text: '20pt', value: 20},
-                      ]
-                    } onChange={this.thayDoiCoChudocx}/>
-                    :
-                    <Dropdown placeholder='Kich Co' selection options={
-                      [
-                        {key: 1, text: '100%', value: 1},
-                        {key: 1.5, text: '150%', value: 1.5},
-                        {key: 2, text: '200%', value: 2},
-                      ]
-                    } onChange={this.thayDoiCoChu}/>
-                  }
-                </Menu.Item>
+
+              {dangXemGi === 'dangXemTruyen'
+                ? <Menu.Item>
+                    {tatCaTrang
+                      ?
+                      <Dropdown placeholder='Kich Co' selection options={
+                        [
+                          {key: 1, text: '10pt', value: 10},
+                          {key: 1.5, text: '15pt', value: 15},
+                          {key: 2, text: '20pt', value: 20},
+                        ]
+                      } onChange={this.thayDoiCoChudocx}/>
+                      :
+                      <Dropdown placeholder='Kich Co' selection options={
+                        [
+                          {key: 1, text: '100%', value: 1},
+                          {key: 1.5, text: '150%', value: 1.5},
+                          {key: 2, text: '200%', value: 2},
+                        ]
+                      } onChange={this.thayDoiCoChu}/>
+                    }
+                  </Menu.Item>
+                : null
+              }
+
               </Menu.Menu>
             </Menu>
 
