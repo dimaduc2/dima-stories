@@ -15,6 +15,8 @@ import { Link, Element , Events, animateScroll as scroll, scrollSpy, scroller } 
 import logo_star_wars from './anh/Gray_Jedi_(Jedi_&_Sith)_symbol.png';
 import logo_overlord from './anh/overlord_symbol.png';
 
+
+import Iron_Spider_Man_suit_by_nanotechnology from './anh/Iron_Spider-Man_suit_by_nanotechnology.jpg';
 import gray_jedi_revan from './anh/Gray_Jedi_Revan.jpg';
 import batman_arkham_knight_demon from './anh/Batman_Arkham_Knight_Demon.jpg';
 
@@ -275,6 +277,8 @@ const phims = {
                 ]
               }
 
+
+
 // PHẦN 2: State
 class App extends Component {
   /*đây là thông tin ban đầu*/
@@ -296,7 +300,8 @@ class App extends Component {
     thuTuTapDangXem: 0,
     thuTuPhanDangXem: 0,
     hienMenu: false,
-    anhStarWars_or_Batman: false, 
+    anhStarWars_or_Batman: false,
+    anhSpiderMan: false,
   }
   //anhStarWars_or_Batman: false la Star Wars và true là Batman
 
@@ -336,7 +341,9 @@ class App extends Component {
     //Làm thế nào? Thay đổi hộp thành gì? Thành true
     this.setState({anhStarWars_or_Batman: true})
   }
-
+  hienVaGiauAnhSpiderMan = () => {
+    this.setState({anhSpiderMan: !this.state.anhSpiderMan})
+  }
   xemTrangKhac = (e,{value}) => {
     this.setState({trang: value});
   }
@@ -511,17 +518,15 @@ class App extends Component {
 // PHẦN 4: Trình bày trang Web, giống HTML
   render() {
     var {truyenDoc, truyenPDF, tenPhim, diachiPhim, trang, tongSoTrang, tatCaTrang, arrayTatCaTrang, arrayTatCaTap, kichCuocChu, 
-          kichCuocChuDocx, white_or_black, dangXemGi, phimDangxem, thuTuPhanDangXem, thuTuTapDangXem, hienMenu, anhStarWars_or_Batman} = this.state;
+          kichCuocChuDocx, white_or_black, dangXemGi, phimDangxem, thuTuPhanDangXem, thuTuTapDangXem, hienMenu, anhStarWars_or_Batman, 
+          anhSpiderMan} = this.state;
     return (
       <div className="App" onKeyUp={this.bamBanPhim} tabIndex="0" style={{backgroundColor: (white_or_black ? 'black' : 'white')}}>
         
         { chieuRongManHinh > 900
           ?	// nếu true thì hiện Menu Máy Tính
             <Menu stackable inverted fixed='top'>
-              <Menu.Item onClick={this.bamHome}>
-              HOME
-              </Menu.Item>
-              <Menu.Item header onClick={this.bamHome}>Dima Stories</Menu.Item>
+              <Menu.Item header onClick={this.bamHome}>HOME</Menu.Item>
               <Dropdown item simple text='Truyện Tranh'>
                 <Dropdown.Menu>
                   {/*    
@@ -613,6 +618,13 @@ class App extends Component {
                   <Dropdown.Item onClick={ () => this.xemPhim('starwars', 2, 0) }><Image src={logo_star_wars} avatar/> SKYWALKER APPRENTICE (2019 Star Wars Fan Film)</Dropdown.Item>
                 </Dropdown.Menu>
               </Dropdown>
+              
+              <Dropdown item simple text='Anh'>
+                <Dropdown.Menu>
+                  <Dropdown.Item onClick={this.hienVaGiauAnhSpiderMan}>Iron Spider-Man</Dropdown.Item>
+                </Dropdown.Menu>
+              </Dropdown>
+
               <Menu.Menu position='right'>
               <Menu.Item>
                   {tatCaTrang
@@ -664,7 +676,7 @@ class App extends Component {
               </Menu.Item>
 
               <Menu.Item>
-                <Dropdown floating text='Star Wars'>
+                <Dropdown floating text='Truyện Tranh'>
                   <Dropdown.Menu>
                     {/*    
                     <Dropdown.Item onClick={this.doc}></Dropdown.Item>
@@ -757,6 +769,17 @@ class App extends Component {
                   </Dropdown.Menu>
                 </Dropdown>
               </Menu.Item>
+
+              <Menu.Item>
+                <Dropdown floating text='Anh'>
+                  <Dropdown.Menu>
+                    <Dropdown.Item onClick={this.hienVaGiauAnhSpiderMan}>Iron Spider-Man</Dropdown.Item>
+                  </Dropdown.Menu>
+                </Dropdown>
+              </Menu.Item>
+
+
+
               <Menu.Item>
                 LIGHT <Checkbox toggle checked={white_or_black} onChange={this.doimau} style={{marginLeft:"5px", marginRight:"5px"}} /> DARK
               </Menu.Item>
@@ -983,11 +1006,15 @@ class App extends Component {
         </ScrollableAnchor>
         
         {anhStarWars_or_Batman
-          ? <Image size='medium' centered src={gray_jedi_revan}/>
-          : <Image fluid src={batman_arkham_knight_demon}/> 
+          ? <Image size='medium' centered src={Iron_Spider_Man_suit_by_nanotechnology}/>
+          : <Image fluid src={batman_arkham_knight_demon}/>
         }
 
 
+        {anhSpiderMan
+          ? <Image size='medium' centered src={Iron_Spider_Man_suit_by_nanotechnology}/>
+          : null
+        }
 
         <Button.Group>
           <Button color='red' onClick={this.doi_anh_batman}>Batman</Button>
@@ -995,10 +1022,12 @@ class App extends Component {
           <Button color='blue' onClick={this.doi_anh_star_wars}>Star Wars</Button>
         </Button.Group>
 
+        <Button color='green' onClick={this.hienVaGiauAnhSpiderMan}>Iron Spider-Man</Button>
+
 
         <Button basic color='red' onClick={this.xemTatCa}>Xem Tat Ca</Button>
         
-        <Button basic color='red' onClick={this.hienPhoneMenu}> Hiện Menu Phone </Button>
+          <Button basic color='red' onClick={this.hienPhoneMenu}> Hiện Menu Phone </Button>
 	      <Button inverted color='orange' onClick={this.dauPhoneMenu}> Dấu Menu Phone </Button>
 
         <Button  color='blue' animated='bounce'>
