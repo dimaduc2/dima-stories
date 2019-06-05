@@ -2,8 +2,12 @@ import React, { Component } from 'react';
 
 // PHẦN 1: IMPORT
 import './App.css';
-import { Button, Icon, Menu, Dropdown, Image, Checkbox, Label, Sidebar, Segment, Header} from 'semantic-ui-react';
-import FileViewer from 'react-file-viewer';
+import Anh from './Anh';
+import Truyen from './Truyen';
+import Phim from './Phim';
+
+import { Button, Icon, Menu, Dropdown, Image, Checkbox, Label } from 'semantic-ui-react';
+
 import Iframe from 'react-iframe';
 
 import ScrollableAnchor from 'react-scrollable-anchor';
@@ -15,10 +19,6 @@ import { Link, Element , Events, animateScroll as scroll, scrollSpy, scroller } 
 import logo_star_wars from './anh/Gray_Jedi_(Jedi_&_Sith)_symbol.png';
 import logo_overlord from './anh/overlord_symbol.png';
 
-
-import Iron_Spider_Man_suit_by_nanotechnology from './anh/Iron_Spider-Man_suit_by_nanotechnology.jpg';
-import gray_jedi_revan from './anh/Gray_Jedi_Revan.jpg';
-import batman_arkham_knight_demon from './anh/Batman_Arkham_Knight_Demon.jpg';
 
 
 import koTruyenDoc from './truyen/koTruyen.docx';
@@ -55,9 +55,6 @@ pdf từ trang 1
 
 import Innocent from './truyen/Innocent.docx';
 import InnocentPDF from './truyen/Innocent.pdf';
-
-import { Document, Page, pdfjs } from 'react-pdf';
-pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
 // Hết PHẦN 1
 
@@ -300,8 +297,6 @@ class App extends Component {
     thuTuTapDangXem: 0,
     thuTuPhanDangXem: 0,
     hienMenu: false,
-    anhStarWars_or_Batman: false,
-    anhSpiderMan: false,
   }
   //anhStarWars_or_Batman: false la Star Wars và true là Batman
 
@@ -329,21 +324,6 @@ class App extends Component {
     this.setState({hienMenu: !this.state.hienMenu})
   }
 
-  doi_anh_batman = () => {
-      //trong đây phải làm gì, mục đích là gì?
-			//Mục đích là đổi sang ảnh Batman, 
-      //Làm thế nào? Thay đổi hộp thành gì? Thành false
-      this.setState({anhStarWars_or_Batman: false})
-  }
-  doi_anh_star_wars = () => {
-    //trong đây phải làm gì, mục đích là gì?
-    //Mục đích là đổi sang ảnh Star Wars, 
-    //Làm thế nào? Thay đổi hộp thành gì? Thành true
-    this.setState({anhStarWars_or_Batman: true})
-  }
-  hienVaGiauAnhSpiderMan = () => {
-    this.setState({anhSpiderMan: !this.state.anhSpiderMan})
-  }
   xemTrangKhac = (e,{value}) => {
     this.setState({trang: value});
   }
@@ -518,8 +498,7 @@ class App extends Component {
 // PHẦN 4: Trình bày trang Web, giống HTML
   render() {
     var {truyenDoc, truyenPDF, tenPhim, diachiPhim, trang, tongSoTrang, tatCaTrang, arrayTatCaTrang, arrayTatCaTap, kichCuocChu, 
-          kichCuocChuDocx, white_or_black, dangXemGi, phimDangxem, thuTuPhanDangXem, thuTuTapDangXem, hienMenu, anhStarWars_or_Batman, 
-          anhSpiderMan} = this.state;
+          kichCuocChuDocx, white_or_black, dangXemGi, phimDangxem, thuTuPhanDangXem, thuTuTapDangXem, hienMenu} = this.state;
     return (
       <div className="App" onKeyUp={this.bamBanPhim} tabIndex="0" style={{backgroundColor: (white_or_black ? 'black' : 'white')}}>
         
@@ -654,29 +633,29 @@ class App extends Component {
                   LIGHT <Checkbox toggle checked={white_or_black} onChange={this.doimau} style={{marginLeft:"5px", marginRight:"5px"}} /> DARK
                 </Menu.Item>
 
-              {dangXemGi === 'dangXemTruyen'
-                ? <Menu.Item>
-                    {tatCaTrang
-                      ?
-                      <Dropdown placeholder='Kich Co' selection options={
-                        [
-                          {key: 1, text: '10pt', value: 10},
-                          {key: 1.5, text: '15pt', value: 15},
-                          {key: 2, text: '20pt', value: 20},
-                        ]
-                      } onChange={this.thayDoiCoChudocx}/>
-                      :
-                      <Dropdown placeholder='Kich Co' selection options={
-                        [
-                          {key: 1, text: '100%', value: 1},
-                          {key: 1.5, text: '150%', value: 1.5},
-                          {key: 2, text: '200%', value: 2},
-                        ]
-                      } onChange={this.thayDoiCoChu}/>
-                    }
-                  </Menu.Item>
-                : null
-              }
+                {dangXemGi === 'dangXemTruyen'
+                  ? <Menu.Item>
+                      {tatCaTrang
+                        ?
+                        <Dropdown placeholder='Kich Co' selection options={
+                          [
+                            {key: 1, text: '10pt', value: 10},
+                            {key: 1.5, text: '15pt', value: 15},
+                            {key: 2, text: '20pt', value: 20},
+                          ]
+                        } onChange={this.thayDoiCoChudocx}/>
+                        :
+                        <Dropdown placeholder='Kich Co' selection options={
+                          [
+                            {key: 1, text: '100%', value: 1},
+                            {key: 1.5, text: '150%', value: 1.5},
+                            {key: 2, text: '200%', value: 2},
+                          ]
+                        } onChange={this.thayDoiCoChu}/>
+                      }
+                    </Menu.Item>
+                  : null
+                }
 
               </Menu.Menu>
             </Menu>
@@ -730,7 +709,6 @@ class App extends Component {
               </Menu.Item>
 
               <Menu.Item>
-
                 <Dropdown floating text='Phim Youtube'>
                   <Dropdown.Menu>
                     <Dropdown.Item onClick={ () => this.xemPhim('overlord', 0, 0) }>
@@ -792,21 +770,22 @@ class App extends Component {
                 </Dropdown>
               </Menu.Item>
 
-
-
               <Menu.Item>
                 LIGHT <Checkbox toggle checked={white_or_black} onChange={this.doimau} style={{marginLeft:"5px", marginRight:"5px"}} /> DARK
               </Menu.Item>
-              <Menu.Item>
-                <Dropdown compact placeholder='Kich Co' selection options={
-                  [
-                    {key: 1, text: '10pt', value: 10},
-                    {key: 1.5, text: '15pt', value: 15},
-                    {key: 2, text: '20pt', value: 20},
-                  ]
-                } onChange={this.thayDoiCoChudocx}/>
-              </Menu.Item>
-
+              
+              {dangXemGi === 'dangXemTruyen'
+                ? <Menu.Item>
+                    <Dropdown compact placeholder='Kich Co' selection options={
+                      [
+                        {key: 1, text: '10pt', value: 10},
+                        {key: 1.5, text: '15pt', value: 15},
+                        {key: 2, text: '20pt', value: 20},
+                      ]
+                    } onChange={this.thayDoiCoChudocx}/>
+                  </Menu.Item>
+                : null
+              }
             </Menu>
 
         }
@@ -816,11 +795,10 @@ class App extends Component {
         /* Nếu màn hình bé hơn 900 = màn hình ĐT */
           /* Thì hiện ra menu dưới cho ĐT */
           ? 
-          
-              dangXemGi === 'dangXemPhim'
-              ? 
+            dangXemGi === 'dangXemPhim'
+            ? 
               <Menu fixed='bottom' borderless size='mini' widths={4} compact inverted={white_or_black}>
-         
+          
                 <Menu.Item onClick={this.hienVaGiauPhoneMenu}>
                   <Icon size='large' name='th large'/>
                 </Menu.Item>
@@ -837,24 +815,24 @@ class App extends Component {
                   <Icon size='large' name='arrow circle right'/>
                 </Menu.Item>
               </Menu>
+            
+            /*Sai, nghĩa là ko phải đang xem phim, nghĩa là xem truyen*/
+            :
+              <Menu fixed='bottom' borderless size='mini' widths={4} compact inverted={white_or_black}>
+
+                <Menu.Item onClick={this.hienVaGiauPhoneMenu}>
+                  <Icon size='large' name='th large'/>
+                </Menu.Item>
+
+                <Menu.Item as='a' href='#oTrenTrang'>
+                  <Icon size='large' name='angle double up' />
+                </Menu.Item>
               
-              /*Sai, nghĩa là ko phải đang xem phim, nghĩa là xem truyen*/
-              :
-                <Menu fixed='bottom' borderless size='mini' widths={4} compact inverted={white_or_black}>
+                <Menu.Item as='a' href='#oDuoiTrang'>
+                  <Icon size='large' name='angle double down' />
+                </Menu.Item>
 
-                  <Menu.Item onClick={this.hienVaGiauPhoneMenu}>
-                    <Icon size='large' name='th large'/>
-                  </Menu.Item>
-
-                  <Menu.Item as='a' href='#oTrenTrang'>
-                    <Icon size='large' name='angle double up' />
-                  </Menu.Item>
-                
-                  <Menu.Item as='a' href='#oDuoiTrang'>
-                    <Icon size='large' name='angle double down' />
-                  </Menu.Item>
-
-                </Menu>
+              </Menu>
 
           /* Còn ko là Màn Hình hơn 900 = màn hình MT */
           : (tatCaTrang && (dangXemGi === 'dangXemTruyen'))
@@ -930,44 +908,15 @@ class App extends Component {
         <ScrollableAnchor id={'oTrenTrang'}> 
           <div></div> 
         </ScrollableAnchor>
-
         <br/><br/><br/><br/><br/>
-        
-        
         <Button basic color='red' as='a' href='#denCuoiTrang'> Đến Cuối Trang </Button>
-        
         <br/><br/>
-
-
         <Button basic color='blue' onClick={this.kiemTraManHinh}> scs </Button>
-
         {(chieuRongManHinh > 900)
           ? (dangXemGi === 'dangXemTruyen')
-            ? 
-            tatCaTrang
-              ? <div className='truyen-div' 
-                  style={{fontSize: kichCuocChuDocx+'pt', lineHeight: kichCuocChuDocx+5+'pt', 
-                    backgroundColor: (white_or_black ? 'black' : 'white'), 
-                    color: (white_or_black ? 'white' : 'black'),
-                    width: (chieuRongManHinh-30), 
-                  }}>
-                  {/*Hien thi truyen DOCX, xem tat ca trang*/}
-                  
-                  <FileViewer key={truyenDoc} fileType='docx' filePath={truyenDoc}/>
-                </div>
-
-              : <div className='truyen-PDF' align='center'  style={{backgroundColor: (white_or_black ? 'black' : 'white'), 
-              color: (white_or_black ? 'white' : 'black')}}>
-              
-                <div style={{height: 125*kichCuocChu+'vh', paddingTop: 60*kichCuocChu + 'vh'}}>
-                {/*Hien thi truyen PDF, xem tung trang mot*/}
-                <Document file={truyenPDF} onLoadSuccess={this.sauKhiMoTruyen}>
-                  <Page pageNumber={trang} scale={kichCuocChu} renderMode='none' /> 
-                </Document>
-                </div>
-                <p>Page {trang} of {tongSoTrang}</p>
-              </div>
-
+            ? <Truyen tatCaTrang={tatCaTrang} kichCuocChuDocx={kichCuocChuDocx} white_or_black={white_or_black} 
+                      chieuRongManHinh={chieuRongManHinh} truyenDoc={truyenDoc} truyenPDF={truyenPDF}       
+                      trang={trang} tongSoTrang={tongSoTrang} kichCuocChu={kichCuocChu}/>
             : (dangXemGi === 'dangXemPhim')
               ?
               <div className="phim-may-tinh">
@@ -982,19 +931,12 @@ class App extends Component {
                 allowFullScreen />
               </div>
               : null
-          
           /* Nếu False (chieuRongManHinh < 900) thì Hiện truyện và phim trên Điện Thoại */
           : (dangXemGi === 'dangXemTruyen') /* điều kiện: đang xem truyện à? True hoặc False ở dưới */
             /* nếu True thì xem luôn truyện DOCX, ko cần quan tâm đến truyện PDF */
-            ? <div className='truyen-div' 
-                style={{fontSize: kichCuocChuDocx+'pt', lineHeight: kichCuocChuDocx+5+'pt', 
-                  backgroundColor: (white_or_black ? 'black' : 'white'), 
-                  color: (white_or_black ? 'white' : 'black'),
-                  width: (chieuRongManHinh)
-                }}>
-                {/*Hien thi truyen DOCX, xem tat ca trang*/}
-                <FileViewer key={truyenDoc} fileType='docx' filePath={truyenDoc}/>
-              </div>
+            ? <Truyen tatCaTrang={true} kichCuocChuDocx={kichCuocChuDocx} white_or_black={white_or_black} 
+                chieuRongManHinh={chieuRongManHinh+30} truyenDoc={truyenDoc} truyenPDF={truyenPDF}       
+                trang={trang} tongSoTrang={tongSoTrang} kichCuocChu={kichCuocChu}/>
               
             /* nếu False thì hỏi tiếp điều kiện tiếp theo*/
             : (dangXemGi === 'dangXemPhim') /* Điều kiện: đang xem phim à? True hoặc False ở dưới*/
@@ -1014,46 +956,11 @@ class App extends Component {
               : null         
         }
         <br/><br/><br/><br/><br/>
-        
         <ScrollableAnchor id={'denCuoiTrang'}> 
           <div></div> 
         </ScrollableAnchor>
         
-        {anhStarWars_or_Batman
-          ? <Image size='medium' centered src={Iron_Spider_Man_suit_by_nanotechnology}/>
-          : <Image fluid src={batman_arkham_knight_demon}/>
-        }
-
-
-        {anhSpiderMan
-          ? <Image size='medium' centered src={Iron_Spider_Man_suit_by_nanotechnology}/>
-          : null
-        }
-
-        <Button.Group>
-          <Button color='red' onClick={this.doi_anh_batman}>Batman</Button>
-          <Button.Or />
-          <Button color='blue' onClick={this.doi_anh_star_wars}>Star Wars</Button>
-        </Button.Group>
-
-        <Button color='green' onClick={this.hienVaGiauAnhSpiderMan}>Iron Spider-Man</Button>
-
-
-        <Button basic color='red' onClick={this.xemTatCa}>Xem Tat Ca</Button>
-        
-          <Button basic color='red' onClick={this.hienPhoneMenu}> Hiện Menu Phone </Button>
-	      <Button inverted color='orange' onClick={this.dauPhoneMenu}> Dấu Menu Phone </Button>
-
-        <Button  color='blue' animated='bounce'>
-          <Button.Content visible>Next</Button.Content>
-          <Button.Content hidden>
-            <Icon name='file word outline' />
-          </Button.Content>
-        </Button>
-        <Button color='youtube' onClick={this.xemYoutubeOverlord}>
-          <Icon name='youtube' /> Overlord
-        </Button>
-        <Button circular color='youtube' icon='youtube' />
+        <Anh/>        
 
         <br/><br/><br/><br/><br/>
 
