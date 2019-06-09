@@ -5,10 +5,11 @@ import './App.css';
 import Anh from './Anh';
 import Truyen from './Truyen';
 import Phim from './Phim';
+import MenuDienThoai from './MenuDienThoai';
+import MenuMayTinh from './MenuMayTinh';
 
 import { Button, Icon, Menu, Dropdown, Image, Checkbox, Label } from 'semantic-ui-react';
 
-import Iframe from 'react-iframe';
 
 import ScrollableAnchor from 'react-scrollable-anchor';
 import { configureAnchors } from 'react-scrollable-anchor';	
@@ -21,92 +22,20 @@ import logo_overlord from './anh/overlord_symbol.png';
 
 
 
-import koTruyenDoc from './truyen/koTruyen.docx';
-import koTruyenPDF from './truyen/koTruyen.pdf';
-
 /*
 import from './truyen/.docx';
 import PDF from './truyen/.pdf';
 */
 
-import BacktothefutureDoc from './truyen/Back to the future.docx';
-import BacktothefuturePDF from './truyen/Back to the future.pdf';
-import ChangingtheFutureDoc from './truyen/Changing the Future.docx';
-import ChangingtheFuturePDF from './truyen/Changing the Future.pdf';
-import EvangelionDoc from './truyen/evangelion.docx';
-import EvangelionPDF from './truyen/evangelion.pdf';
-import GANTZDoc from './truyen/GANTZ.docx';
-import GANTZPDF from './truyen/GANTZ.pdf';
-import DarthVaderRebirthDoc from './truyen/Darth Vader Rebirth.docx';
-import DarthVaderRebirthPDF from './truyen/Darth Vader Rebirth.pdf';
-import DarthVaderHeroofNabooDoc from './truyen/Darth Vader- Hero of Naboo.docx';
-import DarthVaderHeroofNabooPDF from './truyen/Darth Vader- Hero of Naboo.pdf';
-import ASithsSecondChanceDoc from './truyen/A Siths Second Chance.docx';
-import ASithsSecondChancePDF from './truyen/A Siths Second Chance.pdf';
-import MaceWindusalternateselfDoc from './truyen/Mace Windus alternate self.docx';
-import MaceWindusalternateselfPDF from './truyen/Mace Windus alternate self.pdf';
-import OperationPreventingVaderDoc from './truyen/Operation Preventing Vader.docx';
-import OperationPreventingVaderPDF from './truyen/Operation Preventing Vader.pdf';
+
+
 
 /*
 docx tất cả các trang
 pdf từ trang 1
 */
 
-import Innocent from './truyen/Innocent.docx';
-import InnocentPDF from './truyen/Innocent.pdf';
-
-// Hết PHẦN 1
-
-configureAnchors({offset: -60, scrollDuration: 800})
-
-
-var chieuRongManHinh = Math.max(document.documentElement.clientWidth, window.innerWidth || 0); 
-var chieuDaiManHinh = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
-
-
-//Danh ba tat ca Truyen
-const truyens = {
-  'Backtothefuture' : {
-    truyenDoc: BacktothefutureDoc,
-    truyenPDF: BacktothefuturePDF
-  },
-  'ChangingtheFuture': {
-    truyenDoc: ChangingtheFutureDoc,
-    truyenPDF: ChangingtheFuturePDF
-  },
-  'Evangelion': {
-    truyenDoc: EvangelionDoc,
-    truyenPDF: EvangelionPDF
-  },
-  'GANTZ': {
-    truyenDoc: GANTZDoc,
-    truyenPDF: GANTZPDF
-  },
-  'DarthVaderRebirth': {
-    truyenDoc: DarthVaderRebirthDoc,
-    truyenPDF: DarthVaderRebirthPDF
-  },
-  'DarthVaderHeroofNaboo': {
-    truyenDoc: DarthVaderHeroofNabooDoc,
-    truyenPDF: DarthVaderHeroofNabooPDF
-  },
-  'ASithsSecondChance': {
-    truyenDoc: ASithsSecondChanceDoc,
-    truyenPDF: ASithsSecondChancePDF
-  },
-  'MaceWindusalternateself': {
-    truyenDoc: MaceWindusalternateselfDoc,
-    truyenPDF: MaceWindusalternateselfPDF
-  },
-  'OperationPreventingVader': {
-    truyenDoc: OperationPreventingVaderDoc,
-    truyenPDF: OperationPreventingVaderPDF
-  }
-}
-
-//Danh ba tat ca Phim
-const phims = {
+const danhBaPhim = {
   'starwars' :  [ 
                   [
                     {
@@ -274,14 +203,23 @@ const phims = {
                 ]
               }
 
+// Hết PHẦN 1
+
+configureAnchors({offset: -60, scrollDuration: 800})
+
+
+var chieuRongManHinh = Math.max(document.documentElement.clientWidth, window.innerWidth || 0); 
+var chieuDaiManHinh = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+
+
 
 
 // PHẦN 2: State
 class App extends Component {
   /*đây là thông tin ban đầu*/
   state = {
-    truyenDoc: koTruyenDoc,
-    truyenPDF: koTruyenPDF, 
+    tenTruyenTrongDanhBa: 'koTruyen',
+    tenPhimTrongDanhBa: 'koTruyen',
     tenPhim: "",
     diachiPhim:"",  /*  bước 1  */
     tongSoTrang: null,
@@ -355,7 +293,7 @@ class App extends Component {
       //Dima bảo máy tính: hãy xemPhim tênDanhBạ 'overlord' (hãy xem phim này)
       //                               thứTựPhần this.state.thuTuPhanDangXem (phần đang xem) - 1 (hãy xem phần trước)
       //                               thứTựTập 12 (xem tập 13)
-        this.xemPhim('overlord', this.state.thuTuPhanDangXem - 1, phims['overlord'][this.state.thuTuPhanDangXem-1].length-1);
+        this.xemPhim('overlord', this.state.thuTuPhanDangXem - 1, danhBaPhim['overlord'][this.state.thuTuPhanDangXem-1].length-1);
       }
       else {
         alert("Đây là tập đầu tiên và Ko có tập trước")
@@ -381,14 +319,14 @@ class App extends Component {
 
   xemtapsau = () => {
     
-    if((this.state.thuTuTapDangXem + 1) < phims['overlord'][this.state.thuTuPhanDangXem].length){
+    if((this.state.thuTuTapDangXem + 1) < danhBaPhim['overlord'][this.state.thuTuPhanDangXem].length){
       //Dima bảo máy tính: hãy xemPhim tênDanhBạ này 'overlord' (hãy xem phim này)
       //                               thứTựPhần này: this.state.thuTuPhanDangXem (vẫn xem phần này). 
       //                               thứTựTập này: this.state.thuTuTapDangXem (tập đang xem) + 1 = (hãy xem tập sau). 
       this.xemPhim('overlord', this.state.thuTuPhanDangXem, this.state.thuTuTapDangXem + 1);
       
     }
-    else if((this.state.thuTuPhanDangXem + 1) < phims['overlord'].length){
+    else if((this.state.thuTuPhanDangXem + 1) < danhBaPhim['overlord'].length){
       
       //Dima bảo máy tính: hãy xemPhim tênDanhBạ 'overlord' (hãy xem phim này)
       //                               thứTựPhần this.state.thuTuPhanDangXem (phần đang xem) + 1 (hãy xem phần sau)
@@ -409,17 +347,17 @@ class App extends Component {
 
   // Máy tính hiện 1 phim bất kỳ: phim tên tenDanhBa, phần thuTuPhan, tập thuTuTap
   xemPhim = (tenDanhBa, thuTuPhan, thuTuTap) => {
-    this.setState({tenPhim: phims[tenDanhBa][thuTuPhan][thuTuTap].ten, diachiPhim: phims[tenDanhBa][thuTuPhan][thuTuTap].diaChi})
+    this.setState({tenPhim: danhBaPhim[tenDanhBa][thuTuPhan][thuTuTap].ten, diachiPhim: danhBaPhim[tenDanhBa][thuTuPhan][thuTuTap].diaChi})
     this.setState({dangXemGi: 'dangXemPhim'})
     this.setState({phimDangxem: tenDanhBa})  //Dima bảo máy tính tôi dang xem phim này
     this.setState({thuTuPhanDangXem: thuTuPhan})  //Dima bảo máy tính tôi dang xem phần này
     this.setState({thuTuTapDangXem: thuTuTap})
-    this.sauKhiMoPhim(phims[tenDanhBa][thuTuPhan].length);
+    this.sauKhiMoPhim(danhBaPhim[tenDanhBa][thuTuPhan].length);
     this.setState({hienMenu: false})
   }
 
   bamHome = () => {
-    this.setState({truyenDoc: koTruyenDoc, truyenPDF: koTruyenPDF, tenPhim: "", diachiPhim:"", dangXemGi:"koXemGi"});
+    this.setState({tenTruyenTrongDanhBa: 'koTruyen', tenPhim: "", diachiPhim:"", dangXemGi:"koXemGi"});
     this.hienVaGiauPhoneMenu()
   }
 
@@ -452,10 +390,11 @@ class App extends Component {
   }
 */
 
-  docTruyen = (tenTruyenTrongDanhBa) => {
-    this.setState({truyenDoc: truyens[tenTruyenTrongDanhBa].truyenDoc});
-    this.setState({truyenPDF: truyens[tenTruyenTrongDanhBa].truyenPDF});
-    this.setState( {dangXemGi: 'dangXemTruyen'});
+  docTruyen = (tenTruyen) => {
+    //this.setState({truyenDoc: truyens[tenTruyenTrongDanhBa].truyenDoc});
+    //this.setState({truyenPDF: truyens[tenTruyenTrongDanhBa].truyenPDF});
+    this.setState({tenTruyenTrongDanhBa: tenTruyen});
+    this.setState({dangXemGi: 'dangXemTruyen'});
     this.hienVaGiauPhoneMenu()
   }
 
@@ -497,7 +436,7 @@ class App extends Component {
   }
 // PHẦN 4: Trình bày trang Web, giống HTML
   render() {
-    var {truyenDoc, truyenPDF, tenPhim, diachiPhim, trang, tongSoTrang, tatCaTrang, arrayTatCaTrang, arrayTatCaTap, kichCuocChu, 
+    var {tenTruyenTrongDanhBa, tenPhim, diachiPhim, trang, tongSoTrang, tatCaTrang, arrayTatCaTrang, arrayTatCaTap, kichCuocChu, 
           kichCuocChuDocx, white_or_black, dangXemGi, phimDangxem, thuTuPhanDangXem, thuTuTapDangXem, hienMenu} = this.state;
     return (
       <div className="App" onKeyUp={this.bamBanPhim} tabIndex="0" style={{backgroundColor: (white_or_black ? 'black' : 'white')}}>
@@ -914,44 +853,30 @@ class App extends Component {
         <Button basic color='blue' onClick={this.kiemTraManHinh}> scs </Button>
         {(chieuRongManHinh > 900)
           ? (dangXemGi === 'dangXemTruyen')
-            ? <Truyen tatCaTrang={tatCaTrang} kichCuocChuDocx={kichCuocChuDocx} white_or_black={white_or_black} 
-                      chieuRongManHinh={chieuRongManHinh} truyenDoc={truyenDoc} truyenPDF={truyenPDF}       
-                      trang={trang} tongSoTrang={tongSoTrang} kichCuocChu={kichCuocChu}/>
+            ? <Truyen docx_or_pdf={tatCaTrang} kichCuocChuDocx={kichCuocChuDocx} white_or_black={white_or_black} 
+                      chieuRongManHinh={chieuRongManHinh} tenTruyenTrongDanhBa={tenTruyenTrongDanhBa}       
+                      trang={trang} tongSoTrang={tongSoTrang} kichCuocChu={kichCuocChu}
+                      sauKhiMoTruyen={this.sauKhiMoTruyen}/>
             : (dangXemGi === 'dangXemPhim')
-              ?
-              <div className="phim-may-tinh">
-                <h1 style={{color:(white_or_black ? 'white' : 'black')}}>{tenPhim} - {phimDangxem} [{thuTuPhanDangXem}] [{thuTuTapDangXem}]</h1>
-                <Iframe url={diachiPhim} /*  bước 2  */
-                width={(chieuRongManHinh-30)+"px"}
-                height={(chieuDaiManHinh-200)+"px"}
-                id="myId"
-                className="myClassname"
-                display="initial"
-                position="relative"
-                allowFullScreen />
-              </div>
+              ?<Phim white_or_black={white_or_black} chieuRongManHinh={chieuRongManHinh} tenPhim={tenPhim} phimDangxem={phimDangxem}
+              thuTuPhanDangXem={thuTuPhanDangXem} thuTuTapDangXem={thuTuTapDangXem} 
+              diachiPhim={diachiPhim} chieuDaiManHinh={chieuDaiManHinh} />
+              
               : null
           /* Nếu False (chieuRongManHinh < 900) thì Hiện truyện và phim trên Điện Thoại */
           : (dangXemGi === 'dangXemTruyen') /* điều kiện: đang xem truyện à? True hoặc False ở dưới */
             /* nếu True thì xem luôn truyện DOCX, ko cần quan tâm đến truyện PDF */
-            ? <Truyen tatCaTrang={true} kichCuocChuDocx={kichCuocChuDocx} white_or_black={white_or_black} 
-                chieuRongManHinh={chieuRongManHinh+30} truyenDoc={truyenDoc} truyenPDF={truyenPDF}       
-                trang={trang} tongSoTrang={tongSoTrang} kichCuocChu={kichCuocChu}/>
+            ? <Truyen docx_or_pdf={true} kichCuocChuDocx={kichCuocChuDocx} white_or_black={white_or_black} 
+                chieuRongManHinh={chieuRongManHinh+30} tenTruyenTrongDanhBa={tenTruyenTrongDanhBa}       
+                trang={trang} tongSoTrang={tongSoTrang} kichCuocChu={kichCuocChu}
+                sauKhiMoTruyen={this.sauKhiMoTruyen}/>
               
             /* nếu False thì hỏi tiếp điều kiện tiếp theo*/
             : (dangXemGi === 'dangXemPhim') /* Điều kiện: đang xem phim à? True hoặc False ở dưới*/
               /* nếu True thì hiện phim */   
-              ? <div>
-                  <h1 style={{color:(white_or_black ? 'white' : 'black')}}>{tenPhim} - {phimDangxem} [{thuTuPhanDangXem}] [{thuTuTapDangXem}]</h1>
-                  <Iframe url={diachiPhim} /*  bước 2  */
-                  width={(chieuRongManHinh-30)+"px"}
-                  height={(chieuDaiManHinh-200)+"px"}
-                  id="myId"
-                  className="myClassname"
-                  display="initial"
-                  position="relative"
-                  allowFullScreen />
-                </div>
+              ? <Phim white_or_black={white_or_black} chieuRongManHinh={chieuRongManHinh} tenPhim={tenPhim} 
+                      phimDangxem={phimDangxem} thuTuPhanDangXem={thuTuPhanDangXem} thuTuTapDangXem={thuTuTapDangXem} 
+                      diachiPhim={diachiPhim} chieuDaiManHinh={chieuDaiManHinh} />
               /* nếu False thì ko hiện gì: null (đây là khi bấm Home, giấu hết truyện và phim đi) */   
               : null         
         }

@@ -8,6 +8,12 @@ import gray_jedi_revan from './anh/Gray_Jedi_Revan.jpg';
 import batman_arkham_knight_demon from './anh/Batman_Arkham_Knight_Demon.jpg';
 
 
+//Danh ba tat ca Anh
+const anhs = {
+  'ironSpiderMan': Iron_Spider_Man_suit_by_nanotechnology,
+  'revan' : gray_jedi_revan,
+  'batmanDemon' : batman_arkham_knight_demon
+  }
 
 // PHẦN 2: State
 class Anh extends Component {
