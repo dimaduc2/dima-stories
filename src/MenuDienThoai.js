@@ -22,7 +22,7 @@ docTruyen = () => {
 // PHẦN 4: Trình bày trang Web, giống HTML
   render() {
     var {} = this.state;
-    var {dangXemGi, white_or_black, docTruyen, xemPhim, bamHome, hienMenu } = this.props;
+    var {dangXemGi, white_or_black, docTruyen, xemPhim, bamHome, hienMenu, doimau, thayDoiCoChudocx } = this.props;
     return (
       
       <Menu vertical fixed='top' inverted style={{visibility: (hienMenu ? "visible" : "hidden")}} >
@@ -134,7 +134,7 @@ docTruyen = () => {
         </Menu.Item>
 
         <Menu.Item>
-          LIGHT <Checkbox toggle checked={white_or_black} onChange={this.doimau} style={{marginLeft:"5px", marginRight:"5px"}} /> DARK
+          LIGHT <Checkbox toggle checked={white_or_black} onChange={doimau} style={{marginLeft:"5px", marginRight:"5px"}} /> DARK
         </Menu.Item>
         
         {dangXemGi === 'dangXemTruyen'
@@ -145,7 +145,7 @@ docTruyen = () => {
                   {key: 1.5, text: '15pt', value: 15},
                   {key: 2, text: '20pt', value: 20},
                 ]
-              } onChange={this.thayDoiCoChudocx}/>
+              } onChange={thayDoiCoChudocx}/>
             </Menu.Item>
           : null
         }

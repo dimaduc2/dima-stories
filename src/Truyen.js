@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
 
-// PHẦN 1: IMPORT
-import { Button, Image} from 'semantic-ui-react';
-import FileViewer from 'react-file-viewer';
+import MenuDieuKhien from './MenuDieuKhien'
 
+// PHẦN 1: IMPORT
+import FileViewer from 'react-file-viewer';
 
 import koTruyenDoc from './truyen/koTruyen.docx';
 import koTruyenPDF from './truyen/koTruyen.pdf';
-
 
 import BacktothefutureDoc from './truyen/Back to the future.docx';
 import BacktothefuturePDF from './truyen/Back to the future.pdf';
@@ -29,7 +28,6 @@ import OperationPreventingVaderDoc from './truyen/Operation Preventing Vader.doc
 import OperationPreventingVaderPDF from './truyen/Operation Preventing Vader.pdf';
 import InnocentDoc from './truyen/Innocent.docx';
 import InnocentPDF from './truyen/Innocent.pdf';
-
 
 import { Document, Page, pdfjs } from 'react-pdf';
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
@@ -82,21 +80,46 @@ const danhBaTruyen = {
   }
 }
 
-
-
 // PHẦN 2: State
 class Truyen extends Component {
   state = {
-
+    tongSoTrang: null, 
+    trang: 1,
+    arrayTatCaTrang: [],
   }
 
 // PHẦN 3: Function
+//Mỗi khi mở 1 truyện ra, thì làm hành động này:
+sauKhiMoTruyen = ({ numPages }) => {
+  this.setState({ tongSoTrang: numPages, trang: 1});
+  var arrayTrang = [];
+  var i;
+  for (i = 1; i <= numPages; i++) {
+    arrayTrang.push({key:i, text: i + " / " + numPages, value:i});
+  }
+  this.setState({arrayTatCaTrang: arrayTrang});
+}
 
+xemtrangsau = () => { 
+  if (this.state.trang < this.state.tongSoTrang) {
+    this.setState({trang: this.state.trang + 1});
+  }
+}
+
+xemtrangtruoc = () => {
+  if (this.state.trang > 1) {
+    this.setState({trang: this.state.trang - 1});
+  }
+}
+
+xemTrangKhac = (e,{value}) => {
+  this.setState({trang: value});
+}
 
 // PHẦN 4: Trình bày trang Web, giống HTML
   render() {
-    var {} = this.state;
-    var {docx_or_pdf, kichCuocChuDocx, white_or_black, chieuRongManHinh, tenTruyenTrongDanhBa, kichCuocChu, tongSoTrang, trang} = this.props;
+    var {tongSoTrang, trang, arrayTatCaTrang} = this.state;
+    var {docx_or_pdf, kichCuocChuDocx, white_or_black, chieuRongManHinh, tenTruyenTrongDanhBa, kichCuocChu, dangXemGi } = this.props;
     return (
       <div className="Truyen">
         {docx_or_pdf
@@ -116,19 +139,18 @@ class Truyen extends Component {
         
           <div style={{height: 125*kichCuocChu+'vh', paddingTop: 60*kichCuocChu + 'vh'}}>
           {/*Hien thi truyen PDF, xem tung trang mot*/}
-          <Document file={danhBaTruyen[tenTruyenTrongDanhBa].truyenPDF} onLoadSuccess={this.props.sauKhiMoTruyen}>
+          <Document file={danhBaTruyen[tenTruyenTrongDanhBa].truyenPDF} onLoadSuccess={this.sauKhiMoTruyen}>
             <Page pageNumber={trang} scale={kichCuocChu} renderMode='none' /> 
           </Document>
           </div>
           <p>Page {trang} of {tongSoTrang}</p>
         </div>
         }
-
-      </div>
+        <MenuDieuKhien white_or_black={white_or_black} dangXemGi={dangXemGi} chieuRongManHinh={chieuRongManHinh} 
+                       docx_or_pdf={docx_or_pdf} arrayTatCa={arrayTatCaTrang} xemtruoc={this.xemtrangtruoc}
+                       xemsau={this.xemtrangsau} xemTrangKhac={this.xemTrangKhac}/>
+        </div>
     )
-
-
-    
   }
 }
 export default Truyen;

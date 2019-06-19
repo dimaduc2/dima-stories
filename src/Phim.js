@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 // PHẦN 1: IMPORT
 import Iframe from 'react-iframe';
 
-
+import MenuDieuKhien from './MenuDieuKhien'
 
 //Danh ba tat ca Phim
 const danhBaPhim = {
@@ -180,20 +180,92 @@ const danhBaPhim = {
 // PHẦN 2: State
 class Phim extends Component {
   state = {
-
+    arrayTatCaTap: [],
   }
 
 // PHẦN 3: Function
 
+componentDidMount() {
+    var arrayTap = [];
+    var tongSoTap = danhBaPhim[this.props.tenPhimTrongDanhBa][this.props.thuTuPhanDangXem].length;
+    var i;
+    for (i = 1; i <= tongSoTap; i++) {
+      arrayTap.push({key:i, text: i + " / " + tongSoTap, value:i});
+    }
+    this.setState({arrayTatCaTap: arrayTap});
+  
+}
+
+componentDidUpdate(prevProps) {
+  if ((this.props.tenPhimTrongDanhBa !== prevProps.tenPhimTrongDanhBa) || (this.props.thuTuPhanDangXem !== prevProps.thuTuPhanDangXem)) {
+    var arrayTap = [];
+    var tongSoTap = danhBaPhim[this.props.tenPhimTrongDanhBa][this.props.thuTuPhanDangXem].length;
+    var i;
+    for (i = 1; i <= tongSoTap; i++) {
+      arrayTap.push({key:i, text: i + " / " + tongSoTap, value:i});
+    }
+    this.setState({arrayTatCaTap: arrayTap});
+  
+  }
+}
+
+xemtapsau = () => {
+  
+  if((this.props.thuTuTapDangXem + 1) < danhBaPhim['overlord'][this.props.thuTuPhanDangXem].length){
+    //Dima bảo máy tính: hãy xemPhim tênDanhBạ này 'overlord' (hãy xem phim này)
+    //                               thứTựPhần này: this.state.thuTuPhanDangXem (vẫn xem phần này). 
+    //                               thứTựTập này: this.state.thuTuTapDangXem (tập đang xem) + 1 = (hãy xem tập sau). 
+    this.props.xemPhim('overlord', this.props.thuTuPhanDangXem, this.props.thuTuTapDangXem + 1);
+    
+  }
+  else if((this.props.thuTuPhanDangXem + 1) < danhBaPhim['overlord'].length){
+    
+    //Dima bảo máy tính: hãy xemPhim tênDanhBạ 'overlord' (hãy xem phim này)
+    //                               thứTựPhần this.state.thuTuPhanDangXem (phần đang xem) + 1 (hãy xem phần sau)
+    //                               thứTựTập 0 (xem tập từ đầu)
+    this.props.xemPhim('overlord', this.props.thuTuPhanDangXem + 1, 0);
+  }
+  else {
+    alert("hết phim")
+  }
+}
+
+xemtaptruoc = () => {
+
+    if(this.props.thuTuTapDangXem > 0){
+      this.props.xemPhim('overlord', this.props.thuTuPhanDangXem, this.props.thuTuTapDangXem -1);
+    }
+    else if(this.props.thuTuPhanDangXem > 0){
+      
+    //Dima bảo máy tính: hãy xemPhim tênDanhBạ 'overlord' (hãy xem phim này)
+    //                               thứTựPhần this.state.thuTuPhanDangXem (phần đang xem) - 1 (hãy xem phần trước)
+    //                               thứTựTập 12 (xem tập 13)
+      this.props.xemPhim('overlord', this.props.thuTuPhanDangXem - 1, danhBaPhim['overlord'][this.props.thuTuPhanDangXem-1].length-1);
+    }
+    else {
+      alert("Đây là tập đầu tiên và Ko có tập trước")
+    }
+  
+}
+
+xemTapKhac = (e,{value}) => {
+  //Dima goi hanh dong xemPhim
+  //Dima muon xem tap value
+  this.props.xemPhim(this.props.tenPhimTrongDanhBa, this.props.thuTuPhanDangXem, value-1);
+}
+
+
+
 
 // PHẦN 4: Trình bày trang Web, giống HTML
   render() {
-    var {} = this.state;
-    var {white_or_black, chieuRongManHinh, tenPhim, phimDangxem, thuTuPhanDangXem, thuTuTapDangXem, diachiPhim, chieuDaiManHinh} = this.props;
+    var {arrayTatCaTap} = this.state;
+    var {white_or_black, chieuRongManHinh, tenPhimTrongDanhBa, thuTuPhanDangXem, thuTuTapDangXem, chieuDaiManHinh, dangXemGi, 
+      docx_or_pdf, xemPhim } = this.props;
     return (
       <div className="phim-may-tinh">
-        <h1 style={{color:(white_or_black ? 'white' : 'black')}}>{tenPhim} - {phimDangxem} [{thuTuPhanDangXem}] [{thuTuTapDangXem}]</h1>
-        <Iframe url={diachiPhim} /*  bước 2  */
+        <h1 style={{color:(white_or_black ? 'white' : 'black')}}>{tenPhimTrongDanhBa} - [{thuTuPhanDangXem}] [{thuTuTapDangXem}]</h1>
+        <Iframe url={danhBaPhim[tenPhimTrongDanhBa][thuTuPhanDangXem][thuTuTapDangXem].diaChi} /*  bước 2  */
         width={(chieuRongManHinh-30)+"px"}
         height={(chieuDaiManHinh-200)+"px"}
         id="myId"
@@ -201,6 +273,11 @@ class Phim extends Component {
         display="initial"
         position="relative"
         allowFullScreen />
+        <MenuDieuKhien white_or_black={white_or_black} dangXemGi={dangXemGi} chieuRongManHinh={chieuRongManHinh} 
+                       docx_or_pdf={docx_or_pdf} arrayTatCaTap={arrayTatCaTap} xemPhim={xemPhim} danhBaPhim={danhBaPhim}
+                       tenPhimTrongDanhBa={tenPhimTrongDanhBa} thuTuPhanDangXem={thuTuPhanDangXem} thuTuTapDangXem={thuTuTapDangXem}
+                       arrayTatCa={arrayTatCaTap}/>
+
       </div>
     )
   }

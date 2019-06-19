@@ -22,7 +22,8 @@ docTruyen = () => {
 // PHẦN 4: Trình bày trang Web, giống HTML
   render() {
     var {} = this.state;
-    var {dangXemGi, docx_or_pdf, white_or_black, docTruyen, xemPhim, bamHome} = this.props;
+    var {dangXemGi, docx_or_pdf, white_or_black, docTruyen, xemPhim, 
+        bamHome, xemTatCa, doimau, thayDoiCoChudocx, thayDoiCoChu} = this.props;
     return (
       
       <Menu stackable inverted fixed='top'>
@@ -145,13 +146,13 @@ docTruyen = () => {
           }
           { dangXemGi === 'dangXemTruyen'
             ? <Menu.Item>
-                PDF <Checkbox toggle checked={docx_or_pdf} onChange={this.xemTatCa} style={{marginLeft:"5px", marginRight:"5px"}} /> DOC 
+                PDF <Checkbox toggle checked={docx_or_pdf} onChange={xemTatCa} style={{marginLeft:"5px", marginRight:"5px"}} /> DOC 
               </Menu.Item>
             : null
           }
 
           <Menu.Item>
-            LIGHT <Checkbox toggle checked={white_or_black} onChange={this.doimau} style={{marginLeft:"5px", marginRight:"5px"}} /> DARK
+            LIGHT <Checkbox toggle checked={white_or_black} onChange={doimau} style={{marginLeft:"5px", marginRight:"5px"}} /> DARK
           </Menu.Item>
 
           {dangXemGi === 'dangXemTruyen'
@@ -164,7 +165,7 @@ docTruyen = () => {
                       {key: 1.5, text: '15pt', value: 15},
                       {key: 2, text: '20pt', value: 20},
                     ]
-                  } onChange={this.thayDoiCoChudocx}/>
+                  } onChange={thayDoiCoChudocx}/>
                   :
                   <Dropdown placeholder='Kich Co' selection options={
                     [
@@ -172,7 +173,7 @@ docTruyen = () => {
                       {key: 1.5, text: '150%', value: 1.5},
                       {key: 2, text: '200%', value: 2},
                     ]
-                  } onChange={this.thayDoiCoChu}/>
+                  } onChange={thayDoiCoChu}/>
                 }
               </Menu.Item>
             : null
