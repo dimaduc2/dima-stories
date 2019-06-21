@@ -46,6 +46,8 @@ class App extends Component {
     thuTuTapDangXem: 0,
     thuTuPhanDangXem: 0,
     hienMenu: false,
+    coChu: 10, // bắt đầu thì cỡ chữ là 10px thôi
+    chuHello: "hello", // bắt đầu thì chữ Hello là tiếng anh
   }
   //anhStarWars_or_Batman: false la Star Wars và true là Batman
 
@@ -59,7 +61,20 @@ class App extends Component {
       alert("Hiện cửa sổ trên màn hình trên điện thoại.");
     }
   }
-  
+  phongToCoChu= () => {
+    ///this.setState({coChu: "60px"});
+    this.setState({coChu: this.state.coChu * 2})
+  }
+  thuNhoCoChu= () => {
+    this.setState({coChu: this.state.coChu / 2})
+  }
+
+
+  thayDoiChu = (tieng) => {
+    this.setState({chuHello: tieng})
+  }
+
+
   /*hienVaGiauPhoneMenu = () => {
     if(this.state.hienMenu === true){
       this.setState({hienMenu: false})
@@ -152,8 +167,8 @@ class App extends Component {
   
 // PHẦN 4: Trình bày trang Web, giống HTML
   render() {
-    var {tenTruyenTrongDanhBa, tatCaTrang, kichCuocChu, kichCuocChuDocx, white_or_black, dangXemGi, 
-        tenPhimTrongDanhBa, thuTuPhanDangXem, thuTuTapDangXem, hienMenu} = this.state;
+    var {tenTruyenTrongDanhBa, tatCaTrang, kichCuocChu, kichCuocChuDocx, coChu, white_or_black, dangXemGi, 
+        tenPhimTrongDanhBa, thuTuPhanDangXem, thuTuTapDangXem, hienMenu, chuHello} = this.state;
     return (
       <div className="App" onKeyUp={this.bamBanPhim} tabIndex="0" style={{backgroundColor: (white_or_black ? 'black' : 'white')}}>
         
@@ -233,8 +248,18 @@ class App extends Component {
           <div></div> 
         </ScrollableAnchor>
         
-        <Anh/>        
+        <Anh/>     
 
+        <p style={{fontSize:coChu + "px"}} onMouseOver={() => this.thayDoiChu("Hello")}>{chuHello}</p>
+        <Button onClick={() => this.thayDoiChu("xin chào")}>tieng Viet</Button>
+        <Button onClick={() => this.thayDoiChu("Hello")}>tieng Anh</Button>
+        <Button onClick={() => this.thayDoiChu("привет")}>tieng Nga</Button>
+        <br/>
+        <Button onClick={this.phongToCoChu}>phong to</Button>
+        <Button onClick={this.thuNhoCoChu}>thu nho</Button>
+
+        <p className="tenCuaChu">Hi</p>
+        
         <br/><br/><br/><br/><br/>
 
         {/* Vị trí này ở dưới cùng của trang, khi Dima bấm xuống thì sẽ xuống đây*/}
