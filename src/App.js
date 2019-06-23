@@ -5,6 +5,7 @@ import './App.css';
 import Anh from './Anh';
 import Truyen from './Truyen';
 import Phim from './Phim';
+import Home from './Home';
 import MenuMayTinh from './MenuMayTinh';
 import MenuDienThoai from './MenuDienThoai'
 import { Button, Icon, Menu } from 'semantic-ui-react';
@@ -14,6 +15,8 @@ import { configureAnchors } from 'react-scrollable-anchor';
 
 import * as Scroll from 'react-scroll';
 import { Link, Element , Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
+
+
 
 /*
 import from './truyen/.docx';
@@ -42,7 +45,7 @@ class App extends Component {
     kichCuocChu: 1,
     kichCuocChuDocx: 15,
     white_or_black: false,
-    dangXemGi: "",
+    dangXemGi: "dangXemHome", //bắt đầu thì đang xem Home
     thuTuTapDangXem: 0,
     thuTuPhanDangXem: 0,
     hienMenu: false,
@@ -216,39 +219,68 @@ class App extends Component {
         <Button basic color='red' as='a' href='#denCuoiTrang'> Đến Cuối Trang </Button>
         <br/><br/>
         <Button basic color='blue' onClick={this.kiemTraManHinh}> scs </Button>
-        {(chieuRongManHinh > 900)
-          ? (dangXemGi === 'dangXemTruyen')
-            ? <Truyen docx_or_pdf={tatCaTrang} kichCuocChuDocx={kichCuocChuDocx} white_or_black={white_or_black} 
-                      chieuRongManHinh={chieuRongManHinh} tenTruyenTrongDanhBa={tenTruyenTrongDanhBa}       
-                      kichCuocChu={kichCuocChu} dangXemGi={dangXemGi} />
-            : (dangXemGi === 'dangXemPhim')
-              ?<Phim dangXemGi={dangXemGi} white_or_black={white_or_black} chieuRongManHinh={chieuRongManHinh} 
-                      tenPhimTrongDanhBa={tenPhimTrongDanhBa} thuTuPhanDangXem={thuTuPhanDangXem} thuTuTapDangXem={thuTuTapDangXem} 
-                      xemPhim={this.xemPhim} chieuDaiManHinh={chieuDaiManHinh} docx_or_pdf={tatCaTrang} />
+
+
+        {(chieuRongManHinh > 900) /*Kiểm tra là Máy Tính hay là Điện Thoại? */ 
+
+          // Nếu True (chieuRongManHinh lớn hơn 900) thì đây là Máy Tính
+          ? //Sẽ hiện Truyện, Phim, Ảnh trên Máy Tính
+            <div> 
+              {(dangXemGi === 'dangXemHome') //Nếu bấm Home, đang xem Home
+                ? <Home chieuRongManHinh={chieuRongManHinh} white_or_black={white_or_black} dangXemGi={dangXemGi}/>
+                : null
+              }
+              {(dangXemGi === 'dangXemTruyen') //Nếu đang xem Truyện
+                ? <Truyen docx_or_pdf={tatCaTrang} kichCuocChuDocx={kichCuocChuDocx} white_or_black={white_or_black} 
+                          chieuRongManHinh={chieuRongManHinh} tenTruyenTrongDanhBa={tenTruyenTrongDanhBa}       
+                          kichCuocChu={kichCuocChu} dangXemGi={dangXemGi} />
+                : null
+              }
+              {(dangXemGi === 'dangXemPhim') //Nếu đang xem Phim
+                ? <Phim dangXemGi={dangXemGi} white_or_black={white_or_black} chieuRongManHinh={chieuRongManHinh} 
+                        tenPhimTrongDanhBa={tenPhimTrongDanhBa} thuTuPhanDangXem={thuTuPhanDangXem} thuTuTapDangXem={thuTuTapDangXem} 
+                        xemPhim={this.xemPhim} chieuDaiManHinh={chieuDaiManHinh} docx_or_pdf={tatCaTrang} />
+                : null
+              }
+              {(dangXemGi === 'dangXemAnh') //Nếu đang xem Ảnh
+                ? <Anh/>     
+                : null
+              }
+            </div>
+          
               
-              : null
-          /* Nếu False (chieuRongManHinh < 900) thì Hiện truyện và phim trên Điện Thoại */
-          : (dangXemGi === 'dangXemTruyen') /* điều kiện: đang xem truyện à? True hoặc False ở dưới */
-            /* nếu True thì xem luôn truyện DOCX, ko cần quan tâm đến truyện PDF */
-            ? <Truyen docx_or_pdf={true} kichCuocChuDocx={kichCuocChuDocx} white_or_black={white_or_black} 
+
+          // Nếu False (chieuRongManHinh nhỏ hơn 900) thì đây là Điện Thoại Hiện truyện và phim trên Điện Thoại 
+          : //Sẽ hiện Truyện, Phim, Ảnh trên Điện Thoại
+            <div>
+              {(dangXemGi === 'dangXemHome') //Nếu bấm Home, đang xem Home
+                ? <Home chieuRongManHinh={chieuRongManHinh} white_or_black={white_or_black} dangXemGi={dangXemGi}/>
+                : null
+              }
+              {(dangXemGi === 'dangXemTruyen') //Nếu đang xem Truyện, xem luôn truyện DOCX, ko cần quan tâm đến truyện PDF 
+                ? <Truyen docx_or_pdf={true} kichCuocChuDocx={kichCuocChuDocx} white_or_black={white_or_black} 
                       chieuRongManHinh={chieuRongManHinh+30} tenTruyenTrongDanhBa={tenTruyenTrongDanhBa}       
                       kichCuocChu={kichCuocChu} dangXemGi={dangXemGi} />
-              
-            /* nếu False thì hỏi tiếp điều kiện tiếp theo*/
-            : (dangXemGi === 'dangXemPhim') /* Điều kiện: đang xem phim à? True hoặc False ở dưới*/
-              /* nếu True thì hiện phim */   
-              ? <Phim dangXemGi={dangXemGi} white_or_black={white_or_black} chieuRongManHinh={chieuRongManHinh} 
+                : null
+              }
+              {(dangXemGi === 'dangXemPhim') //Nếu đang xem Phim
+                ? <Phim dangXemGi={dangXemGi} white_or_black={white_or_black} chieuRongManHinh={chieuRongManHinh} 
                       tenPhimTrongDanhBa={tenPhimTrongDanhBa} thuTuPhanDangXem={thuTuPhanDangXem} thuTuTapDangXem={thuTuTapDangXem} 
                       chieuDaiManHinh={chieuDaiManHinh} docx_or_pdf={tatCaTrang} xemPhim={this.xemPhim}/>
-              /* nếu False thì ko hiện gì: null (đây là khi bấm Home, giấu hết truyện và phim đi) */   
-              : null         
+                : null
+              }
+              {(dangXemGi === 'dangXemAnh') //Nếu đang xem Ảnh
+                ? <Anh/>     
+                : null
+              }
+              
+            </div>         
         }
         <br/><br/><br/><br/><br/>
         <ScrollableAnchor id={'denCuoiTrang'}> 
           <div></div> 
         </ScrollableAnchor>
         
-        <Anh/>     
 
         <p style={{fontSize:coChu + "px"}} onMouseOver={() => this.thayDoiChu("Hello")}>{chuHello}</p>
         <Button onClick={() => this.thayDoiChu("xin chào")}>tieng Viet</Button>

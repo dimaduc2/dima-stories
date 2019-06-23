@@ -100,13 +100,13 @@ sauKhiMoTruyen = ({ numPages }) => {
   this.setState({arrayTatCaTrang: arrayTrang});
 }
 
-xemtrangsau = () => { 
+xemTrangSau = () => { 
   if (this.state.trang < this.state.tongSoTrang) {
     this.setState({trang: this.state.trang + 1});
   }
 }
 
-xemtrangtruoc = () => {
+xemTrangTruoc = () => {
   if (this.state.trang > 1) {
     this.setState({trang: this.state.trang - 1});
   }
@@ -147,8 +147,8 @@ xemTrangKhac = (e,{value}) => {
         </div>
         }
         <MenuDieuKhien white_or_black={white_or_black} dangXemGi={dangXemGi} chieuRongManHinh={chieuRongManHinh} 
-                       docx_or_pdf={docx_or_pdf} arrayTatCa={arrayTatCaTrang} xemtruoc={this.xemtrangtruoc}
-                       xemsau={this.xemtrangsau} xemTrangKhac={this.xemTrangKhac}/>
+                       docx_or_pdf={docx_or_pdf} arrayTatCa={arrayTatCaTrang} xemTruoc={this.xemTrangTruoc}
+                       xemSau={this.xemTrangSau} xemKhac={this.xemTrangKhac}/>
         </div>
     )
   }

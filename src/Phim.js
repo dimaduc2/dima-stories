@@ -209,7 +209,7 @@ componentDidUpdate(prevProps) {
   }
 }
 
-xemtapsau = () => {
+xemTapSau = () => {
   
   if((this.props.thuTuTapDangXem + 1) < danhBaPhim['overlord'][this.props.thuTuPhanDangXem].length){
     //Dima bảo máy tính: hãy xemPhim tênDanhBạ này 'overlord' (hãy xem phim này)
@@ -230,7 +230,7 @@ xemtapsau = () => {
   }
 }
 
-xemtaptruoc = () => {
+xemTapTruoc = () => {
 
     if(this.props.thuTuTapDangXem > 0){
       this.props.xemPhim('overlord', this.props.thuTuPhanDangXem, this.props.thuTuTapDangXem -1);
@@ -276,7 +276,7 @@ xemTapKhac = (e,{value}) => {
         <MenuDieuKhien white_or_black={white_or_black} dangXemGi={dangXemGi} chieuRongManHinh={chieuRongManHinh} 
                        docx_or_pdf={docx_or_pdf} arrayTatCaTap={arrayTatCaTap} xemPhim={xemPhim} danhBaPhim={danhBaPhim}
                        tenPhimTrongDanhBa={tenPhimTrongDanhBa} thuTuPhanDangXem={thuTuPhanDangXem} thuTuTapDangXem={thuTuTapDangXem}
-                       arrayTatCa={arrayTatCaTap}/>
+                       arrayTatCa={arrayTatCaTap} xemTruoc={this.xemTapTruoc} xemSau={this.xemTapSau} xemKhac={this.xemTapKhac}/>
 
       </div>
     )
