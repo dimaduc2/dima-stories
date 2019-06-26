@@ -1,10 +1,10 @@
 {
-  "main.css": "/dima-stories/static/css/main.b44bc3cd.chunk.css",
-  "main.js": "/dima-stories/static/js/main.6cc82f54.chunk.js",
-  "main.js.map": "/dima-stories/static/js/main.6cc82f54.chunk.js.map",
+  "main.css": "/dima-stories/static/css/main.5d3fa2cf.chunk.css",
+  "main.js": "/dima-stories/static/js/main.28d9c2c3.chunk.js",
+  "main.js.map": "/dima-stories/static/js/main.28d9c2c3.chunk.js.map",
   "static/css/1.1df0973f.chunk.css": "/dima-stories/static/css/1.1df0973f.chunk.css",
-  "static/js/1.7692eeba.chunk.js": "/dima-stories/static/js/1.7692eeba.chunk.js",
-  "static/js/1.7692eeba.chunk.js.map": "/dima-stories/static/js/1.7692eeba.chunk.js.map",
+  "static/js/1.422b6b4e.chunk.js": "/dima-stories/static/js/1.422b6b4e.chunk.js",
+  "static/js/1.422b6b4e.chunk.js.map": "/dima-stories/static/js/1.422b6b4e.chunk.js.map",
   "runtime~main.js": "/dima-stories/static/js/runtime~main.26071fd9.js",
   "runtime~main.js.map": "/dima-stories/static/js/runtime~main.26071fd9.js.map",
   "static/media/semantic.min.css": "/dima-stories/static/media/brand-icons.a1a749e8.svg",
@@ -35,9 +35,9 @@
   "static/media/Innocent.docx": "/dima-stories/static/media/Innocent.540b581d.docx",
   "static/media/Innocent.pdf": "/dima-stories/static/media/Innocent.2c8e5418.pdf",
   "static/media/overlord_symbol.png": "/dima-stories/static/media/overlord_symbol.64b041f2.png",
-  "static/css/main.b44bc3cd.chunk.css.map": "/dima-stories/static/css/main.b44bc3cd.chunk.css.map",
+  "static/css/main.5d3fa2cf.chunk.css.map": "/dima-stories/static/css/main.5d3fa2cf.chunk.css.map",
   "static/css/1.1df0973f.chunk.css.map": "/dima-stories/static/css/1.1df0973f.chunk.css.map",
   "index.html": "/dima-stories/index.html",
-  "precache-manifest.b10dca524e5fafb1cb420cd9408f4c88.js": "/dima-stories/precache-manifest.b10dca524e5fafb1cb420cd9408f4c88.js",
+  "precache-manifest.247ad89538e345a01b28e42478206cd0.js": "/dima-stories/precache-manifest.247ad89538e345a01b28e42478206cd0.js",
   "service-worker.js": "/dima-stories/service-worker.js"
 }
