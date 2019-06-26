@@ -24,12 +24,13 @@ class Home extends Component {
 // PHẦN 4: Trình bày trang Web, giống HTML
   render() {
     var {} = this.state;
-    var { chieuRongManHinh, dangXemGi, white_or_black } = this.props;
+    var { chieuRongManHinh, dangXemGi, white_or_black, hienVaGiauPhoneMenu } = this.props;
     return (
-      <div className="Home">
+      <div className="Home" style={{height:'100vh'}}>
         {(chieuRongManHinh > 900) /*Kiểm tra là Máy Tính hay là Điện Thoại? */ 
           ? null
-          : <MenuDieuKhien dangXemGi={dangXemGi} white_or_black={white_or_black} chieuRongManHinh={chieuRongManHinh}/>
+          : <MenuDieuKhien dangXemGi={dangXemGi} white_or_black={white_or_black} chieuRongManHinh={chieuRongManHinh} 
+                            hienVaGiauPhoneMenu={hienVaGiauPhoneMenu}/>
         }
         
         

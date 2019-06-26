@@ -261,7 +261,7 @@ xemTapKhac = (e,{value}) => {
   render() {
     var {arrayTatCaTap} = this.state;
     var {white_or_black, chieuRongManHinh, tenPhimTrongDanhBa, thuTuPhanDangXem, thuTuTapDangXem, chieuDaiManHinh, dangXemGi, 
-      docx_or_pdf, xemPhim } = this.props;
+          docx_or_pdf, xemPhim, hienVaGiauPhoneMenu } = this.props;
     return (
       <div className="phim-may-tinh">
         <h1 style={{color:(white_or_black ? 'white' : 'black')}}>{tenPhimTrongDanhBa} - [{thuTuPhanDangXem}] [{thuTuTapDangXem}]</h1>
@@ -276,7 +276,8 @@ xemTapKhac = (e,{value}) => {
         <MenuDieuKhien white_or_black={white_or_black} dangXemGi={dangXemGi} chieuRongManHinh={chieuRongManHinh} 
                        docx_or_pdf={docx_or_pdf} arrayTatCaTap={arrayTatCaTap} xemPhim={xemPhim} danhBaPhim={danhBaPhim}
                        tenPhimTrongDanhBa={tenPhimTrongDanhBa} thuTuPhanDangXem={thuTuPhanDangXem} thuTuTapDangXem={thuTuTapDangXem}
-                       arrayTatCa={arrayTatCaTap} xemTruoc={this.xemTapTruoc} xemSau={this.xemTapSau} xemKhac={this.xemTapKhac}/>
+                       arrayTatCa={arrayTatCaTap} xemTruoc={this.xemTapTruoc} xemSau={this.xemTapSau} xemKhac={this.xemTapKhac}
+                       hienVaGiauPhoneMenu={hienVaGiauPhoneMenu}/>
 
       </div>
     )

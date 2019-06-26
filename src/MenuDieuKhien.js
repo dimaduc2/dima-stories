@@ -4,8 +4,6 @@ import React, { Component } from 'react';
 import { Menu, Dropdown, Icon, Button} from 'semantic-ui-react';
 
 
-
-
 // PHẦN 2: State
 class MenuDieuKhien extends Component {
   state = {
@@ -20,18 +18,27 @@ class MenuDieuKhien extends Component {
 // PHẦN 4: Trình bày trang Web, giống HTML
   render() {
     var {} = this.state;
-    var { white_or_black, dangXemGi, chieuRongManHinh, docx_or_pdf, arrayTatCa, xemTruoc, xemSau, xemKhac} = this.props;
+    var { white_or_black, dangXemGi, chieuRongManHinh, docx_or_pdf, arrayTatCa, xemTruoc, xemSau, xemKhac, hienVaGiauPhoneMenu } = this.props;
     return (
       
-      chieuRongManHinh <= 900
-      /* Nếu màn hình bé hơn 900 = màn hình ĐT */
-      /* Thì hiện ra menu điểu khển cho ĐT */
+      chieuRongManHinh <= 900 //so sánh điện thoại/máy tính
+      
+      /* Nếu True = màn hình bé hơn 900 = màn hình điện thoại */
+      /* Thì hiện ra menu điểu khển cho điện thoại */
       ? 
         <div>
-          {dangXemGi === 'dangXemTruyen'
+          {dangXemGi === 'dangXemHome'
+            ? <Menu fixed='bottom' borderless inverted={white_or_black}>
+                <Menu.Item onClick={hienVaGiauPhoneMenu}>
+                  <Icon size='large' name='th large'/>
+                </Menu.Item>
+              </Menu>
+            : null
+          }
+          {dangXemGi === 'dangXemPhim'
             ? <Menu fixed='bottom' borderless size='mini' widths={4} compact inverted={white_or_black}>
   
-                <Menu.Item onClick={this.hienVaGiauPhoneMenu}>
+                <Menu.Item onClick={hienVaGiauPhoneMenu}>
                   <Icon size='large' name='th large'/>
                 </Menu.Item>
 
@@ -49,10 +56,10 @@ class MenuDieuKhien extends Component {
               </Menu>
             : null
           }
-          {dangXemGi === 'dangXemPhim'
-            ? <Menu fixed='bottom' borderless size='mini' widths={4} compact inverted={white_or_black}>
+          {dangXemGi === 'dangXemTruyen'
+            ? <Menu fixed='bottom' borderless size='mini' widths={3} compact inverted={white_or_black}>
 
-                <Menu.Item onClick={this.hienVaGiauPhoneMenu}>
+                <Menu.Item onClick={hienVaGiauPhoneMenu}>
                   <Icon size='large' name='th large'/>
                 </Menu.Item>
 
@@ -72,7 +79,8 @@ class MenuDieuKhien extends Component {
         
         
         
-      /* Còn ko là Màn Hình hơn 900 = màn hình MT */
+      /* Nếu False = màn hình lớn hơn 900 = màn hình máy tính */
+      /* Thì hiện ra menu điểu khển cho máy tính */
       : (docx_or_pdf && (dangXemGi === 'dangXemTruyen'))
       /* Nếu đang xem DOC và đang xem Truyện */
         

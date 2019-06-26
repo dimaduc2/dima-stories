@@ -119,7 +119,8 @@ xemTrangKhac = (e,{value}) => {
 // PHẦN 4: Trình bày trang Web, giống HTML
   render() {
     var {tongSoTrang, trang, arrayTatCaTrang} = this.state;
-    var {docx_or_pdf, kichCuocChuDocx, white_or_black, chieuRongManHinh, tenTruyenTrongDanhBa, kichCuocChu, dangXemGi } = this.props;
+    var {docx_or_pdf, kichCuocChuDocx, white_or_black, chieuRongManHinh, tenTruyenTrongDanhBa, kichCuocChu, dangXemGi, 
+          hienVaGiauPhoneMenu } = this.props;
     return (
       <div className="Truyen">
         {docx_or_pdf
@@ -148,7 +149,7 @@ xemTrangKhac = (e,{value}) => {
         }
         <MenuDieuKhien white_or_black={white_or_black} dangXemGi={dangXemGi} chieuRongManHinh={chieuRongManHinh} 
                        docx_or_pdf={docx_or_pdf} arrayTatCa={arrayTatCaTrang} xemTruoc={this.xemTrangTruoc}
-                       xemSau={this.xemTrangSau} xemKhac={this.xemTrangKhac}/>
+                       xemSau={this.xemTrangSau} xemKhac={this.xemTrangKhac} hienVaGiauPhoneMenu={hienVaGiauPhoneMenu}/>
         </div>
     )
   }

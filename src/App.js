@@ -108,8 +108,12 @@ class App extends Component {
   }
 
   bamHome = () => {
-    this.setState({tenTruyenTrongDanhBa: 'koTruyen', tenPhim: "", diachiPhim:"", dangXemGi:"koXemGi"});
+    this.setState({tenTruyenTrongDanhBa: 'koTruyen', tenPhim: "", diachiPhim:"", dangXemGi:"dangXemHome"});
     this.hienVaGiauPhoneMenu()
+  }
+
+  bamAnh = () => {
+    this.setState({dangXemGi:"dangXemAnh"});
   }
 
   bamBanPhim = (event) => {
@@ -179,11 +183,11 @@ class App extends Component {
           ?	// nếu true thì hiện Menu Máy Tính
             <MenuMayTinh dangXemGi={dangXemGi} docx_or_pdf={tatCaTrang} white_or_black={white_or_black} docTruyen={this.docTruyen}
                           xemPhim={this.xemPhim} bamHome={this.bamHome} xemTatCa={this.xemTatCa} doimau={this.doimau}
-                          thayDoiCoChudocx={this.thayDoiCoChudocx} thayDoiCoChu={this.thayDoiCoChu}/>
+                          thayDoiCoChudocx={this.thayDoiCoChudocx} thayDoiCoChu={this.thayDoiCoChu} bamAnh={this.bamAnh}/>
           :	// nếu false thì hiện Menu Phone
             <MenuDienThoai dangXemGi={dangXemGi} white_or_black={white_or_black} docTruyen={this.docTruyen}
-                          xemPhim={this.xemPhim} bamHome={this.bamHome} hienMenu={this.hienMenu} doimau={this.doimau}
-                          thayDoiCoChudocx={this.thayDoiCoChudocx}/>
+                          xemPhim={this.xemPhim} bamHome={this.bamHome} hienMenu={hienMenu} doimau={this.doimau}
+                          thayDoiCoChudocx={this.thayDoiCoChudocx} bamAnh={this.bamAnh}/>
         }
 
         { chieuRongManHinh <= 900
@@ -254,19 +258,21 @@ class App extends Component {
           : //Sẽ hiện Truyện, Phim, Ảnh trên Điện Thoại
             <div>
               {(dangXemGi === 'dangXemHome') //Nếu bấm Home, đang xem Home
-                ? <Home chieuRongManHinh={chieuRongManHinh} white_or_black={white_or_black} dangXemGi={dangXemGi}/>
+                ? <Home chieuRongManHinh={chieuRongManHinh} white_or_black={white_or_black} dangXemGi={dangXemGi}
+                          hienVaGiauPhoneMenu={this.hienVaGiauPhoneMenu}/>
                 : null
               }
               {(dangXemGi === 'dangXemTruyen') //Nếu đang xem Truyện, xem luôn truyện DOCX, ko cần quan tâm đến truyện PDF 
                 ? <Truyen docx_or_pdf={true} kichCuocChuDocx={kichCuocChuDocx} white_or_black={white_or_black} 
                       chieuRongManHinh={chieuRongManHinh+30} tenTruyenTrongDanhBa={tenTruyenTrongDanhBa}       
-                      kichCuocChu={kichCuocChu} dangXemGi={dangXemGi} />
+                      kichCuocChu={kichCuocChu} dangXemGi={dangXemGi} hienVaGiauPhoneMenu={this.hienVaGiauPhoneMenu}/>
                 : null
               }
               {(dangXemGi === 'dangXemPhim') //Nếu đang xem Phim
                 ? <Phim dangXemGi={dangXemGi} white_or_black={white_or_black} chieuRongManHinh={chieuRongManHinh} 
                       tenPhimTrongDanhBa={tenPhimTrongDanhBa} thuTuPhanDangXem={thuTuPhanDangXem} thuTuTapDangXem={thuTuTapDangXem} 
-                      chieuDaiManHinh={chieuDaiManHinh} docx_or_pdf={tatCaTrang} xemPhim={this.xemPhim}/>
+                      chieuDaiManHinh={chieuDaiManHinh} docx_or_pdf={tatCaTrang} xemPhim={this.xemPhim}
+                      hienVaGiauPhoneMenu={this.hienVaGiauPhoneMenu}/>
                 : null
               }
               {(dangXemGi === 'dangXemAnh') //Nếu đang xem Ảnh

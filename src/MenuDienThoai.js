@@ -22,7 +22,7 @@ docTruyen = () => {
 // PHẦN 4: Trình bày trang Web, giống HTML
   render() {
     var {} = this.state;
-    var {dangXemGi, white_or_black, docTruyen, xemPhim, bamHome, hienMenu, doimau, thayDoiCoChudocx } = this.props;
+    var {dangXemGi, white_or_black, docTruyen, xemPhim, bamHome, hienMenu, doimau, thayDoiCoChudocx, bamAnh } = this.props;
     return (
       
       <Menu vertical fixed='top' inverted style={{visibility: (hienMenu ? "visible" : "hidden")}} >
@@ -125,13 +125,10 @@ docTruyen = () => {
           </Dropdown>
         </Menu.Item>
 
-        <Menu.Item>
-          <Dropdown floating text='Anh'>
-            <Dropdown.Menu>
-              <Dropdown.Item onClick={this.hienVaGiauAnhSpiderMan}>Iron Spider-Man</Dropdown.Item>
-            </Dropdown.Menu>
-          </Dropdown>
-        </Menu.Item>
+
+
+        <Menu.Item onClick={bamAnh}>Ảnh</Menu.Item>
+
 
         <Menu.Item>
           LIGHT <Checkbox toggle checked={white_or_black} onChange={doimau} style={{marginLeft:"5px", marginRight:"5px"}} /> DARK

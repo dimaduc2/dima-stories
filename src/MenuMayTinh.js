@@ -23,7 +23,7 @@ docTruyen = () => {
   render() {
     var {} = this.state;
     var {dangXemGi, docx_or_pdf, white_or_black, docTruyen, xemPhim, 
-        bamHome, xemTatCa, doimau, thayDoiCoChudocx, thayDoiCoChu} = this.props;
+        bamHome, xemTatCa, doimau, thayDoiCoChudocx, thayDoiCoChu, bamAnh} = this.props;
     return (
       
       <Menu stackable inverted fixed='top'>
@@ -120,11 +120,7 @@ docTruyen = () => {
           </Dropdown.Menu>
         </Dropdown>
         
-        <Dropdown item simple text='Anh'>
-          <Dropdown.Menu>
-            <Dropdown.Item onClick={this.hienVaGiauAnhSpiderMan}>Iron Spider-Man</Dropdown.Item>
-          </Dropdown.Menu>
-        </Dropdown>
+        <Menu.Item onClick={bamAnh}>Ảnh</Menu.Item>
 
         <Menu.Menu position='right'>
         
