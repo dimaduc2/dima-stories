@@ -114,6 +114,7 @@ class App extends Component {
 
   bamAnh = () => {
     this.setState({dangXemGi:"dangXemAnh"});
+    this.hienVaGiauPhoneMenu()
   }
 
   bamBanPhim = (event) => {
@@ -171,6 +172,7 @@ class App extends Component {
   lentranghet = () => {
     scroll.scrollToTop();
   }
+
   
 // PHẦN 4: Trình bày trang Web, giống HTML
   render() {
@@ -247,7 +249,8 @@ class App extends Component {
                 : null
               }
               {(dangXemGi === 'dangXemAnh') //Nếu đang xem Ảnh
-                ? <Anh/>     
+                ? <Anh chieuRongManHinh={chieuRongManHinh} dangXemGi={dangXemGi} white_or_black={white_or_black} 
+                        hienVaGiauPhoneMenu={this.hienVaGiauPhoneMenu} />     
                 : null
               }
             </div>
@@ -276,7 +279,8 @@ class App extends Component {
                 : null
               }
               {(dangXemGi === 'dangXemAnh') //Nếu đang xem Ảnh
-                ? <Anh/>     
+                ? <Anh chieuRongManHinh={chieuRongManHinh} dangXemGi={dangXemGi} white_or_black={white_or_black} 
+                        hienVaGiauPhoneMenu={this.hienVaGiauPhoneMenu} />     
                 : null
               }
               

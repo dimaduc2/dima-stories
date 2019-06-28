@@ -74,7 +74,15 @@ class MenuDieuKhien extends Component {
               </Menu>
             : null
           }
-
+          {dangXemGi === 'dangXemAnh'
+            ? <Menu fixed='bottom' borderless size='mini' compact inverted={white_or_black}>
+                <Menu.Item onClick={hienVaGiauPhoneMenu}>
+                  <Icon size='large' name='th large'/>
+                </Menu.Item>
+            </Menu>
+            
+            : null
+          }
         </div>
         
         
