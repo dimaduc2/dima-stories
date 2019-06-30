@@ -222,10 +222,7 @@ class App extends Component {
           <div></div> 
         </ScrollableAnchor>
         <br/><br/><br/><br/><br/>
-        <Button basic color='red' as='a' href='#denCuoiTrang'> Đến Cuối Trang </Button>
-        <br/><br/>
-        <Button basic color='blue' onClick={this.kiemTraManHinh}> scs </Button>
-
+        
 
         {(chieuRongManHinh > 900) /*Kiểm tra là Máy Tính hay là Điện Thoại? */ 
 
@@ -291,6 +288,9 @@ class App extends Component {
           <div></div> 
         </ScrollableAnchor>
         
+        <Button basic color='red' as='a' href='#denCuoiTrang'> Đến Cuối Trang </Button>
+        <br/><br/>
+        <Button basic color='blue' onClick={this.kiemTraManHinh}> scs </Button>
 
         <p style={{fontSize:coChu + "px"}} onMouseOver={() => this.thayDoiChu("Hello")}>{chuHello}</p>
         <Button onClick={() => this.thayDoiChu("xin chào")}>tieng Viet</Button>

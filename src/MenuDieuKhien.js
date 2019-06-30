@@ -18,7 +18,8 @@ class MenuDieuKhien extends Component {
 // PHẦN 4: Trình bày trang Web, giống HTML
   render() {
     var {} = this.state;
-    var { white_or_black, dangXemGi, chieuRongManHinh, docx_or_pdf, arrayTatCa, xemTruoc, xemSau, xemKhac, hienVaGiauPhoneMenu } = this.props;
+    var { white_or_black, dangXemGi, chieuRongManHinh, docx_or_pdf, arrayTatCa, 
+          xemTruoc, xemSau, xemKhac, hienVaGiauPhoneMenu, dangXemAnhGi, thanhDieuKhienAnh} = this.props;
     return (
       
       chieuRongManHinh <= 900 //so sánh điện thoại/máy tính
@@ -79,6 +80,16 @@ class MenuDieuKhien extends Component {
                 <Menu.Item onClick={hienVaGiauPhoneMenu}>
                   <Icon size='large' name='th large'/>
                 </Menu.Item>
+                <Menu.Item>
+                  <input
+                    type='range'
+                    min='-1'
+                    max='2'
+                    value={dangXemAnhGi}
+                    onChange={thanhDieuKhienAnh}
+                  />
+                </Menu.Item>
+                
             </Menu>
             
             : null
@@ -89,45 +100,61 @@ class MenuDieuKhien extends Component {
         
       /* Nếu False = màn hình lớn hơn 900 = màn hình máy tính */
       /* Thì hiện ra menu điểu khển cho máy tính */
-      : (docx_or_pdf && (dangXemGi === 'dangXemTruyen'))
-      /* Nếu đang xem DOC và đang xem Truyện */
-        
-        /* thì ko cần hiện ra menu chọn trang ở dưới */
-        ? null
+      : 
+        <div>
       
-        /* còn ko thì hiện ra menu chọn trang ở dưới */
-        : <Menu fixed='bottom' borderless size='mini' widths={5} compact inverted={white_or_black}>
-      
-            <Menu.Item>
-            </Menu.Item>
-            
-            {/* Cách thứ nhất:
-            1 tên hành động xemtruoc chung cho cả 2 trường hợp: xem Phim và xem Truyện */}
-            <Menu.Item onClick={xemTruoc}>
-              <Button icon labelPosition='left' >
-                <Icon name='arrow circle left'/>
-                  Previous (Prev)
-              </Button>
-            </Menu.Item>
-            
-            <Menu.Item>
-              <Dropdown compact placeholder={dangXemGi === 'dangXemTruyen' ? 'Chon Trang' : 'Chon Tap'} 
-                        selection options={arrayTatCa} onChange={xemKhac}/>
-            </Menu.Item>
-            
-            {/* Cách thứ hai:
-            2 hành động khác nauh cho 2 trường hợp: xem Phim và xem Truyện
-            SO SÁNH Ở DƯỚI ĐÂY, ở nút bấm */}
-            <Menu.Item onClick={xemSau}>
-              <Button icon labelPosition='right' >
-                <Icon name='arrow circle right'/>
-                Next
-              </Button>
-            </Menu.Item>
+          {(dangXemGi === 'dangXemPhim') || (dangXemGi === 'dangXemTruyen')
+            ? <Menu fixed='bottom' borderless size='mini' widths={5} compact inverted={white_or_black}>
+              
+                <Menu.Item>
+                </Menu.Item>
+                
+                {/* Cách thứ nhất:
+                1 tên hành động xemtruoc chung cho cả 2 trường hợp: xem Phim và xem Truyện */}
+                <Menu.Item onClick={xemTruoc}>
+                  <Button icon labelPosition='left' >
+                    <Icon name='arrow circle left'/>
+                      Previous (Prev)
+                  </Button>
+                </Menu.Item>
+                
+                <Menu.Item>
+                  <Dropdown compact placeholder={dangXemGi === 'dangXemTruyen' ? 'Chon Trang' : 'Chon Tap'} 
+                            selection options={arrayTatCa} onChange={xemKhac}/>
+                </Menu.Item>
+                
+                <Menu.Item onClick={xemSau}>
+                  <Button icon labelPosition='right' >
+                    <Icon name='arrow circle right'/>
+                    Next
+                  </Button>
+                </Menu.Item>
 
-            <Menu.Item>
-            </Menu.Item>
-          </Menu>
+                <Menu.Item>
+                </Menu.Item>
+              </Menu>
+            : null
+          }
+          {dangXemGi === 'dangXemAnh'
+            ? <Menu fixed='bottom' borderless size='mini' width={2} inverted={white_or_black}>
+                <Menu.Item>
+                  <input
+                    type='range'
+                    min='-1'
+                    max='2'
+                    value={dangXemAnhGi}
+                    onChange={thanhDieuKhienAnh}
+                  />
+                </Menu.Item>
+                <Menu.Item>
+                  {dangXemAnhGi}
+                </Menu.Item>
+            </Menu>
+            
+            : null
+          }
+      </div>
+  
     )
   }
 }

@@ -6,6 +6,8 @@ import { Image, Menu, Dropdown, Checkbox } from 'semantic-ui-react';
 import logo_star_wars from './anh/Gray_Jedi_(Jedi_&_Sith)_symbol.png';
 import logo_overlord from './anh/overlord_symbol.png';
 
+import './MenuDieuKhien.css';
+
 
 
 // PHẦN 2: State
@@ -25,7 +27,7 @@ docTruyen = () => {
     var {dangXemGi, white_or_black, docTruyen, xemPhim, bamHome, hienMenu, doimau, thayDoiCoChudocx, bamAnh } = this.props;
     return (
       
-      <Menu vertical fixed='top' inverted style={{visibility: (hienMenu ? "visible" : "hidden")}} >
+      <Menu vertical fixed='top' inverted className={ hienMenu ? "menu-hien-ra" : "menu-giau-di"} >
         <Menu.Item as='a' onClick={bamHome}>
           <Image src={logo_star_wars} size='mini' style={{display:'block', marginLeft: 'auto', marginRight:'auto'}}/> 
           Dima Stories

@@ -27,6 +27,10 @@ class Home extends Component {
     var { chieuRongManHinh, dangXemGi, white_or_black, hienVaGiauPhoneMenu } = this.props;
     return (
       <div className="Home" style={{height:'100vh'}}>
+
+        <h1>Đây là trang web của DIMA</h1>
+        <h2>Truyện, Phim và Ảnh</h2>
+
         {(chieuRongManHinh > 900) /*Kiểm tra là Máy Tính hay là Điện Thoại? */ 
           ? null
           : <MenuDieuKhien dangXemGi={dangXemGi} white_or_black={white_or_black} chieuRongManHinh={chieuRongManHinh} 
