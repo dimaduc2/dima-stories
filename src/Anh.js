@@ -22,7 +22,17 @@ import Scream_x_Spider_man from './anh/Scream_love_Spider_man.jpg';
 import Ultimate_Symbiote from './anh/Spiderman_Ultimate_Symbiote_(Spider_Man_have Venom_and_) Carnage.jpg';
 import VenomPeter_and_ToxinEddie from './anh/venom__peter_parker__vs_toxin__eddie_brock.jpg';
 
+import kurono_help_tae from './anh/gantz_collab_(kurono_help_tae).jpg';
+import kuronotwo_and_reika from './anh/kuronotwo_y_reika.jpg';
+import Kurono_X_Tae from './anh/KuronoXTae.jpg';
+import Kei_going_dead_in_metro from './anh/Gantz_-_Kei_[Version_1].png';
+import armor_super_suit from './anh/gantz__oka_super_suitw.jpg';
 
+import Ash_harem from './anh/Ash_s_harem.png';
+import Ash_evil_Hoopa from './anh/What_if_Ash_became_evil_in_Pokemon_Hoopa_movie.jpg';
+import Gardevoir_love_Ash from './anh/Recovershipping_-_AshGardevoir.jpg';
+import ash_and_misty_team_rocket from './anh/aaml_goes_team_rocket.jpg';
+import ash_aura from './anh/ash_aura_awake.jpg';
 
 //Danh ba tat ca Anh
 const anhs = {
@@ -46,6 +56,20 @@ const anhs = {
     Scream_x_Spider_man,
     Ultimate_Symbiote,
     VenomPeter_and_ToxinEddie
+  ]
+  'gantz' : [
+    kurono_help_tae, 
+    kuronotwo_and_reika, 
+    Kurono_X_Tae, 
+    Kei_going_dead_in_metro, 
+    armor_super_suit
+  ]
+  'pokemon' : [
+    Ash_harem, 
+    Ash_evil_Hoopa, 
+    Gardevoir_love_Ash, 
+    ash_and_misty_team_rocket, 
+    ash_aura
   ]
 }
 
