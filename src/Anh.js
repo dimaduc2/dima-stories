@@ -34,6 +34,18 @@ import Gardevoir_love_Ash from './anh/Recovershipping_-_AshGardevoir.jpg';
 import ash_and_misty_team_rocket from './anh/aaml_goes_team_rocket.jpg';
 import ash_aura from './anh/ash_aura_awake.jpg';
 
+import anglel_6_wing from './anh/Angelic_Being.jpg';
+import Unit_01_Adam from './anh/Evangelion_Unit_01_crazy_red_2.jpg';
+import people_drive_robot from './anh/EVAxP3.jpg';
+import angel_red_eye from './anh/Lilith_Crazy_Red.jpg';
+import angel from './anh/Redemption.jpg';
+
+import tron_and_rinzler_like_brother from './anh/Grid_Protector_and_Enforcer.jpg';
+import beck_and_paige_in_the_human_world from './anh/The_Cut_Short_Cafe.jpg';
+import Tron_back_from_Rinzler_in_water from './anh/Tron_-_System_Restarting.png';
+import tron_like_rinzler_vs_beck_like_tron_vs_paige from './anh/TRON_Revolt.jpg';
+import Tron_Rinzler from './anh/Tron_Rinzler.jpg';
+
 //Danh ba tat ca Anh
 const anhs = {
   'starwars' : [
@@ -56,30 +68,52 @@ const anhs = {
     Scream_x_Spider_man,
     Ultimate_Symbiote,
     VenomPeter_and_ToxinEddie
-  ]
+  ],
   'gantz' : [
     kurono_help_tae, 
     kuronotwo_and_reika, 
     Kurono_X_Tae, 
     Kei_going_dead_in_metro, 
     armor_super_suit
-  ]
+  ],
   'pokemon' : [
     Ash_harem, 
     Ash_evil_Hoopa, 
     Gardevoir_love_Ash, 
     ash_and_misty_team_rocket, 
     ash_aura
+  ],
+  'evangelion' : [
+    anglel_6_wing,
+    Unit_01_Adam,
+    people_drive_robot,
+    angel_red_eye,
+    angel    
+  ],
+  'tron' : [
+    tron_and_rinzler_like_brother,
+    beck_and_paige_in_the_human_world,
+    Tron_back_from_Rinzler_in_water,
+    tron_like_rinzler_vs_beck_like_tron_vs_paige,
+    Tron_Rinzler
   ]
 }
 
+const tenAnh = {
+  '-1': 'Hãy lựa chọn ảnh',
+  '0' : 'Star Wars',
+  '1' : 'Batman',        //nếu muốn hiện Batman thì phải viết: tenAnh[‘1’]
+  '2' : 'Spider-Man',
+  '3' : 'Gantz',
+  '4' : 'Pokemoon',
+  '5' : 'Evangelion',
+  '6' : 'Tron',          //nếu muốn hiện Tron thì phải viết: tenAnh[‘6’]
+}
 
 // PHẦN 2: State
 class Anh extends Component {
   state = {
     dangXemAnhGi: -1,  //0 nghĩa là Star Wars, 1 là Batman, 2 là Spider-Man
-    anhSpiderMan: false,
-    anhStarWars_or_Batman: false,
   }
 
 // PHẦN 3: Function
@@ -104,7 +138,6 @@ class Anh extends Component {
         <Accordion>
           
           <Accordion.Title active={dangXemAnhGi === 0} index={0} onClick={this.handleClick}>
-            
             <h1>Star Wars <Icon name='dropdown' /></h1>
           </Accordion.Title>
           <Accordion.Content active={dangXemAnhGi === 0}>
@@ -138,7 +171,6 @@ class Anh extends Component {
           </Accordion.Content>
 
           <Accordion.Title active={dangXemAnhGi === 1} index={1} onClick={this.handleClick}>
-            
             <h1>Batman <Icon name='dropdown' /></h1>
           </Accordion.Title>
           <Accordion.Content active={dangXemAnhGi === 1}>
@@ -167,12 +199,11 @@ class Anh extends Component {
                 <Modal basic trigger={<Image src={anhs['batman'][4]} size='small' />} closeIcon>
                   <Image src={anhs['batman'][4]} />
                 </Modal>
-              </Grid.Column>
+              </Grid.Column>  
             </Grid>
           </Accordion.Content>
 
           <Accordion.Title active={dangXemAnhGi === 2} index={2} onClick={this.handleClick}>
-            
             <h1>Spider-Man <Icon name='dropdown' /></h1>
           </Accordion.Title>
           <Accordion.Content active={dangXemAnhGi === 2}>
@@ -205,9 +236,149 @@ class Anh extends Component {
             </Grid>
           </Accordion.Content>
 
+          <Accordion.Title active={dangXemAnhGi === 3} index={3} onClick={this.handleClick}>
+            <h1>Gantz <Icon name='dropdown' /></h1>
+          </Accordion.Title>
+          <Accordion.Content active={dangXemAnhGi === 3}>
+            <Grid doubling columns={5}>
+              <Grid.Column>
+                <Modal basic trigger={<Image src={anhs['gantz'][0]} size='small' />} closeIcon>
+                  <Image src={anhs['gantz'][0]} />
+                </Modal>
+              </Grid.Column>
+              <Grid.Column>
+                <Modal basic trigger={<Image src={anhs['gantz'][1]} size='small' />} closeIcon>
+                  <Image src={anhs['gantz'][1]} />
+                </Modal>
+              </Grid.Column>
+              <Grid.Column>
+                <Modal basic trigger={<Image src={anhs['gantz'][2]} size='small' />} closeIcon>
+                  <Image src={anhs['gantz'][2]} />
+                </Modal>
+              </Grid.Column>
+              <Grid.Column>
+                <Modal basic trigger={<Image src={anhs['gantz'][3]} size='small' />} closeIcon>
+                  <Image src={anhs['gantz'][3] } />
+                </Modal>
+              </Grid.Column>
+              <Grid.Column>
+                <Modal basic trigger={<Image src={anhs['gantz'][4]} size='small' />} closeIcon>
+                  <Image src={anhs['gantz'][4]} />
+                </Modal>
+              </Grid.Column>
+            </Grid>
+          </Accordion.Content>
+
+          <Accordion.Title active={dangXemAnhGi === 4} index={4} onClick={this.handleClick}>
+            <h1>Pokemon <Icon name='dropdown' /></h1>
+          </Accordion.Title>
+          <Accordion.Content active={dangXemAnhGi === 4}>
+            <Grid doubling columns={5}>
+              <Grid.Column>
+                <Modal basic trigger={<Image src={anhs['pokemon'][0]} size='small' />} closeIcon>
+                  <Image src={anhs['pokemon'][0]} />
+                </Modal>
+              </Grid.Column>
+              <Grid.Column>
+                <Modal basic trigger={<Image src={anhs['pokemon'][1]} size='small' />} closeIcon>
+                  <Image src={anhs['pokemon'][1]} />
+                </Modal>
+              </Grid.Column>
+              <Grid.Column>
+                <Modal basic trigger={<Image src={anhs['pokemon'][2]} size='small' />} closeIcon>
+                  <Image src={anhs['pokemon'][2]} />
+                </Modal>
+              </Grid.Column>
+              <Grid.Column>
+                <Modal basic trigger={<Image src={anhs['pokemon'][3]} size='small' />} closeIcon>
+                  <Image src={anhs['pokemon'][3] } />
+                </Modal>
+              </Grid.Column>
+              <Grid.Column>
+                <Modal basic trigger={<Image src={anhs['pokemon'][4]} size='small' />} closeIcon>
+                  <Image src={anhs['pokemon'][4]} />
+                </Modal>
+              </Grid.Column>
+            </Grid>
+          </Accordion.Content>
+
+          <Accordion.Title active={dangXemAnhGi === 5} index={5} onClick={this.handleClick}>
+            <h1>Evangelion <Icon name='dropdown' /></h1>
+          </Accordion.Title>
+          <Accordion.Content active={dangXemAnhGi === 5}>
+            <Grid doubling columns={5}>
+              <Grid.Column>
+                <Modal basic trigger={<Image src={anhs['evangelion'][0]} size='small' />} closeIcon>
+                  <Image src={anhs['evangelion'][0]} />
+                </Modal>
+              </Grid.Column>
+              <Grid.Column>
+                <Modal basic trigger={<Image src={anhs['evangelion'][1]} size='small' />} closeIcon>
+                  <Image src={anhs['evangelion'][1]} />
+                </Modal>
+              </Grid.Column>
+              <Grid.Column>
+                <Modal basic trigger={<Image src={anhs['evangelion'][2]} size='small' />} closeIcon>
+                  <Image src={anhs['evangelion'][2]} />
+                </Modal>
+              </Grid.Column>
+              <Grid.Column>
+                <Modal basic trigger={<Image src={anhs['evangelion'][3]} size='small' />} closeIcon>
+                  <Image src={anhs['evangelion'][3] } />
+                </Modal>
+              </Grid.Column>
+              <Grid.Column>
+                <Modal basic trigger={<Image src={anhs['evangelion'][4]} size='small' />} closeIcon>
+                  <Image src={anhs['evangelion'][4]} />
+                </Modal>
+              </Grid.Column>
+            </Grid>
+          </Accordion.Content>
+
+          <Accordion.Title active={dangXemAnhGi === 6} index={6} onClick={this.handleClick}>
+            <h1>Tron <Icon name='dropdown' /></h1>
+          </Accordion.Title>
+          <Accordion.Content active={dangXemAnhGi === 6}>
+            <Grid doubling columns={5}>
+              <Grid.Column>
+                <Modal basic trigger={<Image src={anhs['tron'][0]} size='small' />} closeIcon>
+                  <Image src={anhs['tron'][0]} />
+                </Modal>
+              </Grid.Column>
+              <Grid.Column>
+                <Modal basic trigger={<Image src={anhs['tron'][1]} size='small' />} closeIcon>
+                  <Image src={anhs['tron'][1]} />
+                </Modal>
+              </Grid.Column>
+              <Grid.Column>
+                <Modal basic trigger={<Image src={anhs['tron'][2]} size='small' />} closeIcon>
+                  <Image src={anhs['tron'][2]} />
+                </Modal>
+              </Grid.Column>
+              <Grid.Column>
+                <Modal basic trigger={<Image src={anhs['tron'][3]} size='small' />} closeIcon>
+                  <Image src={anhs['tron'][3] } />
+                </Modal>
+              </Grid.Column>
+              <Grid.Column>
+                <Modal basic trigger={<Image src={anhs['tron'][4]} size='small' />} closeIcon>
+                  <Image src={anhs['tron'][4]} />
+                </Modal>
+              </Grid.Column>
+            </Grid>
+          </Accordion.Content>
+
+
+
+
+
+
+
+
         </Accordion>
         <MenuDieuKhien chieuRongManHinh={chieuRongManHinh} dangXemGi={dangXemGi} white_or_black={white_or_black} 
-                        hienVaGiauPhoneMenu={hienVaGiauPhoneMenu} dangXemAnhGi={dangXemAnhGi} thanhDieuKhienAnh={this.thanhDieuKhienAnh}/>
+                        hienVaGiauPhoneMenu={hienVaGiauPhoneMenu} dangXemAnhGi={dangXemAnhGi} 
+                        thanhDieuKhienAnh={this.thanhDieuKhienAnh} tenAnh={tenAnh}/>
       </div>
     )
   }

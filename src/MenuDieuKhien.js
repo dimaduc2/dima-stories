@@ -19,7 +19,7 @@ class MenuDieuKhien extends Component {
   render() {
     var {} = this.state;
     var { white_or_black, dangXemGi, chieuRongManHinh, docx_or_pdf, arrayTatCa, 
-          xemTruoc, xemSau, xemKhac, hienVaGiauPhoneMenu, dangXemAnhGi, thanhDieuKhienAnh} = this.props;
+          xemTruoc, xemSau, xemKhac, hienVaGiauPhoneMenu, dangXemAnhGi, thanhDieuKhienAnh, tenAnh} = this.props;
     return (
       
       chieuRongManHinh <= 900 //so sánh điện thoại/máy tính
@@ -141,13 +141,13 @@ class MenuDieuKhien extends Component {
                   <input
                     type='range'
                     min='-1'
-                    max='2'
+                    max='6'
                     value={dangXemAnhGi}
                     onChange={thanhDieuKhienAnh}
                   />
                 </Menu.Item>
                 <Menu.Item>
-                  {dangXemAnhGi}
+                  {tenAnh[dangXemAnhGi]}
                 </Menu.Item>
             </Menu>
             
