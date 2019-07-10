@@ -26,7 +26,7 @@ class Home extends Component {
     var {} = this.state;
     var { chieuRongManHinh, dangXemGi, white_or_black, hienVaGiauPhoneMenu } = this.props;
     return (
-      <div className="Home" style={{height:'100vh'}}>
+      <div className="Home" style={{height:'100vh', color:  white_or_black ? 'red' : 'blue'}}>
 
         <h1>Đây là trang web của DIMA</h1>
         <h2>Truyện, Phim và Ảnh</h2>
