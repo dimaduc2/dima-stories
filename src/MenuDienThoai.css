@@ -1,0 +1,11 @@
+.menu-hien-ra {
+  opacity: 1;
+  transform: translate(0px,0px) scale(1);
+  transition: transform 2s, opacity 2s;
+}
+
+.menu-dau-di {
+  opacity: 0;
+  transform: translate(100vw,100vh) scale(0);
+  transition: transform 1s, opacity 1s;
+}

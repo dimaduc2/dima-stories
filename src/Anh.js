@@ -138,7 +138,7 @@ class Anh extends Component {
         <Accordion>
           
           <Accordion.Title active={dangXemAnhGi === 0} index={0} onClick={this.handleClick}>
-            <h1>Star Wars <Icon name='dropdown' /></h1>
+            <h1 style={{color:  white_or_black ? 'red' : 'blue'}}>Star Wars <Icon name='dropdown' /></h1>
           </Accordion.Title>
           <Accordion.Content active={dangXemAnhGi === 0}>
             <Grid doubling columns={5} style={{margin:'10px', padding:'0'}}>
@@ -171,7 +171,7 @@ class Anh extends Component {
           </Accordion.Content>
 
           <Accordion.Title active={dangXemAnhGi === 1} index={1} onClick={this.handleClick}>
-            <h1>Batman <Icon name='dropdown' /></h1>
+            <h1 style={{color:  white_or_black ? 'red' : 'blue'}}>Batman <Icon name='dropdown' /></h1>
           </Accordion.Title>
           <Accordion.Content active={dangXemAnhGi === 1}>
             <Grid doubling columns={5}>
@@ -204,7 +204,7 @@ class Anh extends Component {
           </Accordion.Content>
 
           <Accordion.Title active={dangXemAnhGi === 2} index={2} onClick={this.handleClick}>
-            <h1>Spider-Man <Icon name='dropdown' /></h1>
+            <h1 style={{color:  white_or_black ? 'red' : 'blue'}}>Spider-Man <Icon name='dropdown' /></h1>
           </Accordion.Title>
           <Accordion.Content active={dangXemAnhGi === 2}>
             <Grid doubling columns={5}>
@@ -237,7 +237,7 @@ class Anh extends Component {
           </Accordion.Content>
 
           <Accordion.Title active={dangXemAnhGi === 3} index={3} onClick={this.handleClick}>
-            <h1>Gantz <Icon name='dropdown' /></h1>
+            <h1 style={{color:  white_or_black ? 'red' : 'blue'}}>Gantz <Icon name='dropdown' /></h1>
           </Accordion.Title>
           <Accordion.Content active={dangXemAnhGi === 3}>
             <Grid doubling columns={5}>
@@ -270,7 +270,7 @@ class Anh extends Component {
           </Accordion.Content>
 
           <Accordion.Title active={dangXemAnhGi === 4} index={4} onClick={this.handleClick}>
-            <h1>Pokemon <Icon name='dropdown' /></h1>
+            <h1 style={{color:  white_or_black ? 'red' : 'blue'}}>Pokemon <Icon name='dropdown' /></h1>
           </Accordion.Title>
           <Accordion.Content active={dangXemAnhGi === 4}>
             <Grid doubling columns={5}>
@@ -303,7 +303,7 @@ class Anh extends Component {
           </Accordion.Content>
 
           <Accordion.Title active={dangXemAnhGi === 5} index={5} onClick={this.handleClick}>
-            <h1>Evangelion <Icon name='dropdown' /></h1>
+            <h1 style={{color:  white_or_black ? 'red' : 'blue'}}>Evangelion <Icon name='dropdown' /></h1>
           </Accordion.Title>
           <Accordion.Content active={dangXemAnhGi === 5}>
             <Grid doubling columns={5}>
@@ -336,7 +336,7 @@ class Anh extends Component {
           </Accordion.Content>
 
           <Accordion.Title active={dangXemAnhGi === 6} index={6} onClick={this.handleClick}>
-            <h1>Tron <Icon name='dropdown' /></h1>
+            <h1 style={{color:  white_or_black ? 'red' : 'blue'}}>Tron <Icon name='dropdown' /></h1>
           </Accordion.Title>
           <Accordion.Content active={dangXemAnhGi === 6}>
             <Grid doubling columns={5}>
