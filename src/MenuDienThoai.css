@@ -1,11 +1,26 @@
 .menu-hien-ra {
   opacity: 1;
-  transform: translate(0px,0px) scale(1);
-  transition: transform 2s, opacity 2s;
+  transform: translate(0px,0px) scale(1) rotate(0deg);
+  transition: transform 1s, opacity 1s;
 }
 
 .menu-dau-di {
   opacity: 0;
-  transform: translate(100vw,100vh) scale(0);
+  transform: translate(100vw,100vh) scale(0) rotate(800deg);
   transition: transform 1s, opacity 1s;
+}
+
+.lop-duoi-menu-hien-ra {
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  opacity: 0.5;
+  visibility: visible;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.lop-duoi-menu-dau-di {
+  visibility: hidden; 
 }

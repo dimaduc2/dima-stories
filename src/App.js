@@ -187,9 +187,9 @@ class App extends Component {
                           xemPhim={this.xemPhim} bamHome={this.bamHome} xemTatCa={this.xemTatCa} doimau={this.doimau}
                           thayDoiCoChudocx={this.thayDoiCoChudocx} thayDoiCoChu={this.thayDoiCoChu} bamAnh={this.bamAnh}/>
           :	// nếu false thì hiện Menu Phone
-            <MenuDienThoai dangXemGi={dangXemGi} white_or_black={white_or_black} docTruyen={this.docTruyen}
-                          xemPhim={this.xemPhim} bamHome={this.bamHome} hienMenu={hienMenu} doimau={this.doimau}
-                          thayDoiCoChudocx={this.thayDoiCoChudocx} bamAnh={this.bamAnh}/>
+            <MenuDienThoai dangXemGi={dangXemGi} white_or_black={white_or_black} docTruyen={this.docTruyen} xemPhim={this.xemPhim} 
+                            bamHome={this.bamHome} hienMenu={hienMenu} doimau={this.doimau} thayDoiCoChudocx={this.thayDoiCoChudocx} 
+                            bamAnh={this.bamAnh} hienVaGiauPhoneMenu={this.hienVaGiauPhoneMenu}/>
         }
 
         { chieuRongManHinh <= 900

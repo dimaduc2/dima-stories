@@ -138,7 +138,7 @@ class Anh extends Component {
         <Accordion>
           
           <Accordion.Title active={dangXemAnhGi === 0} index={0} onClick={this.handleClick}>
-            <h1 style={{color:  white_or_black ? 'red' : 'blue'}}>Star Wars <Icon name='dropdown' /></h1>
+            <h1 style={{color: white_or_black ? 'red' : 'blue'}}>Star Wars <Icon name='dropdown' /></h1>
           </Accordion.Title>
           <Accordion.Content active={dangXemAnhGi === 0}>
             <Grid doubling columns={5} style={{margin:'10px', padding:'0'}}>
