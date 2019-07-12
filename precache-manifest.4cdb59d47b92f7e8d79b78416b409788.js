@@ -4,8 +4,8 @@ self.__precacheManifest = [
     "url": "/dima-stories/static/media/TRON_Revolt.5304eaae.jpg"
   },
   {
-    "revision": "1f895d3231605cdd1111",
-    "url": "/dima-stories/static/css/main.2952df5f.chunk.css"
+    "revision": "4fb5569cfcdc3b4bd6dd",
+    "url": "/dima-stories/static/css/main.9e57a976.chunk.css"
   },
   {
     "revision": "a1a749e89f578a49306ec2b055c073da",
@@ -160,8 +160,8 @@ self.__precacheManifest = [
     "url": "/dima-stories/static/media/Tron_-_System_Restarting.b36cab7c.png"
   },
   {
-    "revision": "1f895d3231605cdd1111",
-    "url": "/dima-stories/static/js/main.1f895d32.chunk.js"
+    "revision": "4fb5569cfcdc3b4bd6dd",
+    "url": "/dima-stories/static/js/main.4fb5569c.chunk.js"
   },
   {
     "revision": "3ed6b7c5e8b44dc8b8d3e9b74eae9d49",
@@ -320,7 +320,7 @@ self.__precacheManifest = [
     "url": "/dima-stories/static/css/1.3ef96604.chunk.css"
   },
   {
-    "revision": "8b600f498bfa0a51091f45384dabfe9f",
+    "revision": "24b9c2368fc7e6c79cbe1792813da550",
     "url": "/dima-stories/index.html"
   }
 ];
