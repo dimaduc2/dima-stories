@@ -114,6 +114,8 @@ const tenAnh = {
 class Anh extends Component {
   state = {
     dangXemAnhGi: -1,  //0 nghĩa là Star Wars, 1 là Batman, 2 là Spider-Man
+    modalOpen: false,
+    xemAnhSoNay: 0,
   }
 
 // PHẦN 3: Function
@@ -129,10 +131,21 @@ class Anh extends Component {
     this.setState({ dangXemAnhGi: Number(e.target.value) });
   }
 
+  openBigImage = (so) => {
+    this.setState({ modalOpen : true });
+    this.setState({xemAnhSoNay: so})
+  }
+
+  closeModal = () => {
+    this.setState({ modalOpen : false });  
+  }
+
+   
+
 // PHẦN 4: Trình bày trang Web, giống HTML
   render() {
-    var {dangXemAnhGi} = this.state;
-    var {chieuRongManHinh, dangXemGi, white_or_black, hienVaGiauPhoneMenu} = this.props;
+    var {dangXemAnhGi, modalOpen, xemAnhSoNay} = this.state;
+    var {chieuRongManHinh, dangXemGi, white_or_black, hienVaGiauPhoneMenu } = this.props;
     return (
       <div className="Anh" align='center'>
         <Accordion>
@@ -140,33 +153,32 @@ class Anh extends Component {
           <Accordion.Title active={dangXemAnhGi === 0} index={0} onClick={this.handleClick}>
             <h1 style={{color: white_or_black ? 'red' : 'blue'}}>Star Wars <Icon name='dropdown' /></h1>
           </Accordion.Title>
+          
           <Accordion.Content active={dangXemAnhGi === 0}>
+
+            {/* Modal là chỗ để hiện ảnh to */ }
+            <Modal basic open={modalOpen && (dangXemAnhGi===0)} onClose={this.closeModal} closeIcon>
+              <Image src={anhs['starwars'][xemAnhSoNay]} />   {/* Ở trong Modal thì hiện Image to này */ }
+            </Modal> 
+            
+            {/* Grid là chỗ để chứa 5 cái Column, mỗi Colum chứa 1 ảnh nhỏ */ }
             <Grid doubling columns={5} style={{margin:'10px', padding:'0'}}>
               <Grid.Column>
-                <Modal basic trigger={<Image src={anhs['starwars'][0]} size='small' />} closeIcon>
-                  <Image src={anhs['starwars'][0]} />
-                </Modal>
+                <Image src={anhs['starwars'][0]} size='small' onClick={() => this.openBigImage(0)}/>
+               </Grid.Column>
+              <Grid.Column>
+                <Image src={anhs['starwars'][1]} size='small' onClick={() => this.openBigImage(1)}/>
               </Grid.Column>
               <Grid.Column>
-                <Modal basic trigger={<Image src={anhs['starwars'][1]} size='small' />} closeIcon>
-                  <Image src={anhs['starwars'][1]} />
-                </Modal>
+                <Image src={anhs['starwars'][2]} size='small' onClick={() => this.openBigImage(2)}/>
               </Grid.Column>
               <Grid.Column>
-                <Modal basic trigger={<Image src={anhs['starwars'][2]} size='small' />} closeIcon>
-                  <Image src={anhs['starwars'][2]} />
-                </Modal>
+                <Image src={anhs['starwars'][3]} size='small' onClick={() => this.openBigImage(3)}/>
               </Grid.Column>
               <Grid.Column>
-                <Modal basic trigger={<Image src={anhs['starwars'][3]} size='small' />} closeIcon>
-                  <Image src={anhs['starwars'][3] } />
-                </Modal>
+                <Image src={anhs['starwars'][4]} size='small' onClick={() => this.openBigImage(4)}/>
               </Grid.Column>
-              <Grid.Column>
-                <Modal basic trigger={<Image src={anhs['starwars'][4]} size='small' />} closeIcon>
-                  <Image src={anhs['starwars'][4]} />
-                </Modal>
-              </Grid.Column>
+              
             </Grid>
           </Accordion.Content>
 
@@ -174,6 +186,9 @@ class Anh extends Component {
             <h1 style={{color:  white_or_black ? 'red' : 'blue'}}>Batman <Icon name='dropdown' /></h1>
           </Accordion.Title>
           <Accordion.Content active={dangXemAnhGi === 1}>
+
+
+
             <Grid doubling columns={5}>
               <Grid.Column>
                 <Modal basic trigger={<Image src={anhs['batman'][0]} size='small' />} closeIcon>
