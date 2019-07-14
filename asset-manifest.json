@@ -1,10 +1,10 @@
 {
   "main.css": "/dima-stories/static/css/main.9e57a976.chunk.css",
-  "main.js": "/dima-stories/static/js/main.4fb5569c.chunk.js",
-  "main.js.map": "/dima-stories/static/js/main.4fb5569c.chunk.js.map",
+  "main.js": "/dima-stories/static/js/main.4418da76.chunk.js",
+  "main.js.map": "/dima-stories/static/js/main.4418da76.chunk.js.map",
   "static/css/1.3ef96604.chunk.css": "/dima-stories/static/css/1.3ef96604.chunk.css",
-  "static/js/1.8947077e.chunk.js": "/dima-stories/static/js/1.8947077e.chunk.js",
-  "static/js/1.8947077e.chunk.js.map": "/dima-stories/static/js/1.8947077e.chunk.js.map",
+  "static/js/1.a145d09f.chunk.js": "/dima-stories/static/js/1.a145d09f.chunk.js",
+  "static/js/1.a145d09f.chunk.js.map": "/dima-stories/static/js/1.a145d09f.chunk.js.map",
   "runtime~main.js": "/dima-stories/static/js/runtime~main.26071fd9.js",
   "runtime~main.js.map": "/dima-stories/static/js/runtime~main.26071fd9.js.map",
   "static/media/evangelion.pdf": "/dima-stories/static/media/evangelion.51c8e8ca.pdf",
@@ -67,9 +67,9 @@
   "static/media/Innocent.docx": "/dima-stories/static/media/Innocent.540b581d.docx",
   "static/media/Innocent.pdf": "/dima-stories/static/media/Innocent.2c8e5418.pdf",
   "static/media/semantic.min.css": "/dima-stories/static/media/brand-icons.a1a749e8.svg",
-  "static/css/1.3ef96604.chunk.css.map": "/dima-stories/static/css/1.3ef96604.chunk.css.map",
   "static/css/main.9e57a976.chunk.css.map": "/dima-stories/static/css/main.9e57a976.chunk.css.map",
+  "static/css/1.3ef96604.chunk.css.map": "/dima-stories/static/css/1.3ef96604.chunk.css.map",
   "index.html": "/dima-stories/index.html",
-  "precache-manifest.4cdb59d47b92f7e8d79b78416b409788.js": "/dima-stories/precache-manifest.4cdb59d47b92f7e8d79b78416b409788.js",
+  "precache-manifest.d9a50b26e09cfb1600ee837703e4f029.js": "/dima-stories/precache-manifest.d9a50b26e09cfb1600ee837703e4f029.js",
   "service-worker.js": "/dima-stories/service-worker.js"
 }
