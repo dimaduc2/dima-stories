@@ -137,7 +137,25 @@ class Anh extends Component {
   }
 
   closeModal = () => {
-    this.setState({ modalOpen : false });  
+    this.setState({ modalOpen : false });
+  }
+
+  anhTruoc = () => {
+    if(this.state.xemAnhSoNay > 0) {
+      this.setState({xemAnhSoNay:this.state.xemAnhSoNay - 1});
+    }
+    else {
+      alert("không có ảnh trước");
+    }
+  }
+
+  anhSau = () => {
+    if(this.state.xemAnhSoNay < (anhs['starwars'].length - 1)) {
+      this.setState({xemAnhSoNay:this.state.xemAnhSoNay + 1});
+    }
+    else {
+      alert("không có ảnh sau");
+    }
   }
 
    
@@ -153,13 +171,14 @@ class Anh extends Component {
           <Accordion.Title active={dangXemAnhGi === 0} index={0} onClick={this.handleClick}>
             <h1 style={{color: white_or_black ? 'red' : 'blue'}}>Star Wars <Icon name='dropdown' /></h1>
           </Accordion.Title>
-          
           <Accordion.Content active={dangXemAnhGi === 0}>
 
             {/* Modal là chỗ để hiện ảnh to */ }
             <Modal basic open={modalOpen && (dangXemAnhGi===0)} onClose={this.closeModal} closeIcon>
               <Image src={anhs['starwars'][xemAnhSoNay]} />   {/* Ở trong Modal thì hiện Image to này */ }
-            </Modal> 
+              <Icon onClick={this.anhTruoc} color='violet' name='angle double left' size='big' style={{position:'fixed', top: '45vh', left: '-35px'}}/>
+              <Icon onClick={this.anhSau} color='violet' name='angle double right' size='big' style={{position:'fixed', top: '45vh', right: '-35px'}}/>
+            </Modal>
             
             {/* Grid là chỗ để chứa 5 cái Column, mỗi Colum chứa 1 ảnh nhỏ */ }
             <Grid doubling columns={5} style={{margin:'10px', padding:'0'}}>
@@ -178,183 +197,193 @@ class Anh extends Component {
               <Grid.Column>
                 <Image src={anhs['starwars'][4]} size='small' onClick={() => this.openBigImage(4)}/>
               </Grid.Column>
-              
             </Grid>
+
           </Accordion.Content>
 
           <Accordion.Title active={dangXemAnhGi === 1} index={1} onClick={this.handleClick}>
             <h1 style={{color:  white_or_black ? 'red' : 'blue'}}>Batman <Icon name='dropdown' /></h1>
           </Accordion.Title>
+
           <Accordion.Content active={dangXemAnhGi === 1}>
 
+            <Modal basic open={modalOpen && (dangXemAnhGi===1)} onClose={this.closeModal} closeIcon>
+              <Image src={anhs['batman'][xemAnhSoNay]} />   {/* Ở trong Modal thì hiện Image to này */ }
+              <Icon onClick={this.anhTruoc} color='violet' name='angle double left' size='big' style={{position:'fixed', top: '45vh', left: '-35px'}}/>
+              <Icon onClick={this.anhSau} color='violet' name='angle double right' size='big' style={{position:'fixed', top: '45vh', right: '-35px'}}/>
+            </Modal>
 
-
-            <Grid doubling columns={5}>
+            <Grid doubling columns={5} style={{margin:'10px', padding:'0'}}>
               <Grid.Column>
-                <Modal basic trigger={<Image src={anhs['batman'][0]} size='small' />} closeIcon>
-                  <Image src={anhs['batman'][0]} />
-                </Modal>
+                <Image src={anhs['batman'][0]} size='small' onClick={() => this.openBigImage(0)}/>
+               </Grid.Column>
+              <Grid.Column>
+                <Image src={anhs['batman'][1]} size='small' onClick={() => this.openBigImage(1)}/>
               </Grid.Column>
               <Grid.Column>
-                <Modal basic trigger={<Image src={anhs['batman'][1]} size='small' />} closeIcon>
-                  <Image src={anhs['batman'][1]} />
-                </Modal>
+                <Image src={anhs['batman'][2]} size='small' onClick={() => this.openBigImage(2)}/>
               </Grid.Column>
               <Grid.Column>
-                <Modal basic trigger={<Image src={anhs['batman'][2]} size='small' />} closeIcon>
-                  <Image src={anhs['batman'][2]} />
-                </Modal>
+                <Image src={anhs['batman'][3]} size='small' onClick={() => this.openBigImage(3)}/>
               </Grid.Column>
               <Grid.Column>
-                <Modal basic trigger={<Image src={anhs['batman'][3]} size='small' />} closeIcon>
-                  <Image src={anhs['batman'][3] } />
-                </Modal>
+                <Image src={anhs['batman'][4]} size='small' onClick={() => this.openBigImage(4)}/>
               </Grid.Column>
-              <Grid.Column>
-                <Modal basic trigger={<Image src={anhs['batman'][4]} size='small' />} closeIcon>
-                  <Image src={anhs['batman'][4]} />
-                </Modal>
-              </Grid.Column>  
             </Grid>
+
           </Accordion.Content>
 
           <Accordion.Title active={dangXemAnhGi === 2} index={2} onClick={this.handleClick}>
             <h1 style={{color:  white_or_black ? 'red' : 'blue'}}>Spider-Man <Icon name='dropdown' /></h1>
           </Accordion.Title>
           <Accordion.Content active={dangXemAnhGi === 2}>
-            <Grid doubling columns={5}>
+
+            <Modal basic open={modalOpen && (dangXemAnhGi===2)} onClose={this.closeModal} closeIcon>
+              <Image src={anhs['spiderman'][xemAnhSoNay]} />   {/* Ở trong Modal thì hiện Image to này */ }
+              <Icon onClick={this.anhTruoc} color='violet' name='angle double left' size='big' style={{position:'fixed', top: '45vh', left: '-35px'}}/>
+              <Icon onClick={this.anhSau} color='violet' name='angle double right' size='big' style={{position:'fixed', top: '45vh', right: '-35px'}}/>
+            </Modal>
+
+            <Grid doubling columns={5} style={{margin:'10px', padding:'0'}}>
               <Grid.Column>
-                <Modal basic trigger={<Image src={anhs['spiderman'][0]} size='small' />} closeIcon>
-                  <Image src={anhs['spiderman'][0]} />
-                </Modal>
+                <Image src={anhs['spiderman'][0]} size='small' onClick={() => this.openBigImage(0)}/>
+               </Grid.Column>
+              <Grid.Column>
+                <Image src={anhs['spiderman'][1]} size='small' onClick={() => this.openBigImage(1)}/>
               </Grid.Column>
               <Grid.Column>
-                <Modal basic trigger={<Image src={anhs['spiderman'][1]} size='small' />} closeIcon>
-                  <Image src={anhs['spiderman'][1]} />
-                </Modal>
+                <Image src={anhs['spiderman'][2]} size='small' onClick={() => this.openBigImage(2)}/>
               </Grid.Column>
               <Grid.Column>
-                <Modal basic trigger={<Image src={anhs['spiderman'][2]} size='small' />} closeIcon>
-                  <Image src={anhs['spiderman'][2]} />
-                </Modal>
+                <Image src={anhs['spiderman'][3]} size='small' onClick={() => this.openBigImage(3)}/>
               </Grid.Column>
               <Grid.Column>
-                <Modal basic trigger={<Image src={anhs['spiderman'][3]} size='small' />} closeIcon>
-                  <Image src={anhs['spiderman'][3] } />
-                </Modal>
-              </Grid.Column>
-              <Grid.Column>
-                <Modal basic trigger={<Image src={anhs['spiderman'][4]} size='small' />} closeIcon>
-                  <Image src={anhs['spiderman'][4]} />
-                </Modal>
+                <Image src={anhs['spiderman'][4]} size='small' onClick={() => this.openBigImage(4)}/>
               </Grid.Column>
             </Grid>
-          </Accordion.Content>
 
+          </Accordion.Content>
           <Accordion.Title active={dangXemAnhGi === 3} index={3} onClick={this.handleClick}>
             <h1 style={{color:  white_or_black ? 'red' : 'blue'}}>Gantz <Icon name='dropdown' /></h1>
           </Accordion.Title>
           <Accordion.Content active={dangXemAnhGi === 3}>
-            <Grid doubling columns={5}>
+
+            <Modal basic open={modalOpen && (dangXemAnhGi===3)} onClose={this.closeModal} closeIcon>
+              <Image src={anhs['gantz'][xemAnhSoNay]} />   {/* Ở trong Modal thì hiện Image to này */ }
+              <Icon onClick={this.anhTruoc} color='violet' name='angle double left' size='big' style={{position:'fixed', top: '45vh', left: '-35px'}}/>
+              <Icon onClick={this.anhSau} color='violet' name='angle double right' size='big' style={{position:'fixed', top: '45vh', right: '-35px'}}/>
+            </Modal>
+
+            <Grid doubling columns={5} style={{margin:'10px', padding:'0'}}>
               <Grid.Column>
-                <Modal basic trigger={<Image src={anhs['gantz'][0]} size='small' />} closeIcon>
-                  <Image src={anhs['gantz'][0]} />
-                </Modal>
+                <Image src={anhs['gantz'][0]} size='small' onClick={() => this.openBigImage(0)}/>
+               </Grid.Column>
+              <Grid.Column>
+                <Image src={anhs['gantz'][1]} size='small' onClick={() => this.openBigImage(1)}/>
               </Grid.Column>
               <Grid.Column>
-                <Modal basic trigger={<Image src={anhs['gantz'][1]} size='small' />} closeIcon>
-                  <Image src={anhs['gantz'][1]} />
-                </Modal>
+                <Image src={anhs['gantz'][2]} size='small' onClick={() => this.openBigImage(2)}/>
               </Grid.Column>
               <Grid.Column>
-                <Modal basic trigger={<Image src={anhs['gantz'][2]} size='small' />} closeIcon>
-                  <Image src={anhs['gantz'][2]} />
-                </Modal>
+                <Image src={anhs['gantz'][3]} size='small' onClick={() => this.openBigImage(3)}/>
               </Grid.Column>
               <Grid.Column>
-                <Modal basic trigger={<Image src={anhs['gantz'][3]} size='small' />} closeIcon>
-                  <Image src={anhs['gantz'][3] } />
-                </Modal>
-              </Grid.Column>
-              <Grid.Column>
-                <Modal basic trigger={<Image src={anhs['gantz'][4]} size='small' />} closeIcon>
-                  <Image src={anhs['gantz'][4]} />
-                </Modal>
+                <Image src={anhs['gantz'][4]} size='small' onClick={() => this.openBigImage(4)}/>
               </Grid.Column>
             </Grid>
-          </Accordion.Content>
 
+          </Accordion.Content>
           <Accordion.Title active={dangXemAnhGi === 4} index={4} onClick={this.handleClick}>
             <h1 style={{color:  white_or_black ? 'red' : 'blue'}}>Pokemon <Icon name='dropdown' /></h1>
           </Accordion.Title>
           <Accordion.Content active={dangXemAnhGi === 4}>
-            <Grid doubling columns={5}>
+
+            <Modal basic open={modalOpen && (dangXemAnhGi===4)} onClose={this.closeModal} closeIcon>
+              <Image src={anhs['pokemon'][xemAnhSoNay]} />   {/* Ở trong Modal thì hiện Image to này */ }
+              <Icon onClick={this.anhTruoc} color='violet' name='angle double left' size='big' style={{position:'fixed', top: '45vh', left: '-35px'}}/>
+              <Icon onClick={this.anhSau} color='violet' name='angle double right' size='big' style={{position:'fixed', top: '45vh', right: '-35px'}}/>
+            </Modal>
+
+            <Grid doubling columns={5} style={{margin:'10px', padding:'0'}}>
               <Grid.Column>
-                <Modal basic trigger={<Image src={anhs['pokemon'][0]} size='small' />} closeIcon>
-                  <Image src={anhs['pokemon'][0]} />
-                </Modal>
+                <Image src={anhs['pokemon'][0]} size='small' onClick={() => this.openBigImage(0)}/>
+               </Grid.Column>
+              <Grid.Column>
+                <Image src={anhs['pokemon'][1]} size='small' onClick={() => this.openBigImage(1)}/>
               </Grid.Column>
               <Grid.Column>
-                <Modal basic trigger={<Image src={anhs['pokemon'][1]} size='small' />} closeIcon>
-                  <Image src={anhs['pokemon'][1]} />
-                </Modal>
+                <Image src={anhs['pokemon'][2]} size='small' onClick={() => this.openBigImage(2)}/>
               </Grid.Column>
               <Grid.Column>
-                <Modal basic trigger={<Image src={anhs['pokemon'][2]} size='small' />} closeIcon>
-                  <Image src={anhs['pokemon'][2]} />
-                </Modal>
+                <Image src={anhs['pokemon'][3]} size='small' onClick={() => this.openBigImage(3)}/>
               </Grid.Column>
               <Grid.Column>
-                <Modal basic trigger={<Image src={anhs['pokemon'][3]} size='small' />} closeIcon>
-                  <Image src={anhs['pokemon'][3] } />
-                </Modal>
-              </Grid.Column>
-              <Grid.Column>
-                <Modal basic trigger={<Image src={anhs['pokemon'][4]} size='small' />} closeIcon>
-                  <Image src={anhs['pokemon'][4]} />
-                </Modal>
+                <Image src={anhs['pokemon'][4]} size='small' onClick={() => this.openBigImage(4)}/>
               </Grid.Column>
             </Grid>
-          </Accordion.Content>
 
+          </Accordion.Content>
           <Accordion.Title active={dangXemAnhGi === 5} index={5} onClick={this.handleClick}>
             <h1 style={{color:  white_or_black ? 'red' : 'blue'}}>Evangelion <Icon name='dropdown' /></h1>
           </Accordion.Title>
           <Accordion.Content active={dangXemAnhGi === 5}>
-            <Grid doubling columns={5}>
+            <Modal basic open={modalOpen && (dangXemAnhGi===5)} onClose={this.closeModal} closeIcon>
+              <Image src={anhs['evangelion'][xemAnhSoNay]} />   {/* Ở trong Modal thì hiện Image to này */ }
+              <Icon onClick={this.anhTruoc} color='violet' name='angle double left' size='big' style={{position:'fixed', top: '45vh', left: '-35px'}}/>
+              <Icon onClick={this.anhSau} color='violet' name='angle double right' size='big' style={{position:'fixed', top: '45vh', right: '-35px'}}/>
+            </Modal>
+
+
+            <Grid doubling columns={5} style={{margin:'10px', padding:'0'}}>
               <Grid.Column>
-                <Modal basic trigger={<Image src={anhs['evangelion'][0]} size='small' />} closeIcon>
-                  <Image src={anhs['evangelion'][0]} />
-                </Modal>
+                <Image src={anhs['evangelion'][0]} size='small' onClick={() => this.openBigImage(0)}/>
+               </Grid.Column>
+              <Grid.Column>
+                <Image src={anhs['evangelion'][1]} size='small' onClick={() => this.openBigImage(1)}/>
               </Grid.Column>
               <Grid.Column>
-                <Modal basic trigger={<Image src={anhs['evangelion'][1]} size='small' />} closeIcon>
-                  <Image src={anhs['evangelion'][1]} />
-                </Modal>
+                <Image src={anhs['evangelion'][2]} size='small' onClick={() => this.openBigImage(2)}/>
               </Grid.Column>
               <Grid.Column>
-                <Modal basic trigger={<Image src={anhs['evangelion'][2]} size='small' />} closeIcon>
-                  <Image src={anhs['evangelion'][2]} />
-                </Modal>
+                <Image src={anhs['evangelion'][3]} size='small' onClick={() => this.openBigImage(3)}/>
               </Grid.Column>
               <Grid.Column>
-                <Modal basic trigger={<Image src={anhs['evangelion'][3]} size='small' />} closeIcon>
-                  <Image src={anhs['evangelion'][3] } />
-                </Modal>
-              </Grid.Column>
-              <Grid.Column>
-                <Modal basic trigger={<Image src={anhs['evangelion'][4]} size='small' />} closeIcon>
-                  <Image src={anhs['evangelion'][4]} />
-                </Modal>
+                <Image src={anhs['evangelion'][4]} size='small' onClick={() => this.openBigImage(4)}/>
               </Grid.Column>
             </Grid>
-          </Accordion.Content>
+            
 
+          </Accordion.Content>
           <Accordion.Title active={dangXemAnhGi === 6} index={6} onClick={this.handleClick}>
             <h1 style={{color:  white_or_black ? 'red' : 'blue'}}>Tron <Icon name='dropdown' /></h1>
           </Accordion.Title>
           <Accordion.Content active={dangXemAnhGi === 6}>
-            <Grid doubling columns={5}>
+            
+            <Modal basic open={modalOpen && (dangXemAnhGi===6)} onClose={this.closeModal} closeIcon>
+              <Image src={anhs['tron'][xemAnhSoNay]} />   {/* Ở trong Modal thì hiện Image to này */ }
+              <Icon onClick={this.anhTruoc} color='violet' name='angle double left' size='big' style={{position:'fixed', top: '45vh', left: '-35px'}}/>
+              <Icon onClick={this.anhSau} color='violet' name='angle double right' size='big' style={{position:'fixed', top: '45vh', right: '-35px'}}/>
+            </Modal>
+            <Grid doubling columns={5} style={{margin:'10px', padding:'0'}}>
+              <Grid.Column>
+                <Image src={anhs['tron'][0]} size='small' onClick={() => this.openBigImage(0)}/>
+               </Grid.Column>
+              <Grid.Column>
+                <Image src={anhs['tron'][1]} size='small' onClick={() => this.openBigImage(1)}/>
+              </Grid.Column>
+              <Grid.Column>
+                <Image src={anhs['tron'][2]} size='small' onClick={() => this.openBigImage(2)}/>
+              </Grid.Column>
+              <Grid.Column>
+                <Image src={anhs['tron'][3]} size='small' onClick={() => this.openBigImage(3)}/>
+              </Grid.Column>
+              <Grid.Column>
+                <Image src={anhs['tron'][4]} size='small' onClick={() => this.openBigImage(4)}/>
+              </Grid.Column>
+            </Grid>
+
+            
+            {/* <Grid doubling columns={5}>
               <Grid.Column>
                 <Modal basic trigger={<Image src={anhs['tron'][0]} size='small' />} closeIcon>
                   <Image src={anhs['tron'][0]} />
@@ -380,16 +409,9 @@ class Anh extends Component {
                   <Image src={anhs['tron'][4]} />
                 </Modal>
               </Grid.Column>
-            </Grid>
+            </Grid> */}
+
           </Accordion.Content>
-
-
-
-
-
-
-
-
         </Accordion>
         <MenuDieuKhien chieuRongManHinh={chieuRongManHinh} dangXemGi={dangXemGi} white_or_black={white_or_black} 
                         hienVaGiauPhoneMenu={hienVaGiauPhoneMenu} dangXemAnhGi={dangXemAnhGi} 
