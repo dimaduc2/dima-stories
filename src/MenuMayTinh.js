@@ -70,7 +70,24 @@ docTruyen = () => {
         <Dropdown item simple text='Phim Youtube'>
           <Dropdown.Menu>
             <Dropdown.Item onClick={ () => xemPhim('overlord', 0, 0) }>
-              <Image src={logo_overlord} avatar/>Overlord Ss 1 Full {/*  bước 3  */}
+              <Image src={logo_overlord} avatar/>
+              <i className='dropdown icon' />
+              <span className='text'>Overlord Ss 1</span>
+              <Dropdown.Menu>
+                <Dropdown.Item onClick={ () => xemPhim('overlord', 0, 0) }>Overlord Ss1 ep 0</Dropdown.Item>
+                <Dropdown.Item onClick={ () => xemPhim('overlord', 0, 1) }>Overlord Ss1 ep 1</Dropdown.Item>
+                <Dropdown.Item onClick={ () => xemPhim('overlord', 0, 2) }>Overlord Ss1 ep 2</Dropdown.Item>
+                <Dropdown.Item onClick={ () => xemPhim('overlord', 0, 3) }>Overlord Ss1 ep 3</Dropdown.Item>
+                <Dropdown.Item onClick={ () => xemPhim('overlord', 0, 4) }>Overlord Ss1 ep 4</Dropdown.Item>
+                <Dropdown.Item onClick={ () => xemPhim('overlord', 0, 5) }>Overlord Ss1 ep 5</Dropdown.Item>
+                <Dropdown.Item onClick={ () => xemPhim('overlord', 0, 6) }>Overlord Ss1 ep 6</Dropdown.Item>
+                <Dropdown.Item onClick={ () => xemPhim('overlord', 0, 7) }>Overlord Ss1 ep 7</Dropdown.Item>
+                <Dropdown.Item onClick={ () => xemPhim('overlord', 0, 8) }>Overlord Ss1 ep 8</Dropdown.Item>
+                <Dropdown.Item onClick={ () => xemPhim('overlord', 0, 9) }>Overlord Ss1 ep 9</Dropdown.Item>
+                <Dropdown.Item onClick={ () => xemPhim('overlord', 0, 10) }>Overlord Ss1 ep 10</Dropdown.Item>
+                <Dropdown.Item onClick={ () => xemPhim('overlord', 0, 11) }>Overlord Ss1 ep 11</Dropdown.Item>
+                <Dropdown.Item onClick={ () => xemPhim('overlord', 0, 12) }>Overlord Ss1 ep 12</Dropdown.Item>
+              </Dropdown.Menu>
             </Dropdown.Item>
             <Dropdown.Item>
               <Image src={logo_overlord} avatar/>

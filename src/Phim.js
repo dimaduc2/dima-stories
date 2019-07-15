@@ -31,9 +31,69 @@ const danhBaPhim = {
   'overlord' :  [
                   [
                     {
-                      ten: "Overlord SS1 EP1-13",
+                      ten: "Overlord SS1 EP1",
                       phan: 1,
-                      diaChi: 'https://www.youtube.com/embed/e0kpvXdQem4'
+                      diaChi: 'https://player.vimeo.com/video/347422858'
+                    },
+                    {
+                      ten: "Overlord SS1 EP2",
+                      phan: 1,
+                      diaChi: 'https://player.vimeo.com/video/347422975'
+                    },
+                    {
+                      ten: "Overlord SS1 EP3",
+                      phan: 1,
+                      diaChi: 'https://player.vimeo.com/video/347423061'
+                    },
+                    {
+                      ten: "Overlord SS1 EP4",
+                      phan: 1,
+                      diaChi: 'https://player.vimeo.com/video/347424555'
+                    },
+                    {
+                      ten: "Overlord SS1 EP5",
+                      phan: 1,
+                      diaChi: 'https://player.vimeo.com/video/347424622'
+                    },
+                    {
+                      ten: "Overlord SS1 EP6",
+                      phan: 1,
+                      diaChi: 'https://player.vimeo.com/video/347424709'
+                    },
+                    {
+                      ten: "Overlord SS1 EP7",
+                      phan: 1,
+                      diaChi: 'https://player.vimeo.com/video/347426005'
+                    },
+                    {
+                      ten: "Overlord SS1 EP8",
+                      phan: 1,
+                      diaChi: 'https://player.vimeo.com/video/347426219'
+                    },
+                    {
+                      ten: "Overlord SS1 EP9",
+                      phan: 1,
+                      diaChi: 'https://player.vimeo.com/video/347426101'
+                    },
+                    {
+                      ten: "Overlord SS1 EP10",
+                      phan: 1,
+                      diaChi: 'https://player.vimeo.com/video/347432427'
+                    },
+                    {
+                      ten: "Overlord SS1 EP11",
+                      phan: 1,
+                      diaChi: 'https://player.vimeo.com/video/347432520'
+                    },
+                    {
+                      ten: "Overlord SS1 EP12",
+                      phan: 1,
+                      diaChi: 'https://player.vimeo.com/video/347432624'
+                    },
+                    {
+                      ten: "Overlord SS1 EP13",
+                      phan: 1,
+                      diaChi: 'https://player.vimeo.com/video/347432624'
                     },
                   ],
 
@@ -46,7 +106,7 @@ const danhBaPhim = {
                     {
                       ten: "Overlord SS2 EP2",
                       phan: 2,  
-                      diaChi: 'https://player.vimeo.com/video/321032417',
+                      diaChi: 'https://player.vimeo.com/video/321032417'
                     },
                     {
                       ten: "Overlord SS2 EP3",
