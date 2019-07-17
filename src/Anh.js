@@ -145,7 +145,8 @@ class Anh extends Component {
       this.setState({xemAnhSoNay:this.state.xemAnhSoNay - 1});
     }
     else {
-      alert("không có ảnh trước");
+      alert("không có ảnh trước và sẽ quay lại ảnh cuối");
+      this.setState({xemAnhSoNay: anhs['starwars'].length-1});
     }
   }
 
@@ -154,7 +155,8 @@ class Anh extends Component {
       this.setState({xemAnhSoNay:this.state.xemAnhSoNay + 1});
     }
     else {
-      alert("không có ảnh sau");
+      alert("không có ảnh sau và sẽ quay lại ảnh đầu");
+      this.setState({xemAnhSoNay:0});
     }
   }
 
