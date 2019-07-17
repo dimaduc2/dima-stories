@@ -46,6 +46,12 @@ import Tron_back_from_Rinzler_in_water from './anh/Tron_-_System_Restarting.png'
 import tron_like_rinzler_vs_beck_like_tron_vs_paige from './anh/TRON_Revolt.jpg';
 import Tron_Rinzler from './anh/Tron_Rinzler.jpg';
 
+import team_7_akatsuki from './anh/2000_hits.jpg';
+import naruto_hinata_halo from './anh/birthday__ponner89_nh_halo.jpg';
+import Naruto_Hunter_Nin from './anh/Hunter_Nin.jpg';
+import naruto_sharingan_rinnegan from './anh/naruto___the_true_sage_of_six_paths__fanart.jpg';
+import naruto_juubi from './anh/naruto_eyes__body_and_chakra_of_the_juubi.jpg';
+
 //Danh ba tat ca Anh
 const anhs = {
   'starwars' : [
@@ -96,6 +102,13 @@ const anhs = {
     Tron_back_from_Rinzler_in_water,
     tron_like_rinzler_vs_beck_like_tron_vs_paige,
     Tron_Rinzler
+  ],
+  'naruto' :[
+    team_7_akatsuki,
+    naruto_hinata_halo,
+    Naruto_Hunter_Nin,
+    naruto_sharingan_rinnegan,
+    naruto_juubi
   ]
 }
 
@@ -265,6 +278,7 @@ class Anh extends Component {
             </Grid>
 
           </Accordion.Content>
+          
           <Accordion.Title active={dangXemAnhGi === 3} index={3} onClick={this.handleClick}>
             <h1 style={{color:  white_or_black ? 'red' : 'blue'}}>Gantz <Icon name='dropdown' /></h1>
           </Accordion.Title>
@@ -295,6 +309,7 @@ class Anh extends Component {
             </Grid>
 
           </Accordion.Content>
+          
           <Accordion.Title active={dangXemAnhGi === 4} index={4} onClick={this.handleClick}>
             <h1 style={{color:  white_or_black ? 'red' : 'blue'}}>Pokemon <Icon name='dropdown' /></h1>
           </Accordion.Title>
@@ -325,6 +340,7 @@ class Anh extends Component {
             </Grid>
 
           </Accordion.Content>
+          
           <Accordion.Title active={dangXemAnhGi === 5} index={5} onClick={this.handleClick}>
             <h1 style={{color:  white_or_black ? 'red' : 'blue'}}>Evangelion <Icon name='dropdown' /></h1>
           </Accordion.Title>
@@ -353,9 +369,9 @@ class Anh extends Component {
                 <Image src={anhs['evangelion'][4]} size='small' onClick={() => this.openBigImage(4)}/>
               </Grid.Column>
             </Grid>
-            
-
+          
           </Accordion.Content>
+          
           <Accordion.Title active={dangXemAnhGi === 6} index={6} onClick={this.handleClick}>
             <h1 style={{color:  white_or_black ? 'red' : 'blue'}}>Tron <Icon name='dropdown' /></h1>
           </Accordion.Title>
@@ -414,6 +430,40 @@ class Anh extends Component {
             </Grid> */}
 
           </Accordion.Content>
+          
+          <Accordion.Title active={dangXemAnhGi === 7} index={7} onClick={this.handleClick}>
+            <h1 style={{color: white_or_black ? 'red' : 'blue'}}>Naruto <Icon name='dropdown' /></h1>
+          </Accordion.Title>
+          <Accordion.Content active={dangXemAnhGi === 7}>
+
+            {/* Modal là chỗ để hiện ảnh to */ }
+            <Modal basic open={modalOpen && (dangXemAnhGi===7)} onClose={this.closeModal} closeIcon>
+              <Image src={anhs['naruto'][xemAnhSoNay]} />   {/* Ở trong Modal thì hiện Image to này */ }
+              <Icon onClick={this.anhTruoc} color='violet' name='angle double left' size='big' style={{position:'fixed', top: '45vh', left: '-35px'}}/>
+              <Icon onClick={this.anhSau} color='violet' name='angle double right' size='big' style={{position:'fixed', top: '45vh', right: '-35px'}}/>
+            </Modal>
+            
+            {/* Grid là chỗ để chứa 5 cái Column, mỗi Colum chứa 1 ảnh nhỏ */ }
+            <Grid doubling columns={5} style={{margin:'10px', padding:'0'}}>
+              <Grid.Column>
+                <Image src={anhs['naruto'][0]} size='small' onClick={() => this.openBigImage(0)}/>
+               </Grid.Column>
+              <Grid.Column>
+                <Image src={anhs['naruto'][1]} size='small' onClick={() => this.openBigImage(1)}/>
+              </Grid.Column>
+              <Grid.Column>
+                <Image src={anhs['naruto'][2]} size='small' onClick={() => this.openBigImage(2)}/>
+              </Grid.Column>
+              <Grid.Column>
+                <Image src={anhs['naruto'][3]} size='small' onClick={() => this.openBigImage(3)}/>
+              </Grid.Column>
+              <Grid.Column>
+                <Image src={anhs['naruto'][4]} size='small' onClick={() => this.openBigImage(4)}/>
+              </Grid.Column>
+            </Grid>
+
+          </Accordion.Content>
+
         </Accordion>
         <MenuDieuKhien chieuRongManHinh={chieuRongManHinh} dangXemGi={dangXemGi} white_or_black={white_or_black} 
                         hienVaGiauPhoneMenu={hienVaGiauPhoneMenu} dangXemAnhGi={dangXemAnhGi} 
