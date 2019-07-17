@@ -88,7 +88,7 @@ const danhBaPhim = {
                     {
                       ten: "Overlord SS1 EP12",
                       phan: 1,
-                      diaChi: 'https://player.vimeo.com/video/347432624'
+                      diaChi: 'https://player.vimeo.com/video/348495506'
                     },
                     {
                       ten: "Overlord SS1 EP13",
@@ -324,7 +324,9 @@ xemTapKhac = (e,{value}) => {
           docx_or_pdf, xemPhim, hienVaGiauPhoneMenu } = this.props;
     return (
       <div className="phim-may-tinh">
-        <h1 style={{color:(white_or_black ? 'white' : 'black')}}>{tenPhimTrongDanhBa} - [{thuTuPhanDangXem}] [{thuTuTapDangXem}]</h1>
+        <h1 style={{color:(white_or_black ? 'white' : 'black')}}>
+          {tenPhimTrongDanhBa} Ss{thuTuPhanDangXem+1} Ep{thuTuTapDangXem+1}</h1>
+
         <Iframe url={danhBaPhim[tenPhimTrongDanhBa][thuTuPhanDangXem][thuTuTapDangXem].diaChi} /*  bước 2  */
         width={(chieuRongManHinh-30)+"px"}
         height={(chieuDaiManHinh-200)+"px"}
