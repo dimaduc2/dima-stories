@@ -4,7 +4,7 @@ self.__precacheManifest = [
     "url": "/dima-stories/static/media/TRON_Revolt.5304eaae.jpg"
   },
   {
-    "revision": "4418da760cfc00ead6bb",
+    "revision": "efa93ff2e142252f9707",
     "url": "/dima-stories/static/css/main.9e57a976.chunk.css"
   },
   {
@@ -160,8 +160,8 @@ self.__precacheManifest = [
     "url": "/dima-stories/static/media/Tron_-_System_Restarting.b36cab7c.png"
   },
   {
-    "revision": "4418da760cfc00ead6bb",
-    "url": "/dima-stories/static/js/main.4418da76.chunk.js"
+    "revision": "efa93ff2e142252f9707",
+    "url": "/dima-stories/static/js/main.efa93ff2.chunk.js"
   },
   {
     "revision": "3ed6b7c5e8b44dc8b8d3e9b74eae9d49",
@@ -256,12 +256,12 @@ self.__precacheManifest = [
     "url": "/dima-stories/static/media/Innocent.2c8e5418.pdf"
   },
   {
-    "revision": "cd6c777f1945164224dee082abaea03a",
-    "url": "/dima-stories/static/media/outline-icons.cd6c777f.woff2"
-  },
-  {
     "revision": "ef60a4f6c25ef7f39f2d25a748dbecfe",
     "url": "/dima-stories/static/media/outline-icons.ef60a4f6.woff"
+  },
+  {
+    "revision": "cd6c777f1945164224dee082abaea03a",
+    "url": "/dima-stories/static/media/outline-icons.cd6c777f.woff2"
   },
   {
     "revision": "9c74e172f87984c48ddf5c8108cabe67",
@@ -320,7 +320,7 @@ self.__precacheManifest = [
     "url": "/dima-stories/static/css/1.3ef96604.chunk.css"
   },
   {
-    "revision": "a81d10ebbf9f49d992ea8ccf35f112e9",
+    "revision": "e7987050e470209469fea08a56ae1211",
     "url": "/dima-stories/index.html"
   }
 ];
