@@ -112,7 +112,7 @@ const anhs = {
   ]
 }
 
-const tenAnh = {
+const tenAnh = { //Đây là Object
   '-1': 'Hãy lựa chọn ảnh',
   '0' : 'Star Wars',
   '1' : 'Batman',        //nếu muốn hiện Batman thì phải viết: tenAnh[‘1’]
@@ -121,6 +121,7 @@ const tenAnh = {
   '4' : 'Pokemoon',
   '5' : 'Evangelion',
   '6' : 'Tron',          //nếu muốn hiện Tron thì phải viết: tenAnh[‘6’]
+  '7' :  'Naruto',
 }
 
 // PHẦN 2: State
@@ -153,7 +154,7 @@ class Anh extends Component {
     this.setState({ modalOpen : false });
   }
 
-  anhTruoc = () => {
+  xemAnhTruoc = () => {
     if(this.state.xemAnhSoNay > 0) {
       this.setState({xemAnhSoNay:this.state.xemAnhSoNay - 1});
     }
@@ -162,8 +163,7 @@ class Anh extends Component {
       this.setState({xemAnhSoNay: anhs['starwars'].length-1});
     }
   }
-
-  anhSau = () => {
+  xemAnhSau = () => {
     if(this.state.xemAnhSoNay < (anhs['starwars'].length - 1)) {
       this.setState({xemAnhSoNay:this.state.xemAnhSoNay + 1});
     }
@@ -173,14 +173,58 @@ class Anh extends Component {
     }
   }
 
-   
+  xemCacAnhTren = () => {
+    if (this.state.dangXemAnhGi > 0) {
+      this.setState({dangXemAnhGi:this.state.dangXemAnhGi - 1})
+    }
+    else {
+      alert("không có ảnh trên và sẽ quay lại ảnh dưới");
+      this.setState({dangXemAnhGi:Object.keys(tenAnh).length - 2});
+    }
+  }
+  
+  xemCacAnhDuoi = () => {
+    if (this.state.dangXemAnhGi < (Object.keys(tenAnh).length - 2)) {
+      this.setState({dangXemAnhGi:this.state.dangXemAnhGi + 1})
+    }  
+    else {
+      alert("không có ảnh dưới và sẽ quay lại ảnh trên");
+      this.setState({dangXemAnhGi:0});
+    }
+  }
+
+  bamBanPhim = (event) => {
+    if(this.state.modalOpen) {
+    //nếu modelOpen===true, thì nghĩa là Ảnh to đang mở
+    //bây giờ hãy chuyển xem anh sau hoặc xem ảnh trước
+      if (event.key === 'ArrowLeft'){
+        this.xemAnhTruoc();
+      }
+      else if (event.key === 'ArrowRight'){
+        this.xemAnhSau();
+      }
+    }
+
+    else {
+      //nếu modelOpen===false, thì nghĩa là Ảnh to đang không mở
+      //bây giờ hãy chuyển xem anh sau hoặc xem ảnh trước
+      if (event.key === 'ArrowUp'){
+        this.xemCacAnhTren();
+      }
+      else if (event.key === 'ArrowDown'){
+        this.xemCacAnhDuoi();
+      }
+    }
+
+    
+  }
 
 // PHẦN 4: Trình bày trang Web, giống HTML
   render() {
     var {dangXemAnhGi, modalOpen, xemAnhSoNay} = this.state;
     var {chieuRongManHinh, dangXemGi, white_or_black, hienVaGiauPhoneMenu } = this.props;
     return (
-      <div className="Anh" align='center'>
+      <div className="Anh" align='center' onKeyUp={this.bamBanPhim} tabIndex="0">
         <Accordion>
           
           <Accordion.Title active={dangXemAnhGi === 0} index={0} onClick={this.handleClick}>
@@ -191,8 +235,8 @@ class Anh extends Component {
             {/* Modal là chỗ để hiện ảnh to */ }
             <Modal basic open={modalOpen && (dangXemAnhGi===0)} onClose={this.closeModal} closeIcon>
               <Image src={anhs['starwars'][xemAnhSoNay]} />   {/* Ở trong Modal thì hiện Image to này */ }
-              <Icon onClick={this.anhTruoc} color='violet' name='angle double left' size='big' style={{position:'fixed', top: '45vh', left: '-35px'}}/>
-              <Icon onClick={this.anhSau} color='violet' name='angle double right' size='big' style={{position:'fixed', top: '45vh', right: '-35px'}}/>
+              <Icon onClick={this.xemAnhTruoc} color='violet' name='angle double left' size='big' style={{position:'fixed', top: '45vh', left: '-35px'}}/>
+              <Icon onClick={this.xemAnhSau} color='violet' name='angle double right' size='big' style={{position:'fixed', top: '45vh', right: '-35px'}}/>
             </Modal>
             
             {/* Grid là chỗ để chứa 5 cái Column, mỗi Colum chứa 1 ảnh nhỏ */ }
@@ -224,8 +268,10 @@ class Anh extends Component {
 
             <Modal basic open={modalOpen && (dangXemAnhGi===1)} onClose={this.closeModal} closeIcon>
               <Image src={anhs['batman'][xemAnhSoNay]} />   {/* Ở trong Modal thì hiện Image to này */ }
-              <Icon onClick={this.anhTruoc} color='violet' name='angle double left' size='big' style={{position:'fixed', top: '45vh', left: '-35px'}}/>
-              <Icon onClick={this.anhSau} color='violet' name='angle double right' size='big' style={{position:'fixed', top: '45vh', right: '-35px'}}/>
+              <Icon onClick={this.xemAnhTruoc} color='violet' name='angle double left' size='big' 
+                    style={{position:'fixed', top: '45vh', left: '-35px'}}/>
+              <Icon onClick={this.xemAnhSau} color='violet' name='angle double right' size='big' 
+                    style={{position:'fixed', top: '45vh', right: '-35px'}}/>
             </Modal>
 
             <Grid doubling columns={5} style={{margin:'10px', padding:'0'}}>
@@ -255,8 +301,8 @@ class Anh extends Component {
 
             <Modal basic open={modalOpen && (dangXemAnhGi===2)} onClose={this.closeModal} closeIcon>
               <Image src={anhs['spiderman'][xemAnhSoNay]} />   {/* Ở trong Modal thì hiện Image to này */ }
-              <Icon onClick={this.anhTruoc} color='violet' name='angle double left' size='big' style={{position:'fixed', top: '45vh', left: '-35px'}}/>
-              <Icon onClick={this.anhSau} color='violet' name='angle double right' size='big' style={{position:'fixed', top: '45vh', right: '-35px'}}/>
+              <Icon onClick={this.xemAnhTruoc} color='violet' name='angle double left' size='big' style={{position:'fixed', top: '45vh', left: '-35px'}}/>
+              <Icon onClick={this.xemAnhSau} color='violet' name='angle double right' size='big' style={{position:'fixed', top: '45vh', right: '-35px'}}/>
             </Modal>
 
             <Grid doubling columns={5} style={{margin:'10px', padding:'0'}}>
@@ -286,8 +332,8 @@ class Anh extends Component {
 
             <Modal basic open={modalOpen && (dangXemAnhGi===3)} onClose={this.closeModal} closeIcon>
               <Image src={anhs['gantz'][xemAnhSoNay]} />   {/* Ở trong Modal thì hiện Image to này */ }
-              <Icon onClick={this.anhTruoc} color='violet' name='angle double left' size='big' style={{position:'fixed', top: '45vh', left: '-35px'}}/>
-              <Icon onClick={this.anhSau} color='violet' name='angle double right' size='big' style={{position:'fixed', top: '45vh', right: '-35px'}}/>
+              <Icon onClick={this.xemAnhTruoc} color='violet' name='angle double left' size='big' style={{position:'fixed', top: '45vh', left: '-35px'}}/>
+              <Icon onClick={this.xemAnhSau} color='violet' name='angle double right' size='big' style={{position:'fixed', top: '45vh', right: '-35px'}}/>
             </Modal>
 
             <Grid doubling columns={5} style={{margin:'10px', padding:'0'}}>
@@ -317,8 +363,8 @@ class Anh extends Component {
 
             <Modal basic open={modalOpen && (dangXemAnhGi===4)} onClose={this.closeModal} closeIcon>
               <Image src={anhs['pokemon'][xemAnhSoNay]} />   {/* Ở trong Modal thì hiện Image to này */ }
-              <Icon onClick={this.anhTruoc} color='violet' name='angle double left' size='big' style={{position:'fixed', top: '45vh', left: '-35px'}}/>
-              <Icon onClick={this.anhSau} color='violet' name='angle double right' size='big' style={{position:'fixed', top: '45vh', right: '-35px'}}/>
+              <Icon onClick={this.xemAnhTruoc} color='violet' name='angle double left' size='big' style={{position:'fixed', top: '45vh', left: '-35px'}}/>
+              <Icon onClick={this.xemAnhSau} color='violet' name='angle double right' size='big' style={{position:'fixed', top: '45vh', right: '-35px'}}/>
             </Modal>
 
             <Grid doubling columns={5} style={{margin:'10px', padding:'0'}}>
@@ -347,8 +393,8 @@ class Anh extends Component {
           <Accordion.Content active={dangXemAnhGi === 5}>
             <Modal basic open={modalOpen && (dangXemAnhGi===5)} onClose={this.closeModal} closeIcon>
               <Image src={anhs['evangelion'][xemAnhSoNay]} />   {/* Ở trong Modal thì hiện Image to này */ }
-              <Icon onClick={this.anhTruoc} color='violet' name='angle double left' size='big' style={{position:'fixed', top: '45vh', left: '-35px'}}/>
-              <Icon onClick={this.anhSau} color='violet' name='angle double right' size='big' style={{position:'fixed', top: '45vh', right: '-35px'}}/>
+              <Icon onClick={this.xemAnhTruoc} color='violet' name='angle double left' size='big' style={{position:'fixed', top: '45vh', left: '-35px'}}/>
+              <Icon onClick={this.xemAnhSau} color='violet' name='angle double right' size='big' style={{position:'fixed', top: '45vh', right: '-35px'}}/>
             </Modal>
 
 
@@ -379,8 +425,8 @@ class Anh extends Component {
             
             <Modal basic open={modalOpen && (dangXemAnhGi===6)} onClose={this.closeModal} closeIcon>
               <Image src={anhs['tron'][xemAnhSoNay]} />   {/* Ở trong Modal thì hiện Image to này */ }
-              <Icon onClick={this.anhTruoc} color='violet' name='angle double left' size='big' style={{position:'fixed', top: '45vh', left: '-35px'}}/>
-              <Icon onClick={this.anhSau} color='violet' name='angle double right' size='big' style={{position:'fixed', top: '45vh', right: '-35px'}}/>
+              <Icon onClick={this.xemAnhTruoc} color='violet' name='angle double left' size='big' style={{position:'fixed', top: '45vh', left: '-35px'}}/>
+              <Icon onClick={this.xemAnhSau} color='violet' name='angle double right' size='big' style={{position:'fixed', top: '45vh', right: '-35px'}}/>
             </Modal>
             <Grid doubling columns={5} style={{margin:'10px', padding:'0'}}>
               <Grid.Column>
@@ -400,35 +446,6 @@ class Anh extends Component {
               </Grid.Column>
             </Grid>
 
-            
-            {/* <Grid doubling columns={5}>
-              <Grid.Column>
-                <Modal basic trigger={<Image src={anhs['tron'][0]} size='small' />} closeIcon>
-                  <Image src={anhs['tron'][0]} />
-                </Modal>
-              </Grid.Column>
-              <Grid.Column>
-                <Modal basic trigger={<Image src={anhs['tron'][1]} size='small' />} closeIcon>
-                  <Image src={anhs['tron'][1]} />
-                </Modal>
-              </Grid.Column>
-              <Grid.Column>
-                <Modal basic trigger={<Image src={anhs['tron'][2]} size='small' />} closeIcon>
-                  <Image src={anhs['tron'][2]} />
-                </Modal>
-              </Grid.Column>
-              <Grid.Column>
-                <Modal basic trigger={<Image src={anhs['tron'][3]} size='small' />} closeIcon>
-                  <Image src={anhs['tron'][3] } />
-                </Modal>
-              </Grid.Column>
-              <Grid.Column>
-                <Modal basic trigger={<Image src={anhs['tron'][4]} size='small' />} closeIcon>
-                  <Image src={anhs['tron'][4]} />
-                </Modal>
-              </Grid.Column>
-            </Grid> */}
-
           </Accordion.Content>
           
           <Accordion.Title active={dangXemAnhGi === 7} index={7} onClick={this.handleClick}>
@@ -439,8 +456,8 @@ class Anh extends Component {
             {/* Modal là chỗ để hiện ảnh to */ }
             <Modal basic open={modalOpen && (dangXemAnhGi===7)} onClose={this.closeModal} closeIcon>
               <Image src={anhs['naruto'][xemAnhSoNay]} />   {/* Ở trong Modal thì hiện Image to này */ }
-              <Icon onClick={this.anhTruoc} color='violet' name='angle double left' size='big' style={{position:'fixed', top: '45vh', left: '-35px'}}/>
-              <Icon onClick={this.anhSau} color='violet' name='angle double right' size='big' style={{position:'fixed', top: '45vh', right: '-35px'}}/>
+              <Icon onClick={this.xemAnhTruoc} color='violet' name='angle double left' size='big' style={{position:'fixed', top: '45vh', left: '-35px'}}/>
+              <Icon onClick={this.xemAnhSau} color='violet' name='angle double right' size='big' style={{position:'fixed', top: '45vh', right: '-35px'}}/>
             </Modal>
             
             {/* Grid là chỗ để chứa 5 cái Column, mỗi Colum chứa 1 ảnh nhỏ */ }

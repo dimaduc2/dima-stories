@@ -13,10 +13,6 @@ import { Button, Icon, Menu } from 'semantic-ui-react';
 import ScrollableAnchor from 'react-scrollable-anchor';
 import { configureAnchors } from 'react-scrollable-anchor';	
 
-import * as Scroll from 'react-scroll';
-import { Link, Element , Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
-
-
 
 /*
 import from './truyen/.docx';
@@ -117,29 +113,7 @@ class App extends Component {
     this.hienVaGiauPhoneMenu()
   }
 
-  bamBanPhim = (event) => {
-    if (event.key === 'ArrowUp'){
-      this.lentrang();
-    }
-    else if (event.key === 'ArrowDown'){
-      this.xuongtrang();
-    }
-    else if (event.key === 'ArrowLeft'){
-      this.lentranghet();
-    }
-    else if (event.key === 'ArrowRight'){
-      this.xuongtranghet();
-    }
-    else if (event.key === 'p'){
-      this.xemtruoc();
-    
-    }
-    else if (event.key === 'n'){
-      this.xemtrangsau();
-    
-    }
-  }
-
+ 
  /*
   doc = () => {
     this.setState({truyen: , truyenPDF: PDF});
@@ -160,26 +134,14 @@ class App extends Component {
   doimau = () => {
     this.setState({white_or_black: !this.state.white_or_black});
   }
-  xuongtranghet = () => {
-    scroll.scrollToBottom();
-  }
-  xuongtrang = () => {
-    scroll.scrollMore(450);
-  }
-  lentrang = () => {
-    scroll.scrollMore(-450);
-  }
-  lentranghet = () => {
-    scroll.scrollToTop();
-  }
-
+ 
   
 // PHẦN 4: Trình bày trang Web, giống HTML
   render() {
     var {tenTruyenTrongDanhBa, tatCaTrang, kichCuocChu, kichCuocChuDocx, coChu, white_or_black, dangXemGi, 
         tenPhimTrongDanhBa, thuTuPhanDangXem, thuTuTapDangXem, hienMenu, chuHello} = this.state;
     return (
-      <div className="App" onKeyUp={this.bamBanPhim} tabIndex="0" style={{backgroundColor: (white_or_black ? 'black' : 'white')}}>
+      <div className="App" style={{backgroundColor: (white_or_black ? 'black' : 'white')}}>
         
         { chieuRongManHinh > 900
           ?	// nếu true thì hiện Menu Máy Tính
@@ -191,31 +153,6 @@ class App extends Component {
                             bamHome={this.bamHome} hienMenu={hienMenu} doimau={this.doimau} thayDoiCoChudocx={this.thayDoiCoChudocx} 
                             bamAnh={this.bamAnh} hienVaGiauPhoneMenu={this.hienVaGiauPhoneMenu}/>
         }
-
-        { chieuRongManHinh <= 900
-          /*neu trên đt thì ko hiện gì*/
-          ? null
-
-          /*neu trên mt thì hiện ra khi xem truyện*/
-          /*nếu đang xem truyện*/
-          : (dangXemGi === 'dangXemTruyen')
-            /* thì hiện ra menu lên xuống */
-            ? <Menu vertical fixed='right' icon style={{marginTop:'70vh', marginBottom:'5vh'}}>
-                <Menu.Item onClick={this.lentranghet}>
-                    <Icon name='angle double up' />
-                </Menu.Item>
-                <Menu.Item onClick={this.lentrang}>
-                    <Icon name='angle up' />
-                </Menu.Item>
-                <Menu.Item onClick={this.xuongtrang}>
-                    <Icon name='angle down' />
-                </Menu.Item>
-                <Menu.Item onClick={this.xuongtranghet}>
-                    <Icon name='angle double down' />
-                </Menu.Item>
-              </Menu>
-            : null
-        }
         
         {/* Vị trí này ở trên cùng của trang, khi Dima bấm lên thì sẽ lên đây*/}
         <ScrollableAnchor id={'oTrenTrang'}> 
@@ -223,7 +160,6 @@ class App extends Component {
         </ScrollableAnchor>
         <br/><br/><br/><br/><br/>
         
-
         {(chieuRongManHinh > 900) /*Kiểm tra là Máy Tính hay là Điện Thoại? */ 
 
           // Nếu True (chieuRongManHinh lớn hơn 900) thì đây là Máy Tính

@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 
 import MenuDieuKhien from './MenuDieuKhien'
 
+import { Menu, Icon } from 'semantic-ui-react'
+
 // PHẦN 1: IMPORT
 import FileViewer from 'react-file-viewer';
 
@@ -28,6 +30,11 @@ import OperationPreventingVaderDoc from './truyen/Operation Preventing Vader.doc
 import OperationPreventingVaderPDF from './truyen/Operation Preventing Vader.pdf';
 import InnocentDoc from './truyen/Innocent.docx';
 import InnocentPDF from './truyen/Innocent.pdf';
+
+
+import * as Scroll from 'react-scroll';
+import { Link, Element , Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
+
 
 import { Document, Page, pdfjs } from 'react-pdf';
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
@@ -116,13 +123,49 @@ xemTrangKhac = (e,{value}) => {
   this.setState({trang: value});
 }
 
+xuongtranghet = () => {
+  scroll.scrollToBottom();
+}
+xuongtrang = () => {
+  scroll.scrollMore(450);
+}
+lentrang = () => {
+  scroll.scrollMore(-450);
+}
+lentranghet = () => {
+  scroll.scrollToTop();
+}
+
+bamBanPhim = (event) => {
+  if (event.key === 'ArrowUp'){
+    this.lentrang();
+  }
+  else if (event.key === 'ArrowDown'){
+    this.xuongtrang();
+  }
+  else if (event.key === 'ArrowLeft'){
+    this.lentranghet();
+  }
+  else if (event.key === 'ArrowRight'){
+    this.xuongtranghet();
+  }
+  else if (event.key === 'p'){
+    this.xemtruoc();
+  
+  }
+  else if (event.key === 'n'){
+    this.xemtrangsau();  
+  }
+}
+
+
 // PHẦN 4: Trình bày trang Web, giống HTML
   render() {
     var {tongSoTrang, trang, arrayTatCaTrang} = this.state;
     var {docx_or_pdf, kichCuocChuDocx, white_or_black, chieuRongManHinh, tenTruyenTrongDanhBa, kichCuocChu, dangXemGi, 
           hienVaGiauPhoneMenu } = this.props;
     return (
-      <div className="Truyen">
+      <div className="Truyen" onKeyUp={this.bamBanPhim} tabIndex="0" >
 
 
         {docx_or_pdf
@@ -158,6 +201,26 @@ xemTrangKhac = (e,{value}) => {
                        xemSau={this.xemTrangSau} xemKhac={this.xemTrangKhac} hienVaGiauPhoneMenu={hienVaGiauPhoneMenu}/>
         }
 
+        { chieuRongManHinh <= 900
+          /*neu trên đt thì ko hiện gì*/
+          ? null
+
+          /*neu trên may tinh thì hiện ra khi xem truyện*/
+          : <Menu vertical fixed='right' icon style={{marginTop:'70vh', marginBottom:'5vh'}}>
+              <Menu.Item onClick={this.lentranghet}>
+                  <Icon name='angle double up' />
+              </Menu.Item>
+              <Menu.Item onClick={this.lentrang}>
+                  <Icon name='angle up' />
+              </Menu.Item>
+              <Menu.Item onClick={this.xuongtrang}>
+                  <Icon name='angle down' />
+              </Menu.Item>
+              <Menu.Item onClick={this.xuongtranghet}>
+                  <Icon name='angle double down' />
+              </Menu.Item>
+            </Menu>
+        }
         
         </div>
     )

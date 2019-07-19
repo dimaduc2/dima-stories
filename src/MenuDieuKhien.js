@@ -144,7 +144,7 @@ class MenuDieuKhien extends Component {
                   <input
                     type='range'
                     min='-1'
-                    max='6'
+                    max='7'
                     value={dangXemAnhGi}
                     onChange={thanhDieuKhienAnh}
                   />
