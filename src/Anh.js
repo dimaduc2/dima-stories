@@ -65,169 +65,169 @@ const anhs = {
     },
     {
       anh: Obi_Wan_Siri,
-      ten: '',
+      ten: 'Obi-Wan wite lightsaber blue and Siri wite lightsaber purple',
     },
     {
       anh: Vader_Luke_Leia,
-      ten: '',
+      ten: 'Darth Vader help Luke and Leia out danger',
     },
     {
       anh: skywalkers_family,
-      ten: '',
+      ten: 'Anakin family (Anakin and padme sit look leia play Ahsoka and Obi-Wan let Luke see force let toy fly)',
     },
   ],
   'batman' : [
     {
       anh: batman_arkham_knight_demon,
-      ten: '',
+      ten: 'Batman Arkham Knight Demon',
     },
     {
       anh: Azrael_Batman,
-      ten: '',
+      ten: 'Azrael Batman future',
     },
     {
       anh: BatmanFamily,
-      ten: '',
+      ten: 'Batman Family',
     },
     {
       anh: batman_the_ages,
-      ten: '',
+      ten: 'Batman the Ages',
     },
     {
       anh: TRINITY,
-      ten: '',
+      ten: 'TRINITY (Superman & Wonder Woman & Batman)',
     },
   ],
   'spiderman' : [
     {
       anh: Iron_Spider_Man_suit_by_nanotechnology,
-      ten: '',
+      ten: 'Iron Spider-Man suit by Nanotechnology',
     },
     {
       anh: Spider_Man_Vibranium,
-      ten: '',
+      ten: 'Spider-Man Vibranium',
     },
     {
       anh: Scream_x_Spider_man,
-      ten: '',
+      ten: 'Scream love Spider-Man',
     },
     {
       anh: Ultimate_Symbiote,
-      ten: '',
+      ten: 'Ultimate Symbiote (Spoder-Man have 2 Symbiote is Venom and Carnage)',
     },
     {
       anh: VenomPeter_and_ToxinEddie,
-      ten: '',
+      ten: 'Venom (Peter) and Toxin (Eddie) fighting',
     },
   ],
   'gantz' : [
     {
       anh: kurono_help_tae,
-      ten: '',
+      ten: 'Kurono help Tae with gun',
     },
     {
       anh: kuronotwo_and_reika,
-      ten: '',
+      ten: 'kuronotwo and reika in love',
     },
     {
       anh: Kurono_X_Tae,
-      ten: '',
+      ten: 'Kurono help Tae with swork',
     },
     {
       anh: Kei_going_dead_in_metro,
-      ten: '',
+      ten: 'Kei going dead in metro (Gant in Anime ep26)',
     },
     {
       anh: armor_super_suit,
-      ten: '',
+      ten: 'Gantz armor',
     },
   ],
   'pokemon' : [
     {
       anh: Ash_harem,
-      ten: '',
+      ten: 'Ash harem',
     },
     {
       anh: Ash_evil_Hoopa,
-      ten: '',
+      ten: 'Ash evil Hoopa (Dark Hoopa in Ash body)',
     },
     {
       anh: Gardevoir_love_Ash,
-      ten: '',
+      ten: 'Ash Vampire kill hypno perfect and Gardevoir love Ash',
     },
     {
-      anh: ash_and_misty_team_rocket, 
-      ten: '',
+      anh: ash_and_misty_team_rocket,
+      ten: 'Ash and Misty is Team Rocket',
     },
     {
       anh: ash_aura,
-      ten: '',
+      ten: 'Ash aura awake',
     },
   ],
   'evangelion' : [
     {
       anh: anglel_6_wing,
-      ten: '',
+      ten: 'Anglel 6 wing',
     },
     {
       anh: Unit_01_Adam,
-      ten: '',
+      ten: 'Unit 01 Adam (wing in movie Neon Genesis Evangelion: The End of Evangelion (1997) + red eye and red ring in head in movie Evangelion: 2.0 You Can (Not) Advance))',
     },
     {
       anh: people_drive_robot,
-      ten: '',
+      ten: 'people drive robot (06 (04) vs 03 vs 01 vs 00 vs 02 vs 05)',
     },
     {
       anh: angel_red_eye,
-      ten: '',
+      ten: 'Angel red eye',
     },
     {
       anh: angel  ,
-      ten: '',
+      ten: 'Angel (Evangelion)',
     },  
   ],
   'tron' : [
     {
       anh: tron_and_rinzler_like_brother,
-      ten: '',
+      ten: 'Tron and Rinzler like brother',
     },
     {
       anh: beck_and_paige_in_the_human_world,
-      ten: '',
+      ten: 'Beck and Paige in the human world',
     },
     {
       anh: Tron_back_from_Rinzler_in_water,
-      ten: '',
+      ten: 'Tron back from Rinzler dead in water',
     },
     {
       anh: tron_like_rinzler_vs_beck_like_tron_vs_paige,
-      ten: '',
+      ten: 'Tron like Rinzler Iso vs Beck like Tron vs Paige kill Firewall',
     },
     {
       anh: Tron_Rinzler,
-      ten: '',
+      ten: 'Tron Rinzler',
     },
   ],
   'naruto' :[
     {
       anh: team_7_akatsuki,
-      ten: '',
+      ten: 'Team_7 Akatsuki',
     },
     {
       anh: naruto_hinata_halo,
-      ten: '',
+      ten: 'Naruto & Hinata Halo',
     },
     {
       anh: Naruto_Hunter_Nin,
-      ten: '',
+      ten: 'Naruto Hunter Nin (when Naruto banished by Konoha)',
     },
     {
       anh: naruto_sharingan_rinnegan,
-      ten: '',
+      ten: 'Naruto Bijuu Sharingan Rinnegan',
     },
     {
       anh: naruto_juubi,
-      ten: '',
+      ten: 'EYES, BODY AND CHAKRA OF THE JUUBI',
     },
   ]
 }
