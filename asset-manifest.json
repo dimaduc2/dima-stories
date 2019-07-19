@@ -1,10 +1,10 @@
 {
-  "main.css": "/dima-stories/static/css/main.d35f6409.chunk.css",
-  "main.js": "/dima-stories/static/js/main.77e4e72a.chunk.js",
-  "main.js.map": "/dima-stories/static/js/main.77e4e72a.chunk.js.map",
+  "main.css": "/dima-stories/static/css/main.ed15fc61.chunk.css",
+  "main.js": "/dima-stories/static/js/main.2c18df56.chunk.js",
+  "main.js.map": "/dima-stories/static/js/main.2c18df56.chunk.js.map",
   "static/css/1.74083ecb.chunk.css": "/dima-stories/static/css/1.74083ecb.chunk.css",
-  "static/js/1.52a4480d.chunk.js": "/dima-stories/static/js/1.52a4480d.chunk.js",
-  "static/js/1.52a4480d.chunk.js.map": "/dima-stories/static/js/1.52a4480d.chunk.js.map",
+  "static/js/1.a71b1a6a.chunk.js": "/dima-stories/static/js/1.a71b1a6a.chunk.js",
+  "static/js/1.a71b1a6a.chunk.js.map": "/dima-stories/static/js/1.a71b1a6a.chunk.js.map",
   "runtime~main.js": "/dima-stories/static/js/runtime~main.26071fd9.js",
   "runtime~main.js.map": "/dima-stories/static/js/runtime~main.26071fd9.js.map",
   "static/media/Changing the Future.docx": "/dima-stories/static/media/Changing the Future.cee9650a.docx",
@@ -72,9 +72,9 @@
   "static/media/Innocent.docx": "/dima-stories/static/media/Innocent.540b581d.docx",
   "static/media/Innocent.pdf": "/dima-stories/static/media/Innocent.2c8e5418.pdf",
   "static/media/semantic.min.css": "/dima-stories/static/media/brand-icons.a1a749e8.svg",
-  "static/css/main.d35f6409.chunk.css.map": "/dima-stories/static/css/main.d35f6409.chunk.css.map",
+  "static/css/main.ed15fc61.chunk.css.map": "/dima-stories/static/css/main.ed15fc61.chunk.css.map",
   "static/css/1.74083ecb.chunk.css.map": "/dima-stories/static/css/1.74083ecb.chunk.css.map",
   "index.html": "/dima-stories/index.html",
-  "precache-manifest.c943db1437c250d85716f86e3c910989.js": "/dima-stories/precache-manifest.c943db1437c250d85716f86e3c910989.js",
+  "precache-manifest.6596ea75e4f8e092a5eeb1f8cf04a5b4.js": "/dima-stories/precache-manifest.6596ea75e4f8e092a5eeb1f8cf04a5b4.js",
   "service-worker.js": "/dima-stories/service-worker.js"
 }
