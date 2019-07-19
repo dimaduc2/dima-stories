@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/dima-stories/precache-manifest.6596ea75e4f8e092a5eeb1f8cf04a5b4.js"
+  "/dima-stories/precache-manifest.aa9ac9a7e52198e29dcaccbdf1812c73.js"
 );
 
 workbox.clientsClaim();
