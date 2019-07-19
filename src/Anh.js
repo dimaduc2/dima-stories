@@ -55,60 +55,180 @@ import naruto_juubi from './anh/naruto_eyes__body_and_chakra_of_the_juubi.jpg';
 //Danh ba tat ca Anh
 const anhs = {
   'starwars' : [
-    gray_jedi_revan,
-    Anakin_and_Padme_Jedi,
-    Obi_Wan_Siri,
-    Vader_Luke_Leia,
-    skywalkers_family
+    {
+      anh: gray_jedi_revan,
+      ten: 'Darth Revan', 
+    },
+    {
+      anh: Anakin_and_Padme_Jedi,
+      ten: 'Anakin & Padme Jedi',
+    },
+    {
+      anh: Obi_Wan_Siri,
+      ten: '',
+    },
+    {
+      anh: Vader_Luke_Leia,
+      ten: '',
+    },
+    {
+      anh: skywalkers_family,
+      ten: '',
+    },
   ],
   'batman' : [
-    batman_arkham_knight_demon,
-    Azrael_Batman,
-    BatmanFamily,
-    batman_the_ages,
-    TRINITY
+    {
+      anh: batman_arkham_knight_demon,
+      ten: '',
+    },
+    {
+      anh: Azrael_Batman,
+      ten: '',
+    },
+    {
+      anh: BatmanFamily,
+      ten: '',
+    },
+    {
+      anh: batman_the_ages,
+      ten: '',
+    },
+    {
+      anh: TRINITY,
+      ten: '',
+    },
   ],
   'spiderman' : [
-    Iron_Spider_Man_suit_by_nanotechnology,
-    Spider_Man_Vibranium,
-    Scream_x_Spider_man,
-    Ultimate_Symbiote,
-    VenomPeter_and_ToxinEddie
+    {
+      anh: Iron_Spider_Man_suit_by_nanotechnology,
+      ten: '',
+    },
+    {
+      anh: Spider_Man_Vibranium,
+      ten: '',
+    },
+    {
+      anh: Scream_x_Spider_man,
+      ten: '',
+    },
+    {
+      anh: Ultimate_Symbiote,
+      ten: '',
+    },
+    {
+      anh: VenomPeter_and_ToxinEddie,
+      ten: '',
+    },
   ],
   'gantz' : [
-    kurono_help_tae, 
-    kuronotwo_and_reika, 
-    Kurono_X_Tae, 
-    Kei_going_dead_in_metro, 
-    armor_super_suit
+    {
+      anh: kurono_help_tae,
+      ten: '',
+    },
+    {
+      anh: kuronotwo_and_reika,
+      ten: '',
+    },
+    {
+      anh: Kurono_X_Tae,
+      ten: '',
+    },
+    {
+      anh: Kei_going_dead_in_metro,
+      ten: '',
+    },
+    {
+      anh: armor_super_suit,
+      ten: '',
+    },
   ],
   'pokemon' : [
-    Ash_harem, 
-    Ash_evil_Hoopa, 
-    Gardevoir_love_Ash, 
-    ash_and_misty_team_rocket, 
-    ash_aura
+    {
+      anh: Ash_harem,
+      ten: '',
+    },
+    {
+      anh: Ash_evil_Hoopa,
+      ten: '',
+    },
+    {
+      anh: Gardevoir_love_Ash,
+      ten: '',
+    },
+    {
+      anh: ash_and_misty_team_rocket, 
+      ten: '',
+    },
+    {
+      anh: ash_aura,
+      ten: '',
+    },
   ],
   'evangelion' : [
-    anglel_6_wing,
-    Unit_01_Adam,
-    people_drive_robot,
-    angel_red_eye,
-    angel    
+    {
+      anh: anglel_6_wing,
+      ten: '',
+    },
+    {
+      anh: Unit_01_Adam,
+      ten: '',
+    },
+    {
+      anh: people_drive_robot,
+      ten: '',
+    },
+    {
+      anh: angel_red_eye,
+      ten: '',
+    },
+    {
+      anh: angel  ,
+      ten: '',
+    },  
   ],
   'tron' : [
-    tron_and_rinzler_like_brother,
-    beck_and_paige_in_the_human_world,
-    Tron_back_from_Rinzler_in_water,
-    tron_like_rinzler_vs_beck_like_tron_vs_paige,
-    Tron_Rinzler
+    {
+      anh: tron_and_rinzler_like_brother,
+      ten: '',
+    },
+    {
+      anh: beck_and_paige_in_the_human_world,
+      ten: '',
+    },
+    {
+      anh: Tron_back_from_Rinzler_in_water,
+      ten: '',
+    },
+    {
+      anh: tron_like_rinzler_vs_beck_like_tron_vs_paige,
+      ten: '',
+    },
+    {
+      anh: Tron_Rinzler,
+      ten: '',
+    },
   ],
   'naruto' :[
-    team_7_akatsuki,
-    naruto_hinata_halo,
-    Naruto_Hunter_Nin,
-    naruto_sharingan_rinnegan,
-    naruto_juubi
+    {
+      anh: team_7_akatsuki,
+      ten: '',
+    },
+    {
+      anh: naruto_hinata_halo,
+      ten: '',
+    },
+    {
+      anh: Naruto_Hunter_Nin,
+      ten: '',
+    },
+    {
+      anh: naruto_sharingan_rinnegan,
+      ten: '',
+    },
+    {
+      anh: naruto_juubi,
+      ten: '',
+    },
   ]
 }
 
@@ -234,7 +354,7 @@ class Anh extends Component {
 
             {/* Modal là chỗ để hiện ảnh to */ }
             <Modal basic open={modalOpen && (dangXemAnhGi===0)} onClose={this.closeModal} closeIcon>
-              <Image src={anhs['starwars'][xemAnhSoNay]} />   {/* Ở trong Modal thì hiện Image to này */ }
+              <Image src={anhs['starwars'][xemAnhSoNay].anh} />   {/* Ở trong Modal thì hiện Image to này */ }
               <Icon onClick={this.xemAnhTruoc} color='violet' name='angle double left' size='big' style={{position:'fixed', top: '45vh', left: '-35px'}}/>
               <Icon onClick={this.xemAnhSau} color='violet' name='angle double right' size='big' style={{position:'fixed', top: '45vh', right: '-35px'}}/>
             </Modal>
@@ -242,19 +362,24 @@ class Anh extends Component {
             {/* Grid là chỗ để chứa 5 cái Column, mỗi Colum chứa 1 ảnh nhỏ */ }
             <Grid doubling columns={5} style={{margin:'10px', padding:'0'}}>
               <Grid.Column>
-                <Image src={anhs['starwars'][0]} size='small' onClick={() => this.openBigImage(0)}/>
+                <Image src={anhs['starwars'][0].anh} size='small' onClick={() => this.openBigImage(0)}/>
+                <p>{anhs['starwars'][0].ten}</p>
                </Grid.Column>
               <Grid.Column>
-                <Image src={anhs['starwars'][1]} size='small' onClick={() => this.openBigImage(1)}/>
+                <Image src={anhs['starwars'][1].anh} size='small' onClick={() => this.openBigImage(1)}/>
+                <p>{anhs['starwars'][1].ten}</p>
               </Grid.Column>
               <Grid.Column>
-                <Image src={anhs['starwars'][2]} size='small' onClick={() => this.openBigImage(2)}/>
+                <Image src={anhs['starwars'][2].anh} size='small' onClick={() => this.openBigImage(2)}/>
+                <p>{anhs['starwars'][2].ten}</p>
               </Grid.Column>
               <Grid.Column>
-                <Image src={anhs['starwars'][3]} size='small' onClick={() => this.openBigImage(3)}/>
+                <Image src={anhs['starwars'][3].anh} size='small' onClick={() => this.openBigImage(3)}/>
+                <p>{anhs['starwars'][3].ten}</p>
               </Grid.Column>
               <Grid.Column>
-                <Image src={anhs['starwars'][4]} size='small' onClick={() => this.openBigImage(4)}/>
+                <Image src={anhs['starwars'][4].anh} size='small' onClick={() => this.openBigImage(4)}/>
+                <p>{anhs['starwars'][4].ten}</p>
               </Grid.Column>
             </Grid>
 
@@ -267,7 +392,7 @@ class Anh extends Component {
           <Accordion.Content active={dangXemAnhGi === 1}>
 
             <Modal basic open={modalOpen && (dangXemAnhGi===1)} onClose={this.closeModal} closeIcon>
-              <Image src={anhs['batman'][xemAnhSoNay]} />   {/* Ở trong Modal thì hiện Image to này */ }
+              <Image src={anhs['batman'][xemAnhSoNay].anh} />   {/* Ở trong Modal thì hiện Image to này */ }
               <Icon onClick={this.xemAnhTruoc} color='violet' name='angle double left' size='big' 
                     style={{position:'fixed', top: '45vh', left: '-35px'}}/>
               <Icon onClick={this.xemAnhSau} color='violet' name='angle double right' size='big' 
@@ -276,19 +401,24 @@ class Anh extends Component {
 
             <Grid doubling columns={5} style={{margin:'10px', padding:'0'}}>
               <Grid.Column>
-                <Image src={anhs['batman'][0]} size='small' onClick={() => this.openBigImage(0)}/>
+                <Image src={anhs['batman'][0].anh} size='small' onClick={() => this.openBigImage(0)}/>
+                <p>{anhs['batman'][0].ten}</p>
                </Grid.Column>
               <Grid.Column>
-                <Image src={anhs['batman'][1]} size='small' onClick={() => this.openBigImage(1)}/>
+                <Image src={anhs['batman'][1].anh} size='small' onClick={() => this.openBigImage(1)}/>
+                <p>{anhs['batman'][1].ten}</p>
               </Grid.Column>
               <Grid.Column>
-                <Image src={anhs['batman'][2]} size='small' onClick={() => this.openBigImage(2)}/>
+                <Image src={anhs['batman'][2].anh} size='small' onClick={() => this.openBigImage(2)}/>
+                <p>{anhs['batman'][2].ten}</p>
               </Grid.Column>
               <Grid.Column>
-                <Image src={anhs['batman'][3]} size='small' onClick={() => this.openBigImage(3)}/>
+                <Image src={anhs['batman'][3].anh} size='small' onClick={() => this.openBigImage(3)}/>
+                <p>{anhs['batman'][3].ten}</p>
               </Grid.Column>
               <Grid.Column>
-                <Image src={anhs['batman'][4]} size='small' onClick={() => this.openBigImage(4)}/>
+                <Image src={anhs['batman'][4].anh} size='small' onClick={() => this.openBigImage(4)}/>
+                <p>{anhs['batman'][4].ten}</p>
               </Grid.Column>
             </Grid>
 
@@ -300,26 +430,31 @@ class Anh extends Component {
           <Accordion.Content active={dangXemAnhGi === 2}>
 
             <Modal basic open={modalOpen && (dangXemAnhGi===2)} onClose={this.closeModal} closeIcon>
-              <Image src={anhs['spiderman'][xemAnhSoNay]} />   {/* Ở trong Modal thì hiện Image to này */ }
+              <Image src={anhs['spiderman'][xemAnhSoNay].anh} />   {/* Ở trong Modal thì hiện Image to này */ }
               <Icon onClick={this.xemAnhTruoc} color='violet' name='angle double left' size='big' style={{position:'fixed', top: '45vh', left: '-35px'}}/>
               <Icon onClick={this.xemAnhSau} color='violet' name='angle double right' size='big' style={{position:'fixed', top: '45vh', right: '-35px'}}/>
             </Modal>
 
             <Grid doubling columns={5} style={{margin:'10px', padding:'0'}}>
               <Grid.Column>
-                <Image src={anhs['spiderman'][0]} size='small' onClick={() => this.openBigImage(0)}/>
+                <Image src={anhs['spiderman'][0].anh} size='small' onClick={() => this.openBigImage(0)}/>
+                <p>{anhs['spiderman'][0].ten}</p>
                </Grid.Column>
               <Grid.Column>
-                <Image src={anhs['spiderman'][1]} size='small' onClick={() => this.openBigImage(1)}/>
+                <Image src={anhs['spiderman'][1].anh} size='small' onClick={() => this.openBigImage(1)}/>
+                <p>{anhs['spiderman'][1].ten}</p>
               </Grid.Column>
               <Grid.Column>
-                <Image src={anhs['spiderman'][2]} size='small' onClick={() => this.openBigImage(2)}/>
+                <Image src={anhs['spiderman'][2].anh} size='small' onClick={() => this.openBigImage(2)}/>
+                <p>{anhs['spiderman'][2].ten}</p>
               </Grid.Column>
               <Grid.Column>
-                <Image src={anhs['spiderman'][3]} size='small' onClick={() => this.openBigImage(3)}/>
+                <Image src={anhs['spiderman'][3].anh} size='small' onClick={() => this.openBigImage(3)}/>
+                <p>{anhs['spiderman'][3].ten}</p>
               </Grid.Column>
               <Grid.Column>
-                <Image src={anhs['spiderman'][4]} size='small' onClick={() => this.openBigImage(4)}/>
+                <Image src={anhs['spiderman'][4].anh} size='small' onClick={() => this.openBigImage(4)}/>
+                <p>{anhs['spiderman'][4].ten}</p>
               </Grid.Column>
             </Grid>
 
@@ -331,26 +466,31 @@ class Anh extends Component {
           <Accordion.Content active={dangXemAnhGi === 3}>
 
             <Modal basic open={modalOpen && (dangXemAnhGi===3)} onClose={this.closeModal} closeIcon>
-              <Image src={anhs['gantz'][xemAnhSoNay]} />   {/* Ở trong Modal thì hiện Image to này */ }
+              <Image src={anhs['gantz'][xemAnhSoNay].anh} />   {/* Ở trong Modal thì hiện Image to này */ }
               <Icon onClick={this.xemAnhTruoc} color='violet' name='angle double left' size='big' style={{position:'fixed', top: '45vh', left: '-35px'}}/>
               <Icon onClick={this.xemAnhSau} color='violet' name='angle double right' size='big' style={{position:'fixed', top: '45vh', right: '-35px'}}/>
             </Modal>
 
             <Grid doubling columns={5} style={{margin:'10px', padding:'0'}}>
               <Grid.Column>
-                <Image src={anhs['gantz'][0]} size='small' onClick={() => this.openBigImage(0)}/>
+                <Image src={anhs['gantz'][0].anh} size='small' onClick={() => this.openBigImage(0)}/>
+                <p>{anhs['gantz'][0].ten}</p>
                </Grid.Column>
               <Grid.Column>
-                <Image src={anhs['gantz'][1]} size='small' onClick={() => this.openBigImage(1)}/>
+                <Image src={anhs['gantz'][1].anh} size='small' onClick={() => this.openBigImage(1)}/>
+                <p>{anhs['gantz'][1].ten}</p>
               </Grid.Column>
               <Grid.Column>
-                <Image src={anhs['gantz'][2]} size='small' onClick={() => this.openBigImage(2)}/>
+                <Image src={anhs['gantz'][2].anh} size='small' onClick={() => this.openBigImage(2)}/>
+                <p>{anhs['gantz'][2].ten}</p>
               </Grid.Column>
               <Grid.Column>
-                <Image src={anhs['gantz'][3]} size='small' onClick={() => this.openBigImage(3)}/>
+                <Image src={anhs['gantz'][3].anh} size='small' onClick={() => this.openBigImage(3)}/>
+                <p>{anhs['gantz'][3].ten}</p>
               </Grid.Column>
               <Grid.Column>
-                <Image src={anhs['gantz'][4]} size='small' onClick={() => this.openBigImage(4)}/>
+                <Image src={anhs['gantz'][4].anh} size='small' onClick={() => this.openBigImage(4)}/>
+                <p>{anhs['gantz'][4].ten}</p>
               </Grid.Column>
             </Grid>
 
@@ -362,26 +502,31 @@ class Anh extends Component {
           <Accordion.Content active={dangXemAnhGi === 4}>
 
             <Modal basic open={modalOpen && (dangXemAnhGi===4)} onClose={this.closeModal} closeIcon>
-              <Image src={anhs['pokemon'][xemAnhSoNay]} />   {/* Ở trong Modal thì hiện Image to này */ }
+              <Image src={anhs['pokemon'][xemAnhSoNay].anh} />   {/* Ở trong Modal thì hiện Image to này */ }
               <Icon onClick={this.xemAnhTruoc} color='violet' name='angle double left' size='big' style={{position:'fixed', top: '45vh', left: '-35px'}}/>
               <Icon onClick={this.xemAnhSau} color='violet' name='angle double right' size='big' style={{position:'fixed', top: '45vh', right: '-35px'}}/>
             </Modal>
 
             <Grid doubling columns={5} style={{margin:'10px', padding:'0'}}>
               <Grid.Column>
-                <Image src={anhs['pokemon'][0]} size='small' onClick={() => this.openBigImage(0)}/>
+                <Image src={anhs['pokemon'][0].anh} size='small' onClick={() => this.openBigImage(0)}/>
+                <p>{anhs['pokemon'][0].ten}</p>
                </Grid.Column>
               <Grid.Column>
-                <Image src={anhs['pokemon'][1]} size='small' onClick={() => this.openBigImage(1)}/>
+                <Image src={anhs['pokemon'][1].anh} size='small' onClick={() => this.openBigImage(1)}/>
+                <p>{anhs['pokemon'][1].ten}</p>
               </Grid.Column>
               <Grid.Column>
-                <Image src={anhs['pokemon'][2]} size='small' onClick={() => this.openBigImage(2)}/>
+                <Image src={anhs['pokemon'][2].anh} size='small' onClick={() => this.openBigImage(2)}/>
+                <p>{anhs['pokemon'][2].ten}</p>
               </Grid.Column>
               <Grid.Column>
-                <Image src={anhs['pokemon'][3]} size='small' onClick={() => this.openBigImage(3)}/>
+                <Image src={anhs['pokemon'][3].anh} size='small' onClick={() => this.openBigImage(3)}/>
+                <p>{anhs['pokemon'][3].ten}</p>
               </Grid.Column>
               <Grid.Column>
-                <Image src={anhs['pokemon'][4]} size='small' onClick={() => this.openBigImage(4)}/>
+                <Image src={anhs['pokemon'][4].anh} size='small' onClick={() => this.openBigImage(4)}/>
+                <p>{anhs['pokemon'][4].ten}</p>
               </Grid.Column>
             </Grid>
 
@@ -392,7 +537,7 @@ class Anh extends Component {
           </Accordion.Title>
           <Accordion.Content active={dangXemAnhGi === 5}>
             <Modal basic open={modalOpen && (dangXemAnhGi===5)} onClose={this.closeModal} closeIcon>
-              <Image src={anhs['evangelion'][xemAnhSoNay]} />   {/* Ở trong Modal thì hiện Image to này */ }
+              <Image src={anhs['evangelion'][xemAnhSoNay].anh} />   {/* Ở trong Modal thì hiện Image to này */ }
               <Icon onClick={this.xemAnhTruoc} color='violet' name='angle double left' size='big' style={{position:'fixed', top: '45vh', left: '-35px'}}/>
               <Icon onClick={this.xemAnhSau} color='violet' name='angle double right' size='big' style={{position:'fixed', top: '45vh', right: '-35px'}}/>
             </Modal>
@@ -400,19 +545,24 @@ class Anh extends Component {
 
             <Grid doubling columns={5} style={{margin:'10px', padding:'0'}}>
               <Grid.Column>
-                <Image src={anhs['evangelion'][0]} size='small' onClick={() => this.openBigImage(0)}/>
+                <Image src={anhs['evangelion'][0].anh} size='small' onClick={() => this.openBigImage(0)}/>
+                <p>{anhs['evangelion'][0].ten}</p>
                </Grid.Column>
               <Grid.Column>
-                <Image src={anhs['evangelion'][1]} size='small' onClick={() => this.openBigImage(1)}/>
+                <Image src={anhs['evangelion'][1].anh} size='small' onClick={() => this.openBigImage(1)}/>
+                <p>{anhs['evangelion'][1].ten}</p>
               </Grid.Column>
               <Grid.Column>
-                <Image src={anhs['evangelion'][2]} size='small' onClick={() => this.openBigImage(2)}/>
+                <Image src={anhs['evangelion'][2].anh} size='small' onClick={() => this.openBigImage(2)}/>
+                <p>{anhs['evangelion'][2].ten}</p>
               </Grid.Column>
               <Grid.Column>
-                <Image src={anhs['evangelion'][3]} size='small' onClick={() => this.openBigImage(3)}/>
+                <Image src={anhs['evangelion'][3].anh} size='small' onClick={() => this.openBigImage(3)}/>
+                <p>{anhs['evangelion'][3].ten}</p>
               </Grid.Column>
               <Grid.Column>
-                <Image src={anhs['evangelion'][4]} size='small' onClick={() => this.openBigImage(4)}/>
+                <Image src={anhs['evangelion'][4].anh} size='small' onClick={() => this.openBigImage(4)}/>
+                <p>{anhs['evangelion'][4].ten}</p>
               </Grid.Column>
             </Grid>
           
@@ -424,25 +574,30 @@ class Anh extends Component {
           <Accordion.Content active={dangXemAnhGi === 6}>
             
             <Modal basic open={modalOpen && (dangXemAnhGi===6)} onClose={this.closeModal} closeIcon>
-              <Image src={anhs['tron'][xemAnhSoNay]} />   {/* Ở trong Modal thì hiện Image to này */ }
+              <Image src={anhs['tron'][xemAnhSoNay].anh} />   {/* Ở trong Modal thì hiện Image to này */ }
               <Icon onClick={this.xemAnhTruoc} color='violet' name='angle double left' size='big' style={{position:'fixed', top: '45vh', left: '-35px'}}/>
               <Icon onClick={this.xemAnhSau} color='violet' name='angle double right' size='big' style={{position:'fixed', top: '45vh', right: '-35px'}}/>
             </Modal>
             <Grid doubling columns={5} style={{margin:'10px', padding:'0'}}>
               <Grid.Column>
-                <Image src={anhs['tron'][0]} size='small' onClick={() => this.openBigImage(0)}/>
+                <Image src={anhs['tron'][0].anh} size='small' onClick={() => this.openBigImage(0)}/>
+                <p>{anhs['tron'][0].ten}</p>
                </Grid.Column>
               <Grid.Column>
-                <Image src={anhs['tron'][1]} size='small' onClick={() => this.openBigImage(1)}/>
+                <Image src={anhs['tron'][1].anh} size='small' onClick={() => this.openBigImage(1)}/>
+                <p>{anhs['tron'][1].ten}</p>
               </Grid.Column>
               <Grid.Column>
-                <Image src={anhs['tron'][2]} size='small' onClick={() => this.openBigImage(2)}/>
+                <Image src={anhs['tron'][2].anh} size='small' onClick={() => this.openBigImage(2)}/>
+                <p>{anhs['tron'][2].ten}</p>
               </Grid.Column>
               <Grid.Column>
-                <Image src={anhs['tron'][3]} size='small' onClick={() => this.openBigImage(3)}/>
+                <Image src={anhs['tron'][3].anh} size='small' onClick={() => this.openBigImage(3)}/>
+                <p>{anhs['tron'][3].ten}</p>
               </Grid.Column>
               <Grid.Column>
-                <Image src={anhs['tron'][4]} size='small' onClick={() => this.openBigImage(4)}/>
+                <Image src={anhs['tron'][4].anh} size='small' onClick={() => this.openBigImage(4)}/>
+                <p>{anhs['tron'][4].ten}</p>
               </Grid.Column>
             </Grid>
 
@@ -455,7 +610,7 @@ class Anh extends Component {
 
             {/* Modal là chỗ để hiện ảnh to */ }
             <Modal basic open={modalOpen && (dangXemAnhGi===7)} onClose={this.closeModal} closeIcon>
-              <Image src={anhs['naruto'][xemAnhSoNay]} />   {/* Ở trong Modal thì hiện Image to này */ }
+              <Image src={anhs['naruto'][xemAnhSoNay].anh} />   {/* Ở trong Modal thì hiện Image to này */ }
               <Icon onClick={this.xemAnhTruoc} color='violet' name='angle double left' size='big' style={{position:'fixed', top: '45vh', left: '-35px'}}/>
               <Icon onClick={this.xemAnhSau} color='violet' name='angle double right' size='big' style={{position:'fixed', top: '45vh', right: '-35px'}}/>
             </Modal>
@@ -463,19 +618,24 @@ class Anh extends Component {
             {/* Grid là chỗ để chứa 5 cái Column, mỗi Colum chứa 1 ảnh nhỏ */ }
             <Grid doubling columns={5} style={{margin:'10px', padding:'0'}}>
               <Grid.Column>
-                <Image src={anhs['naruto'][0]} size='small' onClick={() => this.openBigImage(0)}/>
+                <Image src={anhs['naruto'][0].anh} size='small' onClick={() => this.openBigImage(0)}/>
+                <p>{anhs['naruto'][0].ten}</p>
                </Grid.Column>
               <Grid.Column>
-                <Image src={anhs['naruto'][1]} size='small' onClick={() => this.openBigImage(1)}/>
+                <Image src={anhs['naruto'][1].anh} size='small' onClick={() => this.openBigImage(1)}/>
+                <p>{anhs['naruto'][1].ten}</p>
               </Grid.Column>
               <Grid.Column>
-                <Image src={anhs['naruto'][2]} size='small' onClick={() => this.openBigImage(2)}/>
+                <Image src={anhs['naruto'][2].anh} size='small' onClick={() => this.openBigImage(2)}/>
+                <p>{anhs['naruto'][2].ten}</p>
               </Grid.Column>
               <Grid.Column>
-                <Image src={anhs['naruto'][3]} size='small' onClick={() => this.openBigImage(3)}/>
+                <Image src={anhs['naruto'][3].anh} size='small' onClick={() => this.openBigImage(3)}/>
+                <p>{anhs['naruto'][3].ten}</p>
               </Grid.Column>
               <Grid.Column>
-                <Image src={anhs['naruto'][4]} size='small' onClick={() => this.openBigImage(4)}/>
+                <Image src={anhs['naruto'][4].anh} size='small' onClick={() => this.openBigImage(4)}/>
+                <p>{anhs['naruto'][4].ten}</p>
               </Grid.Column>
             </Grid>
 
