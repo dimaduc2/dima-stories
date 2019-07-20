@@ -247,7 +247,7 @@ class Phim extends Component {
 
 componentDidMount() {
     var arrayTap = [];
-    var tongSoTap = danhBaPhim[this.props.tenPhimTrongDanhBa][this.props.thuTuPhanDangXem].length;
+    var tongSoTap = danhBaPhim[this.props.tenPhimDangXem][this.props.thuTuPhanDangXem].length;
     var i;
     for (i = 1; i <= tongSoTap; i++) {
       arrayTap.push({key:i, text: i + " / " + tongSoTap, value:i});
@@ -257,9 +257,9 @@ componentDidMount() {
 }
 
 componentDidUpdate(prevProps) {
-  if ((this.props.tenPhimTrongDanhBa !== prevProps.tenPhimTrongDanhBa) || (this.props.thuTuPhanDangXem !== prevProps.thuTuPhanDangXem)) {
+  if ((this.props.tenPhimDangXem !== prevProps.tenPhimDangXem) || (this.props.thuTuPhanDangXem !== prevProps.thuTuPhanDangXem)) {
     var arrayTap = [];
-    var tongSoTap = danhBaPhim[this.props.tenPhimTrongDanhBa][this.props.thuTuPhanDangXem].length;
+    var tongSoTap = danhBaPhim[this.props.tenPhimDangXem][this.props.thuTuPhanDangXem].length;
     var i;
     for (i = 1; i <= tongSoTap; i++) {
       arrayTap.push({key:i, text: i + " / " + tongSoTap, value:i});
@@ -270,20 +270,19 @@ componentDidUpdate(prevProps) {
 }
 
 xemTapSau = () => {
-  
-  if((this.props.thuTuTapDangXem + 1) < danhBaPhim['overlord'][this.props.thuTuPhanDangXem].length){
+  if((this.props.thuTuTapDangXem + 1) < danhBaPhim[this.props.tenPhimDangXem][this.props.thuTuPhanDangXem].length){
     //Dima bảo máy tính: hãy xemPhim tênDanhBạ này 'overlord' (hãy xem phim này)
     //                               thứTựPhần này: this.state.thuTuPhanDangXem (vẫn xem phần này). 
     //                               thứTựTập này: this.state.thuTuTapDangXem (tập đang xem) + 1 = (hãy xem tập sau). 
-    this.props.xemPhim('overlord', this.props.thuTuPhanDangXem, this.props.thuTuTapDangXem + 1);
+    this.props.xemPhim(this.props.tenPhimDangXem, this.props.thuTuPhanDangXem, this.props.thuTuTapDangXem + 1);
     
   }
-  else if((this.props.thuTuPhanDangXem + 1) < danhBaPhim['overlord'].length){
+  else if((this.props.thuTuPhanDangXem + 1) < danhBaPhim[this.props.tenPhimDangXem].length){
     
     //Dima bảo máy tính: hãy xemPhim tênDanhBạ 'overlord' (hãy xem phim này)
     //                               thứTựPhần this.state.thuTuPhanDangXem (phần đang xem) + 1 (hãy xem phần sau)
     //                               thứTựTập 0 (xem tập từ đầu)
-    this.props.xemPhim('overlord', this.props.thuTuPhanDangXem + 1, 0);
+    this.props.xemPhim(this.props.tenPhimDangXem, this.props.thuTuPhanDangXem + 1, 0);
   }
   else {
     alert("hết phim")
@@ -291,43 +290,38 @@ xemTapSau = () => {
 }
 
 xemTapTruoc = () => {
-
     if(this.props.thuTuTapDangXem > 0){
-      this.props.xemPhim('overlord', this.props.thuTuPhanDangXem, this.props.thuTuTapDangXem -1);
+      this.props.xemPhim(this.props.tenPhimDangXem, this.props.thuTuPhanDangXem, this.props.thuTuTapDangXem -1);
     }
     else if(this.props.thuTuPhanDangXem > 0){
       
     //Dima bảo máy tính: hãy xemPhim tênDanhBạ 'overlord' (hãy xem phim này)
     //                               thứTựPhần this.state.thuTuPhanDangXem (phần đang xem) - 1 (hãy xem phần trước)
     //                               thứTựTập 12 (xem tập 13)
-      this.props.xemPhim('overlord', this.props.thuTuPhanDangXem - 1, danhBaPhim['overlord'][this.props.thuTuPhanDangXem-1].length-1);
+      this.props.xemPhim(this.props.tenPhimDangXem, this.props.thuTuPhanDangXem - 1, danhBaPhim[this.props.tenPhimDangXem][this.props.thuTuPhanDangXem-1].length-1);
     }
     else {
       alert("Đây là tập đầu tiên và Ko có tập trước")
     }
-  
 }
 
 xemTapKhac = (e,{value}) => {
   //Dima goi hanh dong xemPhim
   //Dima muon xem tap value
-  this.props.xemPhim(this.props.tenPhimTrongDanhBa, this.props.thuTuPhanDangXem, value-1);
+  this.props.xemPhim(this.props.tenPhimDangXem, this.props.thuTuPhanDangXem, value-1);
 }
-
-
-
 
 // PHẦN 4: Trình bày trang Web, giống HTML
   render() {
     var {arrayTatCaTap} = this.state;
-    var {white_or_black, chieuRongManHinh, tenPhimTrongDanhBa, thuTuPhanDangXem, thuTuTapDangXem, chieuDaiManHinh, dangXemGi, 
+    var {white_or_black, chieuRongManHinh, tenPhimDangXem, thuTuPhanDangXem, thuTuTapDangXem, chieuDaiManHinh, dangXemGi, 
           docx_or_pdf, xemPhim, hienVaGiauPhoneMenu } = this.props;
     return (
       <div className="phim-may-tinh">
         <h1 style={{color:(white_or_black ? 'white' : 'black')}}>
-          {tenPhimTrongDanhBa} Ss{thuTuPhanDangXem+1} Ep{thuTuTapDangXem+1}</h1>
+          {tenPhimDangXem} Ss{thuTuPhanDangXem+1} Ep{thuTuTapDangXem+1}</h1>
 
-        <Iframe url={danhBaPhim[tenPhimTrongDanhBa][thuTuPhanDangXem][thuTuTapDangXem].diaChi} /*  bước 2  */
+        <Iframe url={danhBaPhim[tenPhimDangXem][thuTuPhanDangXem][thuTuTapDangXem].diaChi} /*  bước 2  */
         width={(chieuRongManHinh-30)+"px"}
         height={(chieuDaiManHinh-200)+"px"}
         id="myId"
@@ -337,7 +331,7 @@ xemTapKhac = (e,{value}) => {
         allowFullScreen />
         <MenuDieuKhien white_or_black={white_or_black} dangXemGi={dangXemGi} chieuRongManHinh={chieuRongManHinh} 
                        docx_or_pdf={docx_or_pdf} arrayTatCaTap={arrayTatCaTap} xemPhim={xemPhim} danhBaPhim={danhBaPhim}
-                       tenPhimTrongDanhBa={tenPhimTrongDanhBa} thuTuPhanDangXem={thuTuPhanDangXem} thuTuTapDangXem={thuTuTapDangXem}
+                       tenPhimDangXem={tenPhimDangXem} thuTuPhanDangXem={thuTuPhanDangXem} thuTuTapDangXem={thuTuTapDangXem}
                        arrayTatCa={arrayTatCaTap} xemTruoc={this.xemTapTruoc} xemSau={this.xemTapSau} xemKhac={this.xemTapKhac}
                        hienVaGiauPhoneMenu={hienVaGiauPhoneMenu}/>
 

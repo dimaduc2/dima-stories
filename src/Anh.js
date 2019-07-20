@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import MenuDieuKhien from './MenuDieuKhien';
 // PHẦN 1: IMPORT
-import { Button, Image, Accordion, Icon, Grid, Modal } from 'semantic-ui-react';
+import { Button, Image, Accordion, Icon, Grid, Modal, Label } from 'semantic-ui-react';
 
 import gray_jedi_revan from './anh/Gray_Jedi_Revan.jpg';
 import Anakin_and_Padme_Jedi from './anh/Anakin_and_Padme_Jedi_s_Star_Wars_revenge_of_the_Sith.jpg';
@@ -171,7 +171,7 @@ const anhs = {
     },
     {
       anh: Unit_01_Adam,
-      ten: 'Unit 01 Adam (wing in movie Neon Genesis Evangelion: The End of Evangelion (1997) + red eye and red ring in head in movie Evangelion: 2.0 You Can (Not) Advance))',
+      ten: 'Mark 01 Adam (wing in movie Neon Genesis Evangelion: The End of Evangelion (1997) + red eye and red ring in head in movie Evangelion: 2.0 You Can (Not) Advance))',
     },
     {
       anh: people_drive_robot,
@@ -344,11 +344,13 @@ class Anh extends Component {
     var {dangXemAnhGi, modalOpen, xemAnhSoNay} = this.state;
     var {chieuRongManHinh, dangXemGi, white_or_black, hienVaGiauPhoneMenu } = this.props;
     return (
-      <div className="Anh" align='center' onKeyUp={this.bamBanPhim} tabIndex="0">
+      <div className="Anh" align='center' onKeyUp={this.bamBanPhim} tabIndex="0" style={{color: white_or_black ? 'red' : 'blue'}}>
         <Accordion>
           
           <Accordion.Title active={dangXemAnhGi === 0} index={0} onClick={this.handleClick}>
-            <h1 style={{color: white_or_black ? 'red' : 'blue'}}>Star Wars <Icon name='dropdown' /></h1>
+            <Label size='huge' color={white_or_black ? 'red' : 'blue'}>
+              Star Wars <Icon name='dropdown' />
+            </Label>
           </Accordion.Title>
           <Accordion.Content active={dangXemAnhGi === 0}>
 
@@ -386,7 +388,9 @@ class Anh extends Component {
           </Accordion.Content>
 
           <Accordion.Title active={dangXemAnhGi === 1} index={1} onClick={this.handleClick}>
-            <h1 style={{color:  white_or_black ? 'red' : 'blue'}}>Batman <Icon name='dropdown' /></h1>
+            <Label size='huge' color={white_or_black ? 'red' : 'blue'}>
+              Batman <Icon name='dropdown' />
+            </Label>
           </Accordion.Title>
 
           <Accordion.Content active={dangXemAnhGi === 1}>
@@ -425,7 +429,9 @@ class Anh extends Component {
           </Accordion.Content>
 
           <Accordion.Title active={dangXemAnhGi === 2} index={2} onClick={this.handleClick}>
-            <h1 style={{color:  white_or_black ? 'red' : 'blue'}}>Spider-Man <Icon name='dropdown' /></h1>
+            <Label size='huge' color={white_or_black ? 'red' : 'blue'}>
+              Spider-Man <Icon name='dropdown' />
+            </Label>
           </Accordion.Title>
           <Accordion.Content active={dangXemAnhGi === 2}>
 
@@ -461,7 +467,9 @@ class Anh extends Component {
           </Accordion.Content>
           
           <Accordion.Title active={dangXemAnhGi === 3} index={3} onClick={this.handleClick}>
-            <h1 style={{color:  white_or_black ? 'red' : 'blue'}}>Gantz <Icon name='dropdown' /></h1>
+            <Label size='huge' color={white_or_black ? 'red' : 'blue'}>
+              Gantz <Icon name='dropdown' />
+            </Label>
           </Accordion.Title>
           <Accordion.Content active={dangXemAnhGi === 3}>
 
@@ -497,7 +505,9 @@ class Anh extends Component {
           </Accordion.Content>
           
           <Accordion.Title active={dangXemAnhGi === 4} index={4} onClick={this.handleClick}>
-            <h1 style={{color:  white_or_black ? 'red' : 'blue'}}>Pokemon <Icon name='dropdown' /></h1>
+            <Label size='huge' color={white_or_black ? 'red' : 'blue'}>
+              Pokemon <Icon name='dropdown' />
+            </Label>
           </Accordion.Title>
           <Accordion.Content active={dangXemAnhGi === 4}>
 
@@ -533,7 +543,9 @@ class Anh extends Component {
           </Accordion.Content>
           
           <Accordion.Title active={dangXemAnhGi === 5} index={5} onClick={this.handleClick}>
-            <h1 style={{color:  white_or_black ? 'red' : 'blue'}}>Evangelion <Icon name='dropdown' /></h1>
+            <Label size='huge' color={white_or_black ? 'red' : 'blue'}>
+              Evangelion <Icon name='dropdown' />
+            </Label>
           </Accordion.Title>
           <Accordion.Content active={dangXemAnhGi === 5}>
             <Modal basic open={modalOpen && (dangXemAnhGi===5)} onClose={this.closeModal} closeIcon>
@@ -569,7 +581,9 @@ class Anh extends Component {
           </Accordion.Content>
           
           <Accordion.Title active={dangXemAnhGi === 6} index={6} onClick={this.handleClick}>
-            <h1 style={{color:  white_or_black ? 'red' : 'blue'}}>Tron <Icon name='dropdown' /></h1>
+            <Label size='huge' color={white_or_black ? 'red' : 'blue'}>
+              Tron <Icon name='dropdown' />
+            </Label>
           </Accordion.Title>
           <Accordion.Content active={dangXemAnhGi === 6}>
             
@@ -604,7 +618,9 @@ class Anh extends Component {
           </Accordion.Content>
           
           <Accordion.Title active={dangXemAnhGi === 7} index={7} onClick={this.handleClick}>
-            <h1 style={{color: white_or_black ? 'red' : 'blue'}}>Naruto <Icon name='dropdown' /></h1>
+            <Label size='huge' color={white_or_black ? 'red' : 'blue'}>
+              Naruto <Icon name='dropdown' />
+            </Label>
           </Accordion.Title>
           <Accordion.Content active={dangXemAnhGi === 7}>
 

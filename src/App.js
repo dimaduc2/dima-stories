@@ -36,12 +36,12 @@ class App extends Component {
   /*đây là thông tin ban đầu*/
   state = {
     tenTruyenTrongDanhBa: 'koTruyen',
-    tenPhimTrongDanhBa: 'koPhim',
     tatCaTrang: false,
     kichCuocChu: 1,
     kichCuocChuDocx: 15,
     white_or_black: false,
     dangXemGi: "dangXemHome", //bắt đầu thì đang xem Home
+    tenPhimDangXem: 'koPhim',
     thuTuTapDangXem: 0,
     thuTuPhanDangXem: 0,
     hienMenu: false,
@@ -94,9 +94,9 @@ class App extends Component {
     this.setState({kichCuocChuDocx: value});
   }
     // Máy tính hiện 1 phim bất kỳ: phim tên tenDanhBa, phần thuTuPhan, tập thuTuTap
-  xemPhim = (tenPhim, thuTuPhan, thuTuTap) => {
+  xemPhim = (tenPhimMoi, thuTuPhan, thuTuTap) => {
     this.setState({dangXemGi: 'dangXemPhim'})
-    this.setState({tenPhimTrongDanhBa: tenPhim})  //Dima bảo máy tính tôi dang xem phim này
+    this.setState({tenPhimDangXem: tenPhimMoi})  //Dima bảo máy tính tôi dang xem phim này
     this.setState({thuTuPhanDangXem: thuTuPhan})  //Dima bảo máy tính tôi dang xem phần này
     this.setState({thuTuTapDangXem: thuTuTap})
     //this.sauKhiMoPhim(danhBaPhim[tenPhim][thuTuPhan].length);
@@ -139,7 +139,7 @@ class App extends Component {
 // PHẦN 4: Trình bày trang Web, giống HTML
   render() {
     var {tenTruyenTrongDanhBa, tatCaTrang, kichCuocChu, kichCuocChuDocx, coChu, white_or_black, dangXemGi, 
-        tenPhimTrongDanhBa, thuTuPhanDangXem, thuTuTapDangXem, hienMenu, chuHello} = this.state;
+        tenPhimDangXem, thuTuPhanDangXem, thuTuTapDangXem, hienMenu, chuHello} = this.state;
     return (
       <div className="App" style={{backgroundColor: (white_or_black ? 'black' : 'white')}}>
         
@@ -177,7 +177,7 @@ class App extends Component {
               }
               {(dangXemGi === 'dangXemPhim') //Nếu đang xem Phim
                 ? <Phim dangXemGi={dangXemGi} white_or_black={white_or_black} chieuRongManHinh={chieuRongManHinh} 
-                        tenPhimTrongDanhBa={tenPhimTrongDanhBa} thuTuPhanDangXem={thuTuPhanDangXem} thuTuTapDangXem={thuTuTapDangXem} 
+                        tenPhimDangXem={tenPhimDangXem} thuTuPhanDangXem={thuTuPhanDangXem} thuTuTapDangXem={thuTuTapDangXem} 
                         xemPhim={this.xemPhim} chieuDaiManHinh={chieuDaiManHinh} docx_or_pdf={tatCaTrang} />
                 : null
               }
@@ -206,7 +206,7 @@ class App extends Component {
               }
               {(dangXemGi === 'dangXemPhim') //Nếu đang xem Phim
                 ? <Phim dangXemGi={dangXemGi} white_or_black={white_or_black} chieuRongManHinh={chieuRongManHinh} 
-                      tenPhimTrongDanhBa={tenPhimTrongDanhBa} thuTuPhanDangXem={thuTuPhanDangXem} thuTuTapDangXem={thuTuTapDangXem} 
+                      tenPhimDangXem={tenPhimDangXem} thuTuPhanDangXem={thuTuPhanDangXem} thuTuTapDangXem={thuTuTapDangXem} 
                       chieuDaiManHinh={chieuDaiManHinh} docx_or_pdf={tatCaTrang} xemPhim={this.xemPhim}
                       hienVaGiauPhoneMenu={this.hienVaGiauPhoneMenu}/>
                 : null
