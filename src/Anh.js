@@ -357,32 +357,22 @@ class Anh extends Component {
             {/* Modal là chỗ để hiện ảnh to */ }
             <Modal basic open={modalOpen && (dangXemAnhGi===0)} onClose={this.closeModal} closeIcon>
               <Image src={anhs['starwars'][xemAnhSoNay].anh} />   {/* Ở trong Modal thì hiện Image to này */ }
-              <Icon onClick={this.xemAnhTruoc} color='violet' name='angle double left' size='big' style={{position:'fixed', top: '45vh', left: '-35px'}}/>
-              <Icon onClick={this.xemAnhSau} color='violet' name='angle double right' size='big' style={{position:'fixed', top: '45vh', right: '-35px'}}/>
+              <Icon onClick={this.xemAnhTruoc} circular inverted name='angle double left' size='big' 
+                    style={{position:'fixed', top: '45vh', left: (chieuRongManHinh > 900) ? '-35px' : '0px'}}/>
+              <Icon onClick={this.xemAnhSau} circular inverted name='angle double right' size='big' 
+                    style={{position:'fixed', top: '45vh', right: (chieuRongManHinh > 900) ? '-35px' : '0px'}}/>
             </Modal>
             
             {/* Grid là chỗ để chứa 5 cái Column, mỗi Colum chứa 1 ảnh nhỏ */ }
             <Grid doubling columns={5} style={{margin:'10px', padding:'0'}}>
-              <Grid.Column>
-                <Image src={anhs['starwars'][0].anh} size='small' onClick={() => this.openBigImage(0)}/>
-                <p>{anhs['starwars'][0].ten}</p>
-               </Grid.Column>
-              <Grid.Column>
-                <Image src={anhs['starwars'][1].anh} size='small' onClick={() => this.openBigImage(1)}/>
-                <p>{anhs['starwars'][1].ten}</p>
-              </Grid.Column>
-              <Grid.Column>
-                <Image src={anhs['starwars'][2].anh} size='small' onClick={() => this.openBigImage(2)}/>
-                <p>{anhs['starwars'][2].ten}</p>
-              </Grid.Column>
-              <Grid.Column>
-                <Image src={anhs['starwars'][3].anh} size='small' onClick={() => this.openBigImage(3)}/>
-                <p>{anhs['starwars'][3].ten}</p>
-              </Grid.Column>
-              <Grid.Column>
-                <Image src={anhs['starwars'][4].anh} size='small' onClick={() => this.openBigImage(4)}/>
-                <p>{anhs['starwars'][4].ten}</p>
-              </Grid.Column>
+               { anhs['starwars'].map((moiAnh, index) => 
+                    <Grid.Column> 
+                      <Image src={moiAnh.anh} size='small' 
+                        onClick={() => this.openBigImage(index)}/>
+                      <p>{moiAnh.ten}</p> 
+                    </Grid.Column>
+                  )
+              }
             </Grid>
 
           </Accordion.Content>
@@ -397,33 +387,21 @@ class Anh extends Component {
 
             <Modal basic open={modalOpen && (dangXemAnhGi===1)} onClose={this.closeModal} closeIcon>
               <Image src={anhs['batman'][xemAnhSoNay].anh} />   {/* Ở trong Modal thì hiện Image to này */ }
-              <Icon onClick={this.xemAnhTruoc} color='violet' name='angle double left' size='big' 
-                    style={{position:'fixed', top: '45vh', left: '-35px'}}/>
-              <Icon onClick={this.xemAnhSau} color='violet' name='angle double right' size='big' 
-                    style={{position:'fixed', top: '45vh', right: '-35px'}}/>
+              <Icon onClick={this.xemAnhTruoc} circular inverted name='angle double left' size='big' 
+                    style={{position:'fixed', top: '45vh', left: (chieuRongManHinh > 900) ? '-35px' : '0px'}}/>
+              <Icon onClick={this.xemAnhSau} circular inverted name='angle double right' size='big' 
+                    style={{position:'fixed', top: '45vh', right: (chieuRongManHinh > 900) ? '-35px' : '0px'}}/>
             </Modal>
 
             <Grid doubling columns={5} style={{margin:'10px', padding:'0'}}>
-              <Grid.Column>
-                <Image src={anhs['batman'][0].anh} size='small' onClick={() => this.openBigImage(0)}/>
-                <p>{anhs['batman'][0].ten}</p>
-               </Grid.Column>
-              <Grid.Column>
-                <Image src={anhs['batman'][1].anh} size='small' onClick={() => this.openBigImage(1)}/>
-                <p>{anhs['batman'][1].ten}</p>
-              </Grid.Column>
-              <Grid.Column>
-                <Image src={anhs['batman'][2].anh} size='small' onClick={() => this.openBigImage(2)}/>
-                <p>{anhs['batman'][2].ten}</p>
-              </Grid.Column>
-              <Grid.Column>
-                <Image src={anhs['batman'][3].anh} size='small' onClick={() => this.openBigImage(3)}/>
-                <p>{anhs['batman'][3].ten}</p>
-              </Grid.Column>
-              <Grid.Column>
-                <Image src={anhs['batman'][4].anh} size='small' onClick={() => this.openBigImage(4)}/>
-                <p>{anhs['batman'][4].ten}</p>
-              </Grid.Column>
+              { anhs['batman'].map((moiAnh, index) => 
+                    <Grid.Column> 
+                      <Image src={moiAnh.anh} size='small' 
+                        onClick={() => this.openBigImage(index)}/>
+                      <p>{moiAnh.ten}</p> 
+                    </Grid.Column>
+                  )
+              }
             </Grid>
 
           </Accordion.Content>
@@ -437,31 +415,21 @@ class Anh extends Component {
 
             <Modal basic open={modalOpen && (dangXemAnhGi===2)} onClose={this.closeModal} closeIcon>
               <Image src={anhs['spiderman'][xemAnhSoNay].anh} />   {/* Ở trong Modal thì hiện Image to này */ }
-              <Icon onClick={this.xemAnhTruoc} color='violet' name='angle double left' size='big' style={{position:'fixed', top: '45vh', left: '-35px'}}/>
-              <Icon onClick={this.xemAnhSau} color='violet' name='angle double right' size='big' style={{position:'fixed', top: '45vh', right: '-35px'}}/>
+              <Icon onClick={this.xemAnhTruoc} circular inverted name='angle double left' size='big' 
+                    style={{position:'fixed', top: '45vh', left: (chieuRongManHinh > 900) ? '-35px' : '0px'}}/>
+              <Icon onClick={this.xemAnhSau} circular inverted name='angle double right' size='big' 
+                    style={{position:'fixed', top: '45vh', right: (chieuRongManHinh > 900) ? '-35px' : '0px'}}/>
             </Modal>
 
             <Grid doubling columns={5} style={{margin:'10px', padding:'0'}}>
-              <Grid.Column>
-                <Image src={anhs['spiderman'][0].anh} size='small' onClick={() => this.openBigImage(0)}/>
-                <p>{anhs['spiderman'][0].ten}</p>
-               </Grid.Column>
-              <Grid.Column>
-                <Image src={anhs['spiderman'][1].anh} size='small' onClick={() => this.openBigImage(1)}/>
-                <p>{anhs['spiderman'][1].ten}</p>
-              </Grid.Column>
-              <Grid.Column>
-                <Image src={anhs['spiderman'][2].anh} size='small' onClick={() => this.openBigImage(2)}/>
-                <p>{anhs['spiderman'][2].ten}</p>
-              </Grid.Column>
-              <Grid.Column>
-                <Image src={anhs['spiderman'][3].anh} size='small' onClick={() => this.openBigImage(3)}/>
-                <p>{anhs['spiderman'][3].ten}</p>
-              </Grid.Column>
-              <Grid.Column>
-                <Image src={anhs['spiderman'][4].anh} size='small' onClick={() => this.openBigImage(4)}/>
-                <p>{anhs['spiderman'][4].ten}</p>
-              </Grid.Column>
+              { anhs['spiderman'].map((moiAnh, index) => 
+                  <Grid.Column> 
+                    <Image src={moiAnh.anh} size='small' 
+                      onClick={() => this.openBigImage(index)}/>
+                    <p>{moiAnh.ten}</p> 
+                  </Grid.Column>
+                )
+              }
             </Grid>
 
           </Accordion.Content>
@@ -475,31 +443,21 @@ class Anh extends Component {
 
             <Modal basic open={modalOpen && (dangXemAnhGi===3)} onClose={this.closeModal} closeIcon>
               <Image src={anhs['gantz'][xemAnhSoNay].anh} />   {/* Ở trong Modal thì hiện Image to này */ }
-              <Icon onClick={this.xemAnhTruoc} color='violet' name='angle double left' size='big' style={{position:'fixed', top: '45vh', left: '-35px'}}/>
-              <Icon onClick={this.xemAnhSau} color='violet' name='angle double right' size='big' style={{position:'fixed', top: '45vh', right: '-35px'}}/>
+              <Icon onClick={this.xemAnhTruoc} circular inverted name='angle double left' size='big' 
+                    style={{position:'fixed', top: '45vh', left: (chieuRongManHinh > 900) ? '-35px' : '0px'}}/>
+              <Icon onClick={this.xemAnhSau} circular inverted name='angle double right' size='big' 
+                    style={{position:'fixed', top: '45vh', right: (chieuRongManHinh > 900) ? '-35px' : '0px'}}/>
             </Modal>
 
             <Grid doubling columns={5} style={{margin:'10px', padding:'0'}}>
-              <Grid.Column>
-                <Image src={anhs['gantz'][0].anh} size='small' onClick={() => this.openBigImage(0)}/>
-                <p>{anhs['gantz'][0].ten}</p>
-               </Grid.Column>
-              <Grid.Column>
-                <Image src={anhs['gantz'][1].anh} size='small' onClick={() => this.openBigImage(1)}/>
-                <p>{anhs['gantz'][1].ten}</p>
-              </Grid.Column>
-              <Grid.Column>
-                <Image src={anhs['gantz'][2].anh} size='small' onClick={() => this.openBigImage(2)}/>
-                <p>{anhs['gantz'][2].ten}</p>
-              </Grid.Column>
-              <Grid.Column>
-                <Image src={anhs['gantz'][3].anh} size='small' onClick={() => this.openBigImage(3)}/>
-                <p>{anhs['gantz'][3].ten}</p>
-              </Grid.Column>
-              <Grid.Column>
-                <Image src={anhs['gantz'][4].anh} size='small' onClick={() => this.openBigImage(4)}/>
-                <p>{anhs['gantz'][4].ten}</p>
-              </Grid.Column>
+              { anhs['gantz'].map((moiAnh, index) => 
+                  <Grid.Column> 
+                    <Image src={moiAnh.anh} size='small' 
+                      onClick={() => this.openBigImage(index)}/>
+                    <p>{moiAnh.ten}</p> 
+                  </Grid.Column>
+                )
+              }
             </Grid>
 
           </Accordion.Content>
@@ -513,31 +471,21 @@ class Anh extends Component {
 
             <Modal basic open={modalOpen && (dangXemAnhGi===4)} onClose={this.closeModal} closeIcon>
               <Image src={anhs['pokemon'][xemAnhSoNay].anh} />   {/* Ở trong Modal thì hiện Image to này */ }
-              <Icon onClick={this.xemAnhTruoc} color='violet' name='angle double left' size='big' style={{position:'fixed', top: '45vh', left: '-35px'}}/>
-              <Icon onClick={this.xemAnhSau} color='violet' name='angle double right' size='big' style={{position:'fixed', top: '45vh', right: '-35px'}}/>
+              <Icon onClick={this.xemAnhTruoc} circular inverted name='angle double left' size='big' 
+                    style={{position:'fixed', top: '45vh', left: (chieuRongManHinh > 900) ? '-35px' : '0px'}}/>
+              <Icon onClick={this.xemAnhSau} circular inverted name='angle double right' size='big' 
+                    style={{position:'fixed', top: '45vh', right: (chieuRongManHinh > 900) ? '-35px' : '0px'}}/>
             </Modal>
 
             <Grid doubling columns={5} style={{margin:'10px', padding:'0'}}>
-              <Grid.Column>
-                <Image src={anhs['pokemon'][0].anh} size='small' onClick={() => this.openBigImage(0)}/>
-                <p>{anhs['pokemon'][0].ten}</p>
-               </Grid.Column>
-              <Grid.Column>
-                <Image src={anhs['pokemon'][1].anh} size='small' onClick={() => this.openBigImage(1)}/>
-                <p>{anhs['pokemon'][1].ten}</p>
-              </Grid.Column>
-              <Grid.Column>
-                <Image src={anhs['pokemon'][2].anh} size='small' onClick={() => this.openBigImage(2)}/>
-                <p>{anhs['pokemon'][2].ten}</p>
-              </Grid.Column>
-              <Grid.Column>
-                <Image src={anhs['pokemon'][3].anh} size='small' onClick={() => this.openBigImage(3)}/>
-                <p>{anhs['pokemon'][3].ten}</p>
-              </Grid.Column>
-              <Grid.Column>
-                <Image src={anhs['pokemon'][4].anh} size='small' onClick={() => this.openBigImage(4)}/>
-                <p>{anhs['pokemon'][4].ten}</p>
-              </Grid.Column>
+              { anhs['pokemon'].map((moiAnh, index) => 
+                  <Grid.Column> 
+                    <Image src={moiAnh.anh} size='small' 
+                      onClick={() => this.openBigImage(index)}/>
+                    <p>{moiAnh.ten}</p> 
+                  </Grid.Column>
+                )
+              }
             </Grid>
 
           </Accordion.Content>
@@ -550,32 +498,22 @@ class Anh extends Component {
           <Accordion.Content active={dangXemAnhGi === 5}>
             <Modal basic open={modalOpen && (dangXemAnhGi===5)} onClose={this.closeModal} closeIcon>
               <Image src={anhs['evangelion'][xemAnhSoNay].anh} />   {/* Ở trong Modal thì hiện Image to này */ }
-              <Icon onClick={this.xemAnhTruoc} color='violet' name='angle double left' size='big' style={{position:'fixed', top: '45vh', left: '-35px'}}/>
-              <Icon onClick={this.xemAnhSau} color='violet' name='angle double right' size='big' style={{position:'fixed', top: '45vh', right: '-35px'}}/>
+              <Icon onClick={this.xemAnhTruoc} circular inverted name='angle double left' 
+                    size='big' style={{position:'fixed', top: '45vh', left: (chieuRongManHinh > 900) ? '-35px' : '0px'}}/>
+              <Icon onClick={this.xemAnhSau} circular inverted name='angle double right' 
+                    size='big' style={{position:'fixed', top: '45vh', right: (chieuRongManHinh > 900) ? '-35px' : '0px'}}/>
             </Modal>
 
 
             <Grid doubling columns={5} style={{margin:'10px', padding:'0'}}>
-              <Grid.Column>
-                <Image src={anhs['evangelion'][0].anh} size='small' onClick={() => this.openBigImage(0)}/>
-                <p>{anhs['evangelion'][0].ten}</p>
-               </Grid.Column>
-              <Grid.Column>
-                <Image src={anhs['evangelion'][1].anh} size='small' onClick={() => this.openBigImage(1)}/>
-                <p>{anhs['evangelion'][1].ten}</p>
-              </Grid.Column>
-              <Grid.Column>
-                <Image src={anhs['evangelion'][2].anh} size='small' onClick={() => this.openBigImage(2)}/>
-                <p>{anhs['evangelion'][2].ten}</p>
-              </Grid.Column>
-              <Grid.Column>
-                <Image src={anhs['evangelion'][3].anh} size='small' onClick={() => this.openBigImage(3)}/>
-                <p>{anhs['evangelion'][3].ten}</p>
-              </Grid.Column>
-              <Grid.Column>
-                <Image src={anhs['evangelion'][4].anh} size='small' onClick={() => this.openBigImage(4)}/>
-                <p>{anhs['evangelion'][4].ten}</p>
-              </Grid.Column>
+              { anhs['evangelion'].map((moiAnh, index) => 
+                  <Grid.Column> 
+                    <Image src={moiAnh.anh} size='small' 
+                      onClick={() => this.openBigImage(index)}/>
+                    <p>{moiAnh.ten}</p> 
+                  </Grid.Column>
+                )
+              }
             </Grid>
           
           </Accordion.Content>
@@ -589,30 +527,20 @@ class Anh extends Component {
             
             <Modal basic open={modalOpen && (dangXemAnhGi===6)} onClose={this.closeModal} closeIcon>
               <Image src={anhs['tron'][xemAnhSoNay].anh} />   {/* Ở trong Modal thì hiện Image to này */ }
-              <Icon onClick={this.xemAnhTruoc} color='violet' name='angle double left' size='big' style={{position:'fixed', top: '45vh', left: '-35px'}}/>
-              <Icon onClick={this.xemAnhSau} color='violet' name='angle double right' size='big' style={{position:'fixed', top: '45vh', right: '-35px'}}/>
+              <Icon onClick={this.xemAnhTruoc} circular inverted name='angle double left' size='big' 
+                    style={{position:'fixed', top: '45vh', left: (chieuRongManHinh > 900) ? '-35px' : '0px'}}/>
+              <Icon onClick={this.xemAnhSau} circular inverted name='angle double right' size='big' 
+                    style={{position:'fixed', top: '45vh', right: (chieuRongManHinh > 900) ? '-35px' : '0px'}}/>
             </Modal>
             <Grid doubling columns={5} style={{margin:'10px', padding:'0'}}>
-              <Grid.Column>
-                <Image src={anhs['tron'][0].anh} size='small' onClick={() => this.openBigImage(0)}/>
-                <p>{anhs['tron'][0].ten}</p>
-               </Grid.Column>
-              <Grid.Column>
-                <Image src={anhs['tron'][1].anh} size='small' onClick={() => this.openBigImage(1)}/>
-                <p>{anhs['tron'][1].ten}</p>
-              </Grid.Column>
-              <Grid.Column>
-                <Image src={anhs['tron'][2].anh} size='small' onClick={() => this.openBigImage(2)}/>
-                <p>{anhs['tron'][2].ten}</p>
-              </Grid.Column>
-              <Grid.Column>
-                <Image src={anhs['tron'][3].anh} size='small' onClick={() => this.openBigImage(3)}/>
-                <p>{anhs['tron'][3].ten}</p>
-              </Grid.Column>
-              <Grid.Column>
-                <Image src={anhs['tron'][4].anh} size='small' onClick={() => this.openBigImage(4)}/>
-                <p>{anhs['tron'][4].ten}</p>
-              </Grid.Column>
+              { anhs['tron'].map((moiAnh, index) => 
+                  <Grid.Column> 
+                    <Image src={moiAnh.anh} size='small' 
+                      onClick={() => this.openBigImage(index)}/>
+                    <p>{moiAnh.ten}</p> 
+                  </Grid.Column>
+                )
+              }
             </Grid>
 
           </Accordion.Content>
@@ -627,32 +555,22 @@ class Anh extends Component {
             {/* Modal là chỗ để hiện ảnh to */ }
             <Modal basic open={modalOpen && (dangXemAnhGi===7)} onClose={this.closeModal} closeIcon>
               <Image src={anhs['naruto'][xemAnhSoNay].anh} />   {/* Ở trong Modal thì hiện Image to này */ }
-              <Icon onClick={this.xemAnhTruoc} color='violet' name='angle double left' size='big' style={{position:'fixed', top: '45vh', left: '-35px'}}/>
-              <Icon onClick={this.xemAnhSau} color='violet' name='angle double right' size='big' style={{position:'fixed', top: '45vh', right: '-35px'}}/>
+              <Icon onClick={this.xemAnhTruoc} circular inverted name='angle double left' size='big' 
+                    style={{position:'fixed', top: '45vh', left: (chieuRongManHinh > 900) ? '-35px' : '0px'}}/>
+              <Icon onClick={this.xemAnhSau} circular inverted name='angle double right' size='big' 
+                    style={{position:'fixed', top: '45vh', right: (chieuRongManHinh > 900) ? '-35px' : '0px'}}/>
             </Modal>
             
             {/* Grid là chỗ để chứa 5 cái Column, mỗi Colum chứa 1 ảnh nhỏ */ }
             <Grid doubling columns={5} style={{margin:'10px', padding:'0'}}>
-              <Grid.Column>
-                <Image src={anhs['naruto'][0].anh} size='small' onClick={() => this.openBigImage(0)}/>
-                <p>{anhs['naruto'][0].ten}</p>
-               </Grid.Column>
-              <Grid.Column>
-                <Image src={anhs['naruto'][1].anh} size='small' onClick={() => this.openBigImage(1)}/>
-                <p>{anhs['naruto'][1].ten}</p>
-              </Grid.Column>
-              <Grid.Column>
-                <Image src={anhs['naruto'][2].anh} size='small' onClick={() => this.openBigImage(2)}/>
-                <p>{anhs['naruto'][2].ten}</p>
-              </Grid.Column>
-              <Grid.Column>
-                <Image src={anhs['naruto'][3].anh} size='small' onClick={() => this.openBigImage(3)}/>
-                <p>{anhs['naruto'][3].ten}</p>
-              </Grid.Column>
-              <Grid.Column>
-                <Image src={anhs['naruto'][4].anh} size='small' onClick={() => this.openBigImage(4)}/>
-                <p>{anhs['naruto'][4].ten}</p>
-              </Grid.Column>
+              { anhs['naruto'].map((moiAnh, index) => 
+                  <Grid.Column> 
+                    <Image src={moiAnh.anh} size='small' 
+                      onClick={() => this.openBigImage(index)}/>
+                    <p>{moiAnh.ten}</p> 
+                  </Grid.Column>
+                )
+              }
             </Grid>
 
           </Accordion.Content>

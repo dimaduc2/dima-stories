@@ -27,6 +27,15 @@ const danhBaPhim = {
                     }
                   ]
                 ],
+
+  'pokemon' :   [
+                  [
+                    {
+                      ten: 'pokemon moive 20',
+                      diaChi: 'https://player.vimeo.com/video/349156788'
+                    }
+                  ]
+                ],
   
   'overlord' :  [
                   [
