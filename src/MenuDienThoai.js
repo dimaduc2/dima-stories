@@ -143,6 +143,9 @@ docTruyen = () => {
                 <Dropdown.Item onClick={ () => xemPhim('starwars', 0, 0) }><Image src={logo_star_wars} avatar/> Star Wars Clone Wars 2003 Full</Dropdown.Item>
                 <Dropdown.Item onClick={ () => xemPhim('starwars', 1, 0) }><Image src={logo_star_wars} avatar/> Revan - Star Wars Fan Film </Dropdown.Item>
                 <Dropdown.Item onClick={ () => xemPhim('starwars', 2, 0) }><Image src={logo_star_wars} avatar/> SKYWALKER APPRENTICE</Dropdown.Item>
+                <Dropdown.Divider />
+                <Dropdown.Item onClick={ () => xemPhim('pokemon', 0, 0) }>Pokemon Movie 20</Dropdown.Item>
+                <Dropdown.Item onClick={ () => xemPhim('pokemon', 1, 0) }>Pokemon Movie 21</Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
           </Menu.Item>

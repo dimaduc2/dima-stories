@@ -136,6 +136,7 @@ docTruyen = () => {
             <Dropdown.Item onClick={ () => xemPhim('starwars', 2, 0) }><Image src={logo_star_wars} avatar/> SKYWALKER APPRENTICE (2019 Star Wars Fan Film)</Dropdown.Item>
             <Dropdown.Divider />
             <Dropdown.Item onClick={ () => xemPhim('pokemon', 0, 0) }>Pokemon Movie 20</Dropdown.Item>
+            <Dropdown.Item onClick={ () => xemPhim('pokemon', 1, 0) }>Pokemon Movie 21</Dropdown.Item>
           </Dropdown.Menu>
         </Dropdown>
         

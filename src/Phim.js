@@ -34,6 +34,12 @@ const danhBaPhim = {
                       ten: 'pokemon moive 20',
                       diaChi: 'https://player.vimeo.com/video/349156788'
                     }
+                  ],
+                  [
+                    {
+                      ten: 'pokemon moive 21',
+                      diaChi: 'https://player.vimeo.com/video/349787042'
+                    }
                   ]
                 ],
   
@@ -242,9 +248,6 @@ const danhBaPhim = {
                   ],
                 ]
               }
-
-
-
 
 // PHẦN 2: State
 class Phim extends Component {

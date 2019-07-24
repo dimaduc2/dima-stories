@@ -211,7 +211,7 @@ const anhs = {
   'naruto' :[
     {
       anh: team_7_akatsuki,
-      ten: 'Team_7 Akatsuki',
+      ten: 'Team 7 Akatsuki',
     },
     {
       anh: naruto_hinata_halo,
@@ -243,6 +243,16 @@ const tenAnh = { //Đây là Object
   '6' : 'Tron',          //nếu muốn hiện Tron thì phải viết: tenAnh[‘6’]
   '7' :  'Naruto',
 }
+
+const thongtinNguoi = [ 
+                        {ten: 'Dima', diachi: 'Ha Noi'},
+                        {ten: 'Darth Revan', diachi: 'Coruscant'},
+                        {ten: 'Anakin', diachi: 'Tatooine'},
+                        {ten: 'Padme', diachi: 'Naboo'},
+                        {ten: 'Luke', diachi: 'Tatooine'},
+                        {ten: 'Darth Vader', diachi: 'Kamino'},
+                        {ten: 'Leia', diachi: 'Alderaan'}
+                      ]
 
 // PHẦN 2: State
 class Anh extends Component {
@@ -347,235 +357,50 @@ class Anh extends Component {
       <div className="Anh" align='center' onKeyUp={this.bamBanPhim} tabIndex="0" style={{color: white_or_black ? 'red' : 'blue'}}>
         <Accordion>
           
-          <Accordion.Title active={dangXemAnhGi === 0} index={0} onClick={this.handleClick}>
-            <Label size='huge' color={white_or_black ? 'red' : 'blue'}>
-              Star Wars <Icon name='dropdown' />
-            </Label>
-          </Accordion.Title>
-          <Accordion.Content active={dangXemAnhGi === 0}>
-
-            {/* Modal là chỗ để hiện ảnh to */ }
-            <Modal basic open={modalOpen && (dangXemAnhGi===0)} onClose={this.closeModal} closeIcon>
-              <Image src={anhs['starwars'][xemAnhSoNay].anh} />   {/* Ở trong Modal thì hiện Image to này */ }
-              <Icon onClick={this.xemAnhTruoc} circular inverted name='angle double left' size='big' 
-                    style={{position:'fixed', top: '45vh', left: (chieuRongManHinh > 900) ? '-35px' : '0px'}}/>
-              <Icon onClick={this.xemAnhSau} circular inverted name='angle double right' size='big' 
-                    style={{position:'fixed', top: '45vh', right: (chieuRongManHinh > 900) ? '-35px' : '0px'}}/>
-            </Modal>
-            
-            {/* Grid là chỗ để chứa 5 cái Column, mỗi Colum chứa 1 ảnh nhỏ */ }
-            <Grid doubling columns={5} style={{margin:'10px', padding:'0'}}>
-               { anhs['starwars'].map((moiAnh, index) => 
-                    <Grid.Column> 
-                      <Image src={moiAnh.anh} size='small' 
-                        onClick={() => this.openBigImage(index)}/>
-                      <p>{moiAnh.ten}</p> 
-                    </Grid.Column>
-                  )
-              }
-            </Grid>
-
-          </Accordion.Content>
-
-          <Accordion.Title active={dangXemAnhGi === 1} index={1} onClick={this.handleClick}>
-            <Label size='huge' color={white_or_black ? 'red' : 'blue'}>
-              Batman <Icon name='dropdown' />
-            </Label>
-          </Accordion.Title>
-
-          <Accordion.Content active={dangXemAnhGi === 1}>
-
-            <Modal basic open={modalOpen && (dangXemAnhGi===1)} onClose={this.closeModal} closeIcon>
-              <Image src={anhs['batman'][xemAnhSoNay].anh} />   {/* Ở trong Modal thì hiện Image to này */ }
-              <Icon onClick={this.xemAnhTruoc} circular inverted name='angle double left' size='big' 
-                    style={{position:'fixed', top: '45vh', left: (chieuRongManHinh > 900) ? '-35px' : '0px'}}/>
-              <Icon onClick={this.xemAnhSau} circular inverted name='angle double right' size='big' 
-                    style={{position:'fixed', top: '45vh', right: (chieuRongManHinh > 900) ? '-35px' : '0px'}}/>
-            </Modal>
-
-            <Grid doubling columns={5} style={{margin:'10px', padding:'0'}}>
-              { anhs['batman'].map((moiAnh, index) => 
-                    <Grid.Column> 
-                      <Image src={moiAnh.anh} size='small' 
-                        onClick={() => this.openBigImage(index)}/>
-                      <p>{moiAnh.ten}</p> 
-                    </Grid.Column>
-                  )
-              }
-            </Grid>
-
-          </Accordion.Content>
-
-          <Accordion.Title active={dangXemAnhGi === 2} index={2} onClick={this.handleClick}>
-            <Label size='huge' color={white_or_black ? 'red' : 'blue'}>
-              Spider-Man <Icon name='dropdown' />
-            </Label>
-          </Accordion.Title>
-          <Accordion.Content active={dangXemAnhGi === 2}>
-
-            <Modal basic open={modalOpen && (dangXemAnhGi===2)} onClose={this.closeModal} closeIcon>
-              <Image src={anhs['spiderman'][xemAnhSoNay].anh} />   {/* Ở trong Modal thì hiện Image to này */ }
-              <Icon onClick={this.xemAnhTruoc} circular inverted name='angle double left' size='big' 
-                    style={{position:'fixed', top: '45vh', left: (chieuRongManHinh > 900) ? '-35px' : '0px'}}/>
-              <Icon onClick={this.xemAnhSau} circular inverted name='angle double right' size='big' 
-                    style={{position:'fixed', top: '45vh', right: (chieuRongManHinh > 900) ? '-35px' : '0px'}}/>
-            </Modal>
-
-            <Grid doubling columns={5} style={{margin:'10px', padding:'0'}}>
-              { anhs['spiderman'].map((moiAnh, index) => 
-                  <Grid.Column> 
-                    <Image src={moiAnh.anh} size='small' 
-                      onClick={() => this.openBigImage(index)}/>
-                    <p>{moiAnh.ten}</p> 
-                  </Grid.Column>
-                )
-              }
-            </Grid>
-
-          </Accordion.Content>
+          {
+            Object.keys(anhs).map((ten, index) => 
+              <div>
+                <Accordion.Title active={dangXemAnhGi === index} index={index} onClick={this.handleClick}>
+                  <Label size='huge' color={white_or_black ? 'red' : 'blue'}>
+                    {tenAnh[index]} <Icon name='dropdown' />
+                  </Label>
+                </Accordion.Title>
+                <Accordion.Content active={dangXemAnhGi === index}>
+                  {/* Modal là chỗ để hiện ảnh to */ }
+                  <Modal basic open={modalOpen && (dangXemAnhGi === index)} onClose={this.closeModal} closeIcon>
+                    <Image src={anhs[ten][xemAnhSoNay].anh} />   {/* Ở trong Modal thì hiện Image to này */ }
+                    <Icon onClick={this.xemAnhTruoc} circular inverted name='angle double left' size='big' 
+                          style={{position:'fixed', top: '45vh', left: (chieuRongManHinh > 900) ? '-35px' : '0px'}}/>
+                    <Icon onClick={this.xemAnhSau} circular inverted name='angle double right' size='big' 
+                          style={{position:'fixed', top: '45vh', right: (chieuRongManHinh > 900) ? '-35px' : '0px'}}/>
+                  </Modal>
+                  {/* Grid là chỗ để chứa 5 cái Column, mỗi Colum chứa 1 ảnh nhỏ */ }
+                  <Grid doubling columns={5} style={{margin:'10px', padding:'0'}}>
+                    { anhs[ten].map((moiAnh, index) => 
+                          <Grid.Column> 
+                            <Image src={moiAnh.anh} size='small' 
+                              onClick={() => this.openBigImage(index)}/>
+                            <p>{moiAnh.ten}</p> 
+                          </Grid.Column>
+                        )
+                    }
+                  </Grid>
+                </Accordion.Content>
+              </div>
+            )
+          }
           
-          <Accordion.Title active={dangXemAnhGi === 3} index={3} onClick={this.handleClick}>
-            <Label size='huge' color={white_or_black ? 'red' : 'blue'}>
-              Gantz <Icon name='dropdown' />
-            </Label>
-          </Accordion.Title>
-          <Accordion.Content active={dangXemAnhGi === 3}>
-
-            <Modal basic open={modalOpen && (dangXemAnhGi===3)} onClose={this.closeModal} closeIcon>
-              <Image src={anhs['gantz'][xemAnhSoNay].anh} />   {/* Ở trong Modal thì hiện Image to này */ }
-              <Icon onClick={this.xemAnhTruoc} circular inverted name='angle double left' size='big' 
-                    style={{position:'fixed', top: '45vh', left: (chieuRongManHinh > 900) ? '-35px' : '0px'}}/>
-              <Icon onClick={this.xemAnhSau} circular inverted name='angle double right' size='big' 
-                    style={{position:'fixed', top: '45vh', right: (chieuRongManHinh > 900) ? '-35px' : '0px'}}/>
-            </Modal>
-
-            <Grid doubling columns={5} style={{margin:'10px', padding:'0'}}>
-              { anhs['gantz'].map((moiAnh, index) => 
-                  <Grid.Column> 
-                    <Image src={moiAnh.anh} size='small' 
-                      onClick={() => this.openBigImage(index)}/>
-                    <p>{moiAnh.ten}</p> 
-                  </Grid.Column>
-                )
-              }
-            </Grid>
-
-          </Accordion.Content>
-          
-          <Accordion.Title active={dangXemAnhGi === 4} index={4} onClick={this.handleClick}>
-            <Label size='huge' color={white_or_black ? 'red' : 'blue'}>
-              Pokemon <Icon name='dropdown' />
-            </Label>
-          </Accordion.Title>
-          <Accordion.Content active={dangXemAnhGi === 4}>
-
-            <Modal basic open={modalOpen && (dangXemAnhGi===4)} onClose={this.closeModal} closeIcon>
-              <Image src={anhs['pokemon'][xemAnhSoNay].anh} />   {/* Ở trong Modal thì hiện Image to này */ }
-              <Icon onClick={this.xemAnhTruoc} circular inverted name='angle double left' size='big' 
-                    style={{position:'fixed', top: '45vh', left: (chieuRongManHinh > 900) ? '-35px' : '0px'}}/>
-              <Icon onClick={this.xemAnhSau} circular inverted name='angle double right' size='big' 
-                    style={{position:'fixed', top: '45vh', right: (chieuRongManHinh > 900) ? '-35px' : '0px'}}/>
-            </Modal>
-
-            <Grid doubling columns={5} style={{margin:'10px', padding:'0'}}>
-              { anhs['pokemon'].map((moiAnh, index) => 
-                  <Grid.Column> 
-                    <Image src={moiAnh.anh} size='small' 
-                      onClick={() => this.openBigImage(index)}/>
-                    <p>{moiAnh.ten}</p> 
-                  </Grid.Column>
-                )
-              }
-            </Grid>
-
-          </Accordion.Content>
-          
-          <Accordion.Title active={dangXemAnhGi === 5} index={5} onClick={this.handleClick}>
-            <Label size='huge' color={white_or_black ? 'red' : 'blue'}>
-              Evangelion <Icon name='dropdown' />
-            </Label>
-          </Accordion.Title>
-          <Accordion.Content active={dangXemAnhGi === 5}>
-            <Modal basic open={modalOpen && (dangXemAnhGi===5)} onClose={this.closeModal} closeIcon>
-              <Image src={anhs['evangelion'][xemAnhSoNay].anh} />   {/* Ở trong Modal thì hiện Image to này */ }
-              <Icon onClick={this.xemAnhTruoc} circular inverted name='angle double left' 
-                    size='big' style={{position:'fixed', top: '45vh', left: (chieuRongManHinh > 900) ? '-35px' : '0px'}}/>
-              <Icon onClick={this.xemAnhSau} circular inverted name='angle double right' 
-                    size='big' style={{position:'fixed', top: '45vh', right: (chieuRongManHinh > 900) ? '-35px' : '0px'}}/>
-            </Modal>
-
-
-            <Grid doubling columns={5} style={{margin:'10px', padding:'0'}}>
-              { anhs['evangelion'].map((moiAnh, index) => 
-                  <Grid.Column> 
-                    <Image src={moiAnh.anh} size='small' 
-                      onClick={() => this.openBigImage(index)}/>
-                    <p>{moiAnh.ten}</p> 
-                  </Grid.Column>
-                )
-              }
-            </Grid>
-          
-          </Accordion.Content>
-          
-          <Accordion.Title active={dangXemAnhGi === 6} index={6} onClick={this.handleClick}>
-            <Label size='huge' color={white_or_black ? 'red' : 'blue'}>
-              Tron <Icon name='dropdown' />
-            </Label>
-          </Accordion.Title>
-          <Accordion.Content active={dangXemAnhGi === 6}>
-            
-            <Modal basic open={modalOpen && (dangXemAnhGi===6)} onClose={this.closeModal} closeIcon>
-              <Image src={anhs['tron'][xemAnhSoNay].anh} />   {/* Ở trong Modal thì hiện Image to này */ }
-              <Icon onClick={this.xemAnhTruoc} circular inverted name='angle double left' size='big' 
-                    style={{position:'fixed', top: '45vh', left: (chieuRongManHinh > 900) ? '-35px' : '0px'}}/>
-              <Icon onClick={this.xemAnhSau} circular inverted name='angle double right' size='big' 
-                    style={{position:'fixed', top: '45vh', right: (chieuRongManHinh > 900) ? '-35px' : '0px'}}/>
-            </Modal>
-            <Grid doubling columns={5} style={{margin:'10px', padding:'0'}}>
-              { anhs['tron'].map((moiAnh, index) => 
-                  <Grid.Column> 
-                    <Image src={moiAnh.anh} size='small' 
-                      onClick={() => this.openBigImage(index)}/>
-                    <p>{moiAnh.ten}</p> 
-                  </Grid.Column>
-                )
-              }
-            </Grid>
-
-          </Accordion.Content>
-          
-          <Accordion.Title active={dangXemAnhGi === 7} index={7} onClick={this.handleClick}>
-            <Label size='huge' color={white_or_black ? 'red' : 'blue'}>
-              Naruto <Icon name='dropdown' />
-            </Label>
-          </Accordion.Title>
-          <Accordion.Content active={dangXemAnhGi === 7}>
-
-            {/* Modal là chỗ để hiện ảnh to */ }
-            <Modal basic open={modalOpen && (dangXemAnhGi===7)} onClose={this.closeModal} closeIcon>
-              <Image src={anhs['naruto'][xemAnhSoNay].anh} />   {/* Ở trong Modal thì hiện Image to này */ }
-              <Icon onClick={this.xemAnhTruoc} circular inverted name='angle double left' size='big' 
-                    style={{position:'fixed', top: '45vh', left: (chieuRongManHinh > 900) ? '-35px' : '0px'}}/>
-              <Icon onClick={this.xemAnhSau} circular inverted name='angle double right' size='big' 
-                    style={{position:'fixed', top: '45vh', right: (chieuRongManHinh > 900) ? '-35px' : '0px'}}/>
-            </Modal>
-            
-            {/* Grid là chỗ để chứa 5 cái Column, mỗi Colum chứa 1 ảnh nhỏ */ }
-            <Grid doubling columns={5} style={{margin:'10px', padding:'0'}}>
-              { anhs['naruto'].map((moiAnh, index) => 
-                  <Grid.Column> 
-                    <Image src={moiAnh.anh} size='small' 
-                      onClick={() => this.openBigImage(index)}/>
-                    <p>{moiAnh.ten}</p> 
-                  </Grid.Column>
-                )
-              }
-            </Grid>
-
-          </Accordion.Content>
-
         </Accordion>
+
+              {
+                thongtinNguoi.map( (person, index) => 
+                  <div>
+                    Người thứ <i>{index}</i> tên là <b>{person.ten}</b> và sống ở <b>{person.diachi}</b> 
+
+                  </div>
+                )
+              }
+
         <MenuDieuKhien chieuRongManHinh={chieuRongManHinh} dangXemGi={dangXemGi} white_or_black={white_or_black} 
                         hienVaGiauPhoneMenu={hienVaGiauPhoneMenu} dangXemAnhGi={dangXemAnhGi} 
                         thanhDieuKhienAnh={this.thanhDieuKhienAnh} tenAnh={tenAnh}/>
