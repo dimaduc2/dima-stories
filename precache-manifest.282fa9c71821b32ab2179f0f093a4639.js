@@ -4,7 +4,7 @@ self.__precacheManifest = [
     "url": "/dima-stories/static/media/birthday__ponner89_nh_halo.c41b5931.jpg"
   },
   {
-    "revision": "944d8dfa4b8693fbb987",
+    "revision": "8411d48e252a90c48290",
     "url": "/dima-stories/static/css/main.ed15fc61.chunk.css"
   },
   {
@@ -172,8 +172,8 @@ self.__precacheManifest = [
     "url": "/dima-stories/static/media/2000_hits.97a7f2c0.jpg"
   },
   {
-    "revision": "944d8dfa4b8693fbb987",
-    "url": "/dima-stories/static/js/main.944d8dfa.chunk.js"
+    "revision": "8411d48e252a90c48290",
+    "url": "/dima-stories/static/js/main.8411d48e.chunk.js"
   },
   {
     "revision": "ed19eff95443e119f06037a104df45ab",
@@ -320,12 +320,12 @@ self.__precacheManifest = [
     "url": "/dima-stories/static/media/icons.b87b9ba5.ttf"
   },
   {
-    "revision": "c5ebe0b32dc1b5cc449a76c4204d13bb",
-    "url": "/dima-stories/static/media/brand-icons.c5ebe0b3.ttf"
-  },
-  {
     "revision": "13db00b7a34fee4d819ab7f9838cc428",
     "url": "/dima-stories/static/media/brand-icons.13db00b7.eot"
+  },
+  {
+    "revision": "c5ebe0b32dc1b5cc449a76c4204d13bb",
+    "url": "/dima-stories/static/media/brand-icons.c5ebe0b3.ttf"
   },
   {
     "revision": "82f60bd0b94a1ed68b1e6e309ce2e8c3",
@@ -340,7 +340,7 @@ self.__precacheManifest = [
     "url": "/dima-stories/static/css/1.74083ecb.chunk.css"
   },
   {
-    "revision": "8b7a178fcce42c6b1191d0d2429d3fde",
+    "revision": "ac543d3c900fa42c231ed3d27b217159",
     "url": "/dima-stories/index.html"
   }
 ];
