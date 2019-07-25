@@ -28,13 +28,13 @@ docTruyen = () => {
       
       <div>
         <Menu vertical fixed='top' inverted className = {hienMenu ? "menu-hien-ra" : "menu-dau-di"} >
-          <Menu.Item as='a' onClick={bamHome}>
+          <Menu.Item as='a' onClick={bamHome} style={{color: (dangXemGi === "dangXemHome") ? 'red' : 'white'}}>
             <Image src={logo_star_wars} size='mini' style={{display:'block', marginLeft: 'auto', marginRight:'auto'}}/> 
             Dima Stories
           </Menu.Item>
 
           <Menu.Item>
-            <Dropdown floating text='Truyện Tranh'>
+            <Dropdown floating text='Truyện Tranh' style={{color: (dangXemGi === "dangXemTruyen") ? 'red' : 'white'}}>
               <Dropdown.Menu>
                 <Dropdown.Item onClick={() => docTruyen('Evangelion')}>EVANGELION</Dropdown.Item>
                 <Dropdown.Item onClick={() => docTruyen('GANTZ')}>GANTZ</Dropdown.Item>
@@ -71,7 +71,7 @@ docTruyen = () => {
           </Menu.Item>
 
           <Menu.Item>
-            <Dropdown floating text='Phim Youtube'>
+            <Dropdown floating text='Phim Youtube' style={{color: (dangXemGi === "dangXemPhim") ? 'red' : 'white'}}>
               <Dropdown.Menu>
                 
                 <Dropdown.Item>
@@ -152,7 +152,7 @@ docTruyen = () => {
 
 
 
-          <Menu.Item onClick={bamAnh}>Ảnh</Menu.Item>
+          <Menu.Item onClick={bamAnh} style={{color: (dangXemGi === "dangXemAnh") ? 'red' : 'white'}}>Ảnh</Menu.Item>
 
 
           <Menu.Item>

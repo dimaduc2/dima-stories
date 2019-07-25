@@ -23,12 +23,13 @@ docTruyen = () => {
   render() {
     var {} = this.state;
     var {dangXemGi, docx_or_pdf, white_or_black, docTruyen, xemPhim, 
-        bamHome, xemTatCa, doimau, thayDoiCoChudocx, thayDoiCoChu, bamAnh} = this.props;
+        bamHome, xemTatCa, doimau, thayDoiCoChudocx, thayDoiCoChu, bamAnh, 
+        tenPhimDangXem, thuTuTapDangXem, thuTuPhanDangXem} = this.props;
     return (
       
       <Menu stackable inverted fixed='top'>
-        <Menu.Item header onClick={bamHome}>HOME</Menu.Item>
-        <Dropdown item simple text='Truyện Tranh'>
+        <Menu.Item header onClick={bamHome} style={{color: (dangXemGi === "dangXemHome") ? 'red' : 'white'}}>HOME</Menu.Item>
+        <Dropdown item simple text='Truyện Tranh' style={{color: (dangXemGi === "dangXemTruyen") ? 'red' : 'white'}}>
           <Dropdown.Menu>
             {/*    
             <Dropdown.Item onClick={this.doc}></Dropdown.Item>
@@ -67,66 +68,66 @@ docTruyen = () => {
             </Dropdown.Item>
           </Dropdown.Menu>
         </Dropdown>
-        <Dropdown item simple text='Phim Youtube'>
+        <Dropdown item simple text='Phim Youtube' style={{color: (dangXemGi === "dangXemPhim") ? 'red' : 'white'}}>
           <Dropdown.Menu>
             <Dropdown.Item>
               <Image src={logo_overlord} avatar/>
               <i className='dropdown icon' />
-              <span className='text'>Overlord Ss 1</span>
+              <span className='text' style={{color: (tenPhimDangXem === "overlord" && thuTuPhanDangXem === 0) ? 'blue' : 'black'}}>Overlord Ss 1</span>
               <Dropdown.Menu>
-                <Dropdown.Item onClick={ () => xemPhim('overlord', 0, 0) }>Overlord Ss1 ep 1</Dropdown.Item>
-                <Dropdown.Item onClick={ () => xemPhim('overlord', 0, 1) }>Overlord Ss1 ep 2</Dropdown.Item>
-                <Dropdown.Item onClick={ () => xemPhim('overlord', 0, 2) }>Overlord Ss1 ep 3</Dropdown.Item>
-                <Dropdown.Item onClick={ () => xemPhim('overlord', 0, 3) }>Overlord Ss1 ep 4</Dropdown.Item>
-                <Dropdown.Item onClick={ () => xemPhim('overlord', 0, 4) }>Overlord Ss1 ep 5</Dropdown.Item>
-                <Dropdown.Item onClick={ () => xemPhim('overlord', 0, 5) }>Overlord Ss1 ep 6</Dropdown.Item>
-                <Dropdown.Item onClick={ () => xemPhim('overlord', 0, 6) }>Overlord Ss1 ep 7</Dropdown.Item>
-                <Dropdown.Item onClick={ () => xemPhim('overlord', 0, 7) }>Overlord Ss1 ep 8</Dropdown.Item>
-                <Dropdown.Item onClick={ () => xemPhim('overlord', 0, 8) }>Overlord Ss1 ep 9</Dropdown.Item>
-                <Dropdown.Item onClick={ () => xemPhim('overlord', 0, 9) }>Overlord Ss1 ep 10</Dropdown.Item>
-                <Dropdown.Item onClick={ () => xemPhim('overlord', 0, 10) }>Overlord Ss1 ep 11</Dropdown.Item>
-                <Dropdown.Item onClick={ () => xemPhim('overlord', 0, 11) }>Overlord Ss1 ep 12</Dropdown.Item>
-                <Dropdown.Item onClick={ () => xemPhim('overlord', 0, 12) }>Overlord Ss1 ep 13</Dropdown.Item>
+                <Dropdown.Item onClick={ () => xemPhim('overlord', 0, 0) }><span style={{color: (thuTuTapDangXem === 0) ? 'blue' : 'black'}}>Overlord Ss1 ep 1</span></Dropdown.Item>
+                <Dropdown.Item onClick={ () => xemPhim('overlord', 0, 1) }><span style={{color: (thuTuTapDangXem === 1) ? 'blue' : 'black'}}>Overlord Ss1 ep 2</span></Dropdown.Item>
+                <Dropdown.Item onClick={ () => xemPhim('overlord', 0, 2) }><span style={{color: (thuTuTapDangXem === 2) ? 'blue' : 'black'}}>Overlord Ss1 ep 3</span></Dropdown.Item>
+                <Dropdown.Item onClick={ () => xemPhim('overlord', 0, 3) }><span style={{color: (thuTuTapDangXem === 3) ? 'blue' : 'black'}}>Overlord Ss1 ep 4</span></Dropdown.Item>
+                <Dropdown.Item onClick={ () => xemPhim('overlord', 0, 4) }><span style={{color: (thuTuTapDangXem === 4) ? 'blue' : 'black'}}>Overlord Ss1 ep 5</span></Dropdown.Item>
+                <Dropdown.Item onClick={ () => xemPhim('overlord', 0, 5) }><span style={{color: (thuTuTapDangXem === 5) ? 'blue' : 'black'}}>Overlord Ss1 ep 6</span></Dropdown.Item>
+                <Dropdown.Item onClick={ () => xemPhim('overlord', 0, 6) }><span style={{color: (thuTuTapDangXem === 6) ? 'blue' : 'black'}}>Overlord Ss1 ep 7</span></Dropdown.Item>
+                <Dropdown.Item onClick={ () => xemPhim('overlord', 0, 7) }><span style={{color: (thuTuTapDangXem === 7) ? 'blue' : 'black'}}>Overlord Ss1 ep 8</span></Dropdown.Item>
+                <Dropdown.Item onClick={ () => xemPhim('overlord', 0, 8) }><span style={{color: (thuTuTapDangXem === 8) ? 'blue' : 'black'}}>Overlord Ss1 ep 9</span></Dropdown.Item>
+                <Dropdown.Item onClick={ () => xemPhim('overlord', 0, 9) }><span style={{color: (thuTuTapDangXem === 9) ? 'blue' : 'black'}}>Overlord Ss1 ep 10</span></Dropdown.Item>
+                <Dropdown.Item onClick={ () => xemPhim('overlord', 0, 10) }><span style={{color: (thuTuTapDangXem === 10) ? 'blue' : 'black'}}>Overlord Ss1 ep 11</span></Dropdown.Item>
+                <Dropdown.Item onClick={ () => xemPhim('overlord', 0, 11) }><span style={{color: (thuTuTapDangXem === 11) ? 'blue' : 'black'}}>Overlord Ss1 ep 12</span></Dropdown.Item>
+                <Dropdown.Item onClick={ () => xemPhim('overlord', 0, 12) }><span style={{color: (thuTuTapDangXem === 12) ? 'blue' : 'black'}}>Overlord Ss1 ep 13</span></Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown.Item>
             <Dropdown.Item>
               <Image src={logo_overlord} avatar/>
               <i className='dropdown icon' />
-              <span className='text'>Overlord Ss 2</span>
+              <span className='text' style={{color: (tenPhimDangXem === "overlord" && thuTuPhanDangXem === 1) ? 'blue' : 'black'}}>Overlord Ss 2</span>
               <Dropdown.Menu>
-                <Dropdown.Item onClick={ () => xemPhim('overlord', 1, 0) }>Overlord Ss2 ep 1</Dropdown.Item>
-                <Dropdown.Item onClick={ () => xemPhim('overlord', 1, 1) }>Overlord Ss2 ep 2</Dropdown.Item>
-                <Dropdown.Item onClick={ () => xemPhim('overlord', 1, 2) }>Overlord Ss2 ep 3</Dropdown.Item>
-                <Dropdown.Item onClick={ () => xemPhim('overlord', 1, 3) }>Overlord Ss2 ep 4</Dropdown.Item>
-                <Dropdown.Item onClick={ () => xemPhim('overlord', 1, 4) }>Overlord Ss2 ep 5</Dropdown.Item>
-                <Dropdown.Item onClick={ () => xemPhim('overlord', 1, 5) }>Overlord Ss2 ep 6</Dropdown.Item>
-                <Dropdown.Item onClick={ () => xemPhim('overlord', 1, 6) }>Overlord Ss2 ep 7</Dropdown.Item>
-                <Dropdown.Item onClick={ () => xemPhim('overlord', 1, 7) }>Overlord Ss2 ep 8</Dropdown.Item>
-                <Dropdown.Item onClick={ () => xemPhim('overlord', 1, 8) }>Overlord Ss2 ep 9</Dropdown.Item>
-                <Dropdown.Item onClick={ () => xemPhim('overlord', 1, 9) }>Overlord Ss2 ep 10</Dropdown.Item>
-                <Dropdown.Item onClick={ () => xemPhim('overlord', 1, 10) }>Overlord Ss2 ep 11</Dropdown.Item>
-                <Dropdown.Item onClick={ () => xemPhim('overlord', 1, 11) }>Overlord Ss2 ep 12</Dropdown.Item>
-                <Dropdown.Item onClick={ () => xemPhim('overlord', 1, 12) }>Overlord Ss2 ep 13</Dropdown.Item>
+                <Dropdown.Item onClick={ () => xemPhim('overlord', 1, 0) }><span style={{color: (thuTuTapDangXem === 0) ? 'blue' : 'black'}}>Overlord Ss2 ep 1</span></Dropdown.Item>
+                <Dropdown.Item onClick={ () => xemPhim('overlord', 1, 1) }><span style={{color: (thuTuTapDangXem === 1) ? 'blue' : 'black'}}>Overlord Ss2 ep 2</span></Dropdown.Item>
+                <Dropdown.Item onClick={ () => xemPhim('overlord', 1, 2) }><span style={{color: (thuTuTapDangXem === 2) ? 'blue' : 'black'}}>Overlord Ss2 ep 3</span></Dropdown.Item>
+                <Dropdown.Item onClick={ () => xemPhim('overlord', 1, 3) }><span style={{color: (thuTuTapDangXem === 3) ? 'blue' : 'black'}}>Overlord Ss2 ep 4</span></Dropdown.Item>
+                <Dropdown.Item onClick={ () => xemPhim('overlord', 1, 4) }><span style={{color: (thuTuTapDangXem === 4) ? 'blue' : 'black'}}>Overlord Ss2 ep 5</span></Dropdown.Item>
+                <Dropdown.Item onClick={ () => xemPhim('overlord', 1, 5) }><span style={{color: (thuTuTapDangXem === 5) ? 'blue' : 'black'}}>Overlord Ss2 ep 6</span></Dropdown.Item>
+                <Dropdown.Item onClick={ () => xemPhim('overlord', 1, 6) }><span style={{color: (thuTuTapDangXem === 6) ? 'blue' : 'black'}}>Overlord Ss2 ep 7</span></Dropdown.Item>
+                <Dropdown.Item onClick={ () => xemPhim('overlord', 1, 7) }><span style={{color: (thuTuTapDangXem === 7) ? 'blue' : 'black'}}>Overlord Ss2 ep 8</span></Dropdown.Item>
+                <Dropdown.Item onClick={ () => xemPhim('overlord', 1, 8) }><span style={{color: (thuTuTapDangXem === 8) ? 'blue' : 'black'}}>Overlord Ss2 ep 9</span></Dropdown.Item>
+                <Dropdown.Item onClick={ () => xemPhim('overlord', 1, 9) }><span style={{color: (thuTuTapDangXem === 9) ? 'blue' : 'black'}}>Overlord Ss2 ep 10</span></Dropdown.Item>
+                <Dropdown.Item onClick={ () => xemPhim('overlord', 1, 10) }><span style={{color: (thuTuTapDangXem === 10) ? 'blue' : 'black'}}>Overlord Ss2 ep 11</span></Dropdown.Item>
+                <Dropdown.Item onClick={ () => xemPhim('overlord', 1, 11) }><span style={{color: (thuTuTapDangXem === 11) ? 'blue' : 'black'}}>Overlord Ss2 ep 12</span></Dropdown.Item>
+                <Dropdown.Item onClick={ () => xemPhim('overlord', 1, 12) }><span style={{color: (thuTuTapDangXem === 12) ? 'blue' : 'black'}}>Overlord Ss2 ep 13</span></Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown.Item>
             <Dropdown.Item>
               <Image src={logo_overlord} avatar/>
               <i className='dropdown icon' />
-              <span className='text'>Overlord Ss 3</span>
+              <span className='text' style={{color: (tenPhimDangXem === "overlord" && thuTuPhanDangXem === 2) ? 'blue' : 'black'}}>Overlord Ss 3</span>
               <Dropdown.Menu>
-                <Dropdown.Item onClick={ () => xemPhim('overlord', 2, 0) }>Overlord Ss3 ep 1</Dropdown.Item>
-                <Dropdown.Item onClick={ () => xemPhim('overlord', 2, 1) }>Overlord Ss3 ep 2</Dropdown.Item>
-                <Dropdown.Item onClick={ () => xemPhim('overlord', 2, 2) }>Overlord Ss3 ep 3</Dropdown.Item>
-                <Dropdown.Item onClick={ () => xemPhim('overlord', 2, 3) }>Overlord Ss3 ep 4</Dropdown.Item>
-                <Dropdown.Item onClick={ () => xemPhim('overlord', 2, 4) }>Overlord Ss3 ep 5</Dropdown.Item>
-                <Dropdown.Item onClick={ () => xemPhim('overlord', 2, 5) }>Overlord Ss3 ep 6</Dropdown.Item>
-                <Dropdown.Item onClick={ () => xemPhim('overlord', 2, 6) }>Overlord Ss3 ep 7</Dropdown.Item>
-                <Dropdown.Item onClick={ () => xemPhim('overlord', 2, 7) }>Overlord Ss3 ep 8</Dropdown.Item>
-                <Dropdown.Item onClick={ () => xemPhim('overlord', 2, 8) }>Overlord Ss3 ep 9</Dropdown.Item>
-                <Dropdown.Item onClick={ () => xemPhim('overlord', 2, 9) }>Overlord Ss3 ep 10</Dropdown.Item>
-                <Dropdown.Item onClick={ () => xemPhim('overlord', 2, 10) }>Overlord Ss3 ep 11</Dropdown.Item>
-                <Dropdown.Item onClick={ () => xemPhim('overlord', 2, 11) }>Overlord Ss3 ep 12</Dropdown.Item>
-                <Dropdown.Item onClick={ () => xemPhim('overlord', 2, 12) }>Overlord Ss3 ep 13</Dropdown.Item>
+                <Dropdown.Item onClick={ () => xemPhim('overlord', 2, 0) }><span style={{color: (thuTuTapDangXem === 0) ? 'blue' : 'black'}}>Overlord Ss3 ep 1</span></Dropdown.Item>
+                <Dropdown.Item onClick={ () => xemPhim('overlord', 2, 1) }><span style={{color: (thuTuTapDangXem === 1) ? 'blue' : 'black'}}>Overlord Ss3 ep 2</span></Dropdown.Item>
+                <Dropdown.Item onClick={ () => xemPhim('overlord', 2, 2) }><span style={{color: (thuTuTapDangXem === 2) ? 'blue' : 'black'}}>Overlord Ss3 ep 3</span></Dropdown.Item>
+                <Dropdown.Item onClick={ () => xemPhim('overlord', 2, 3) }><span style={{color: (thuTuTapDangXem === 3) ? 'blue' : 'black'}}>Overlord Ss3 ep 4</span></Dropdown.Item>
+                <Dropdown.Item onClick={ () => xemPhim('overlord', 2, 4) }><span style={{color: (thuTuTapDangXem === 4) ? 'blue' : 'black'}}>Overlord Ss3 ep 5</span></Dropdown.Item>
+                <Dropdown.Item onClick={ () => xemPhim('overlord', 2, 5) }><span style={{color: (thuTuTapDangXem === 5) ? 'blue' : 'black'}}>Overlord Ss3 ep 6</span></Dropdown.Item>
+                <Dropdown.Item onClick={ () => xemPhim('overlord', 2, 6) }><span style={{color: (thuTuTapDangXem === 6) ? 'blue' : 'black'}}>Overlord Ss3 ep 7</span></Dropdown.Item>
+                <Dropdown.Item onClick={ () => xemPhim('overlord', 2, 7) }><span style={{color: (thuTuTapDangXem === 7) ? 'blue' : 'black'}}>Overlord Ss3 ep 8</span></Dropdown.Item>
+                <Dropdown.Item onClick={ () => xemPhim('overlord', 2, 8) }><span style={{color: (thuTuTapDangXem === 8) ? 'blue' : 'black'}}>Overlord Ss3 ep 9</span></Dropdown.Item>
+                <Dropdown.Item onClick={ () => xemPhim('overlord', 2, 9) }><span style={{color: (thuTuTapDangXem === 9) ? 'blue' : 'black'}}>Overlord Ss3 ep 10</span></Dropdown.Item>
+                <Dropdown.Item onClick={ () => xemPhim('overlord', 2, 10) }><span style={{color: (thuTuTapDangXem === 10) ? 'blue' : 'black'}}>Overlord Ss3 ep 11</span></Dropdown.Item>
+                <Dropdown.Item onClick={ () => xemPhim('overlord', 2, 11) }><span style={{color: (thuTuTapDangXem === 11) ? 'blue' : 'black'}}>Overlord Ss3 ep 12</span></Dropdown.Item>
+                <Dropdown.Item onClick={ () => xemPhim('overlord', 2, 12) }><span style={{color: (thuTuTapDangXem === 12) ? 'blue' : 'black'}}>Overlord Ss3 ep 13</span></Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown.Item>
             <Dropdown.Divider />
@@ -140,7 +141,7 @@ docTruyen = () => {
           </Dropdown.Menu>
         </Dropdown>
         
-        <Menu.Item onClick={bamAnh}>Ảnh</Menu.Item>
+        <Menu.Item onClick={bamAnh} style={{color: (dangXemGi === "dangXemAnh") ? 'red' : 'white'}}>Ảnh</Menu.Item>
 
         <Menu.Menu position='right'>
         

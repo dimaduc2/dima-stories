@@ -147,7 +147,8 @@ class App extends Component {
           ?	// nếu true thì hiện Menu Máy Tính
             <MenuMayTinh dangXemGi={dangXemGi} docx_or_pdf={tatCaTrang} white_or_black={white_or_black} docTruyen={this.docTruyen}
                           xemPhim={this.xemPhim} bamHome={this.bamHome} xemTatCa={this.xemTatCa} doimau={this.doimau}
-                          thayDoiCoChudocx={this.thayDoiCoChudocx} thayDoiCoChu={this.thayDoiCoChu} bamAnh={this.bamAnh}/>
+                          thayDoiCoChudocx={this.thayDoiCoChudocx} thayDoiCoChu={this.thayDoiCoChu} bamAnh={this.bamAnh}
+                          tenPhimDangXem={tenPhimDangXem} thuTuTapDangXem={thuTuTapDangXem} thuTuPhanDangXem={thuTuPhanDangXem}/>
           :	// nếu false thì hiện Menu Phone
             <MenuDienThoai dangXemGi={dangXemGi} white_or_black={white_or_black} docTruyen={this.docTruyen} xemPhim={this.xemPhim} 
                             bamHome={this.bamHome} hienMenu={hienMenu} doimau={this.doimau} thayDoiCoChudocx={this.thayDoiCoChudocx} 
