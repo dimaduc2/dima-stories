@@ -23,7 +23,7 @@ docTruyen = () => {
   render() {
     var {} = this.state;
     var {dangXemGi, white_or_black, docTruyen, xemPhim, bamHome, hienMenu, doimau, thayDoiCoChudocx, 
-          bamAnh, hienVaGiauPhoneMenu} = this.props;
+          bamAnh, hienVaGiauPhoneMenu, tenPhimDangXem, thuTuTapDangXem, thuTuPhanDangXem} = this.props;
     return (
       
       <div>
