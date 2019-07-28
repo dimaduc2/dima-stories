@@ -4,7 +4,7 @@ self.__precacheManifest = [
     "url": "/dima-stories/static/media/2000_hits.97a7f2c0.jpg"
   },
   {
-    "revision": "d4d783eeb6dce7436af5",
+    "revision": "63543e4e1171f2eca595",
     "url": "/dima-stories/static/css/main.f66e6c2d.chunk.css"
   },
   {
@@ -172,8 +172,8 @@ self.__precacheManifest = [
     "url": "/dima-stories/static/media/Tron_Rinzler.3ed6b7c5.jpg"
   },
   {
-    "revision": "d4d783eeb6dce7436af5",
-    "url": "/dima-stories/static/js/main.d4d783ee.chunk.js"
+    "revision": "63543e4e1171f2eca595",
+    "url": "/dima-stories/static/js/main.63543e4e.chunk.js"
   },
   {
     "revision": "c41b59317c8fdd2b6ee77c20ab59dd60",
@@ -316,20 +316,20 @@ self.__precacheManifest = [
     "url": "/dima-stories/static/media/brand-icons.a046592b.woff"
   },
   {
-    "revision": "b87b9ba532ace76ae9f6edfe9f72ded2",
-    "url": "/dima-stories/static/media/icons.b87b9ba5.ttf"
-  },
-  {
     "revision": "8e3c7f5520f5ae906c6cf6d7f3ddcd19",
     "url": "/dima-stories/static/media/icons.8e3c7f55.eot"
   },
   {
-    "revision": "c5ebe0b32dc1b5cc449a76c4204d13bb",
-    "url": "/dima-stories/static/media/brand-icons.c5ebe0b3.ttf"
+    "revision": "b87b9ba532ace76ae9f6edfe9f72ded2",
+    "url": "/dima-stories/static/media/icons.b87b9ba5.ttf"
   },
   {
     "revision": "13db00b7a34fee4d819ab7f9838cc428",
     "url": "/dima-stories/static/media/brand-icons.13db00b7.eot"
+  },
+  {
+    "revision": "c5ebe0b32dc1b5cc449a76c4204d13bb",
+    "url": "/dima-stories/static/media/brand-icons.c5ebe0b3.ttf"
   },
   {
     "revision": "82f60bd0b94a1ed68b1e6e309ce2e8c3",
@@ -344,7 +344,7 @@ self.__precacheManifest = [
     "url": "/dima-stories/static/css/1.89959e7a.chunk.css"
   },
   {
-    "revision": "74b183c9201354bd1f31fc60c3ab8fa2",
+    "revision": "eb51e946ba8897836b02c17f4927dddb",
     "url": "/dima-stories/index.html"
   }
 ];

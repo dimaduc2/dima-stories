@@ -1,7 +1,7 @@
 {
   "main.css": "/dima-stories/static/css/main.f66e6c2d.chunk.css",
-  "main.js": "/dima-stories/static/js/main.d4d783ee.chunk.js",
-  "main.js.map": "/dima-stories/static/js/main.d4d783ee.chunk.js.map",
+  "main.js": "/dima-stories/static/js/main.63543e4e.chunk.js",
+  "main.js.map": "/dima-stories/static/js/main.63543e4e.chunk.js.map",
   "static/css/1.89959e7a.chunk.css": "/dima-stories/static/css/1.89959e7a.chunk.css",
   "static/js/1.a9a6c87f.chunk.js": "/dima-stories/static/js/1.a9a6c87f.chunk.js",
   "static/js/1.a9a6c87f.chunk.js.map": "/dima-stories/static/js/1.a9a6c87f.chunk.js.map",
@@ -76,6 +76,6 @@
   "static/css/main.f66e6c2d.chunk.css.map": "/dima-stories/static/css/main.f66e6c2d.chunk.css.map",
   "static/css/1.89959e7a.chunk.css.map": "/dima-stories/static/css/1.89959e7a.chunk.css.map",
   "index.html": "/dima-stories/index.html",
-  "precache-manifest.54064deb0521bd15a3c33103dc169368.js": "/dima-stories/precache-manifest.54064deb0521bd15a3c33103dc169368.js",
+  "precache-manifest.c4e1a1d08bf811542d7dd5a8ec31aefb.js": "/dima-stories/precache-manifest.c4e1a1d08bf811542d7dd5a8ec31aefb.js",
   "service-worker.js": "/dima-stories/service-worker.js"
 }
