@@ -153,7 +153,9 @@ class App extends Component {
           :	// nếu false thì hiện Menu Phone
             <MenuDienThoai dangXemGi={dangXemGi} white_or_black={white_or_black} docTruyen={this.docTruyen} xemPhim={this.xemPhim} 
                             bamHome={this.bamHome} hienMenu={hienMenu} doimau={this.doimau} thayDoiCoChudocx={this.thayDoiCoChudocx} 
-                            bamAnh={this.bamAnh} hienVaGiauPhoneMenu={this.hienVaGiauPhoneMenu}/>
+                            bamAnh={this.bamAnh} hienVaGiauPhoneMenu={this.hienVaGiauPhoneMenu} thuTuTapDangXem={thuTuTapDangXem} 
+                            thuTuPhanDangXem={thuTuPhanDangXem} tenTruyenTrongDanhBa={tenTruyenTrongDanhBa} 
+                            tenPhimDangXem={tenPhimDangXem}/>
         }
         
         {/* Vị trí này ở trên cùng của trang, khi Dima bấm lên thì sẽ lên đây*/}

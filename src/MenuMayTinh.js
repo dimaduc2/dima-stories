@@ -74,42 +74,42 @@ docTruyen = () => {
           <Dropdown.Menu style={{width:'30vw'}}>
             <Dropdown.Item>
               <Image src={logo_overlord} avatar/>
+
               <i className='dropdown icon' />
               <span className='text' style={{color: (dangXemGi === "dangXemPhim" && tenPhimDangXem === "overlord" && thuTuPhanDangXem === 0) ? 'blue' : 'black'}}>Overlord Ss 1</span>
               <Dropdown.Menu>
-
               {tapOverlord.map( (tap, index) =>
                 <Dropdown.Item onClick={ () => xemPhim('overlord', 0, index) }>
-                    <span style={{color: (dangXemGi === "dangXemPhim" && tenPhimDangXem === "overlord" && thuTuTapDangXem === index && thuTuPhanDangXem === 0) ? 'blue' : 'black'}}>
-                        Overlord Ss1 ep {index+1}
-                    </span>
-                    </Dropdown.Item>
+                  <span style={{color: (dangXemGi === "dangXemPhim" && tenPhimDangXem === "overlord" && thuTuTapDangXem === index && thuTuPhanDangXem === 0) ? 'blue' : 'black'}}>
+                      Overlord Ss1 ep {index+1}
+                  </span>
+                </Dropdown.Item>
                 )}
-                
               </Dropdown.Menu>
+
             </Dropdown.Item>
             <Dropdown.Item>
               <Image src={logo_overlord} avatar/>
+              
               <i className='dropdown icon' />
               <span className='text' style={{color: (dangXemGi === "dangXemPhim" && tenPhimDangXem === "overlord" && thuTuPhanDangXem === 1) ? 'blue' : 'black'}}>Overlord Ss 2</span>
               <Dropdown.Menu>
-                
                 {tapOverlord.map( (tap, index) =>
                   <Dropdown.Item onClick={ () => xemPhim('overlord', 1, index) }>
                     <span style={{color: (dangXemGi === "dangXemPhim" && tenPhimDangXem === "overlord" && thuTuTapDangXem === index && thuTuPhanDangXem === 1) ? 'blue' : 'black'}}>
                         Overlord Ss2 ep {index+1}
                     </span>
-                    </Dropdown.Item>
+                  </Dropdown.Item>
                   )}
-
               </Dropdown.Menu>
+
             </Dropdown.Item>
             <Dropdown.Item>
               <Image src={logo_overlord} avatar/>
+              
               <i className='dropdown icon' />
               <span className='text' style={{color: (dangXemGi === "dangXemPhim" && tenPhimDangXem === "overlord" && thuTuPhanDangXem === 2) ? 'blue' : 'black'}}>Overlord Ss 3</span>
               <Dropdown.Menu>
-                
                 {tapOverlord.map( (tap, index) =>
                 <Dropdown.Item onClick={ () => xemPhim('overlord', 2, index) }>
                     <span style={{color: (dangXemGi === "dangXemPhim" && tenPhimDangXem === "overlord" && thuTuTapDangXem === index && thuTuPhanDangXem === 2) ? 'blue' : 'black'}}>
@@ -117,8 +117,8 @@ docTruyen = () => {
                     </span>
                     </Dropdown.Item>
                 )}
-
               </Dropdown.Menu>
+
             </Dropdown.Item>
             <Dropdown.Divider />
             
