@@ -30,6 +30,9 @@ import OperationPreventingVaderDoc from './truyen/Operation Preventing Vader.doc
 import OperationPreventingVaderPDF from './truyen/Operation Preventing Vader.pdf';
 import InnocentDoc from './truyen/Innocent.docx';
 import InnocentPDF from './truyen/Innocent.pdf';
+import chosenOneDoc from './truyen/Lord Anakin Vader Skywalker & Lady Padme Mirayya Amidala & Lord Obi-Wan Rego Kenobi.docx';
+import chosenOnePDF from './truyen/Lord Anakin Vader Skywalker & Lady Padme Mirayya Amidala & Lord Obi-Wan Rego Kenobi.pdf';
+
 
 
 import * as Scroll from 'react-scroll';
@@ -48,6 +51,10 @@ const danhBaTruyen = {
   'Innocent' : {
     truyenDoc: InnocentDoc,
     truyenPDF: InnocentPDF
+  },
+  'chosenOne' : {
+    truyenDoc: chosenOneDoc,
+    truyenPDF: chosenOnePDF
   },
   'Backtothefuture' : {
     truyenDoc: BacktothefutureDoc,

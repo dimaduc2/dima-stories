@@ -41,6 +41,7 @@ docTruyen = () => {
             <Dropdown.Divider />
             <Dropdown.Item onClick={() => docTruyen('Backtothefuture')}><span style={{color: (dangXemGi === "dangXemTruyen" && tenTruyenTrongDanhBa === "Backtothefuture") ? 'blue' : 'black'}}>Back to the future</span></Dropdown.Item>
             <Dropdown.Item onClick={() => docTruyen('ChangingtheFuture')}><span style={{color: (dangXemGi === "dangXemTruyen" && tenTruyenTrongDanhBa === "ChangingtheFuture") ? 'blue' : 'black'}}>Changing the Future</span></Dropdown.Item>
+            <Dropdown.Item onClick={() => docTruyen('chosenOne')}><span style={{color: (dangXemGi === "dangXemTruyen" && tenTruyenTrongDanhBa === "chosenOne") ? 'blue' : 'black'}}>Chosen One for Force</span></Dropdown.Item>
             <Dropdown.Divider />
             <Dropdown.Item>
               <Icon name='star'/>
