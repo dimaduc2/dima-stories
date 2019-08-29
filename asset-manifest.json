@@ -1,7 +1,7 @@
 {
   "main.css": "/dima-stories/static/css/main.d00653b9.chunk.css",
-  "main.js": "/dima-stories/static/js/main.0581d2b9.chunk.js",
-  "main.js.map": "/dima-stories/static/js/main.0581d2b9.chunk.js.map",
+  "main.js": "/dima-stories/static/js/main.08f41eba.chunk.js",
+  "main.js.map": "/dima-stories/static/js/main.08f41eba.chunk.js.map",
   "static/css/1.43176851.chunk.css": "/dima-stories/static/css/1.43176851.chunk.css",
   "static/js/1.546cd111.chunk.js": "/dima-stories/static/js/1.546cd111.chunk.js",
   "static/js/1.546cd111.chunk.js.map": "/dima-stories/static/js/1.546cd111.chunk.js.map",
@@ -72,12 +72,12 @@
   "static/media/Operation Preventing Vader.pdf": "/dima-stories/static/media/Operation Preventing Vader.7fd1ce85.pdf",
   "static/media/Innocent.docx": "/dima-stories/static/media/Innocent.540b581d.docx",
   "static/media/Innocent.pdf": "/dima-stories/static/media/Innocent.2c8e5418.pdf",
-  "static/media/Lord Anakin Vader Skywalker & Lady Padme Mirayya Amidala & Lord Obi-Wan Rego Kenobi.docx": "/dima-stories/static/media/Lord Anakin Vader Skywalker & Lady Padme Mirayya Amidala & Lord Obi-Wan Rego Kenobi.b6c9587b.docx",
-  "static/media/Lord Anakin Vader Skywalker & Lady Padme Mirayya Amidala & Lord Obi-Wan Rego Kenobi.pdf": "/dima-stories/static/media/Lord Anakin Vader Skywalker & Lady Padme Mirayya Amidala & Lord Obi-Wan Rego Kenobi.b91ea33d.pdf",
+  "static/media/Lord Anakin Vader Skywalker & Lady Padme Mirayya Amidala & Lord Obi-Wan Rego Kenobi.docx": "/dima-stories/static/media/Lord Anakin Vader Skywalker & Lady Padme Mirayya Amidala & Lord Obi-Wan Rego Kenobi.7d04e9d4.docx",
+  "static/media/Lord Anakin Vader Skywalker & Lady Padme Mirayya Amidala & Lord Obi-Wan Rego Kenobi.pdf": "/dima-stories/static/media/Lord Anakin Vader Skywalker & Lady Padme Mirayya Amidala & Lord Obi-Wan Rego Kenobi.3d43ed0c.pdf",
   "static/media/semantic.min.css": "/dima-stories/static/media/brand-icons.a1a749e8.svg",
   "static/css/main.d00653b9.chunk.css.map": "/dima-stories/static/css/main.d00653b9.chunk.css.map",
   "static/css/1.43176851.chunk.css.map": "/dima-stories/static/css/1.43176851.chunk.css.map",
   "index.html": "/dima-stories/index.html",
-  "precache-manifest.37b02c15b1b82c9e4aaccbf1d6d9503e.js": "/dima-stories/precache-manifest.37b02c15b1b82c9e4aaccbf1d6d9503e.js",
+  "precache-manifest.9f2274a9df333163bd9a935128ed219a.js": "/dima-stories/precache-manifest.9f2274a9df333163bd9a935128ed219a.js",
   "service-worker.js": "/dima-stories/service-worker.js"
 }

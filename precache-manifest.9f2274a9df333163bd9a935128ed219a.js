@@ -4,7 +4,7 @@ self.__precacheManifest = [
     "url": "/dima-stories/static/media/birthday__ponner89_nh_halo.c41b5931.jpg"
   },
   {
-    "revision": "0581d2b96013017d16aa",
+    "revision": "08f41eba4977b609dc5e",
     "url": "/dima-stories/static/css/main.d00653b9.chunk.css"
   },
   {
@@ -176,8 +176,8 @@ self.__precacheManifest = [
     "url": "/dima-stories/static/media/2000_hits.97a7f2c0.jpg"
   },
   {
-    "revision": "0581d2b96013017d16aa",
-    "url": "/dima-stories/static/js/main.0581d2b9.chunk.js"
+    "revision": "08f41eba4977b609dc5e",
+    "url": "/dima-stories/static/js/main.08f41eba.chunk.js"
   },
   {
     "revision": "ed19eff95443e119f06037a104df45ab",
@@ -280,20 +280,20 @@ self.__precacheManifest = [
     "url": "/dima-stories/static/media/Innocent.2c8e5418.pdf"
   },
   {
-    "revision": "b6c9587b586779c249baade4dea46373",
-    "url": "/dima-stories/static/media/Lord Anakin Vader Skywalker & Lady Padme Mirayya Amidala & Lord Obi-Wan Rego Kenobi.b6c9587b.docx"
+    "revision": "7d04e9d4f341e940f5aaa5b3e90b1396",
+    "url": "/dima-stories/static/media/Lord Anakin Vader Skywalker & Lady Padme Mirayya Amidala & Lord Obi-Wan Rego Kenobi.7d04e9d4.docx"
   },
   {
-    "revision": "b91ea33df07597fa9e10c6c85fa195d9",
-    "url": "/dima-stories/static/media/Lord Anakin Vader Skywalker & Lady Padme Mirayya Amidala & Lord Obi-Wan Rego Kenobi.b91ea33d.pdf"
-  },
-  {
-    "revision": "cd6c777f1945164224dee082abaea03a",
-    "url": "/dima-stories/static/media/outline-icons.cd6c777f.woff2"
+    "revision": "3d43ed0c16b9b7f3f4fc36e99619eee8",
+    "url": "/dima-stories/static/media/Lord Anakin Vader Skywalker & Lady Padme Mirayya Amidala & Lord Obi-Wan Rego Kenobi.3d43ed0c.pdf"
   },
   {
     "revision": "ef60a4f6c25ef7f39f2d25a748dbecfe",
     "url": "/dima-stories/static/media/outline-icons.ef60a4f6.woff"
+  },
+  {
+    "revision": "cd6c777f1945164224dee082abaea03a",
+    "url": "/dima-stories/static/media/outline-icons.cd6c777f.woff2"
   },
   {
     "revision": "9c74e172f87984c48ddf5c8108cabe67",
@@ -352,7 +352,7 @@ self.__precacheManifest = [
     "url": "/dima-stories/static/css/1.43176851.chunk.css"
   },
   {
-    "revision": "748ec1051f7e6c234f9de3689058da16",
+    "revision": "9f2621e859f1e88d1eb54366464d8325",
     "url": "/dima-stories/index.html"
   }
 ];
